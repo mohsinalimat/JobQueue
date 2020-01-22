@@ -1,9 +1,6 @@
-//
-//  File.swift
-//
-//
-//  Created by George Cox on 1/21/20.
-//
+///
+///  Created by George Cox on 1/22/20.
+///
 
 import Foundation
 import ReactiveSwift
