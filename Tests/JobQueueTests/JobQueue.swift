@@ -129,9 +129,6 @@ class JobQueueTests: QuickSpec {
                 }
               }
             queue.store(job)
-              .on(value: {
-                print("Stored job: \($0)")
-              })
               .then(queue.resume())
               .start()
           }
@@ -183,7 +180,7 @@ class JobQueueTests: QuickSpec {
 
           queue.register(Processor.self, concurrency: 50)
           var disposable: Disposable?
-          
+
           waitUntil(timeout: 5) { done in
             disposable = queue.events.producer
               .startWithValues { event in
@@ -193,7 +190,6 @@ class JobQueueTests: QuickSpec {
                     fail("Began processing job prior to delay `until` date")
                     return
                   }
-                  print("Processing delayed job at \(Date().timeIntervalSince1970), was delayed until \(date.timeIntervalSince1970)")
                 case .finishedProcessing(let j):
                   guard Date() > date else {
                     fail("Processed job prior to delay `until` date")
@@ -203,15 +199,11 @@ class JobQueueTests: QuickSpec {
                   done()
                 case .failedProcessing(_, let error):
                   fail("should not have failed, \(error)")
-                  done()
                 default:
                   break
                 }
               }
             queue.store(job)
-              .on(value: {
-                print("Stored job: \($0)")
-                       })
               .then(queue.resume())
               .start()
           }
@@ -234,7 +226,6 @@ private class Processor: DefaultJobProcessor<TestJob1> {
     isProcessing = true
     scheduler.schedule(after: Date(timeIntervalSinceNow: Double.random(in: 0.1..<0.25))) {
       done(.success(()))
-      print("PROCESSED JOB: \(job.id)")
     }
   }
 }
