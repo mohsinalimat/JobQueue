@@ -1,21 +1,23 @@
 # JobQueue
 
-A flexible, persistent, job queue for Swift applications. 
+A persistent and flexible job queue for Swift applications.
+
+There are other queue implementations for Swift that are based on `Operation` and `OperationQueue`. Unfortunately, those classes have several drawbacks, all due to being closed source.
 
 ## Features
 
-- [x] No `Operation` or `OperationQueue`. If you see this as a limitation, this isn't for you.
-- [x] Concurrency per job type 
+- [x] No `Operation` or `OperationQueue`
+- [x] Concurrency per job type
 - [x] Manual processing order
-- [ ] Delayed jobs
-- [ ] Scheduled jobs
+- [x] Delayed jobs
 - [x] Paused jobs
+- [ ] Scheduled jobs
+- [ ] Repeating jobs
 - [ ] Rate limiting
-- [x] Allows for custom execution sorting
-- [x] Allows for custom synchronization
-- [x] Allows for custom persistance
-- [ ] Realm persistence support
-- [ ] Core Data persistence support
-- [ ] YapDatabase persistence support
-- [ ] Couchbase Lite persistence support
-- [x] In memory persistence support
+- [x] Custom execution sorting
+- [x] Custom persistance
+- [x] In memory persistence
+- [ ] YapDatabase persistence
+- [ ] Couchbase Lite persistence
+- [ ] Core Data persistence
+- [ ] Realm persistence
