@@ -26,13 +26,13 @@ class DefaultJobProcessorTests: QuickSpec {
                 return
               }
               switch reason {
-              case .movedToWaiting:
+              case .statusChangedToWaiting:
                 done()
               default:
                 fail("Did not send the expected cancellation reason")
               }
             }
-            processor.cancel(reason: .movedToWaiting)
+            processor.cancel(reason: .statusChangedToWaiting)
           }
         }
       }

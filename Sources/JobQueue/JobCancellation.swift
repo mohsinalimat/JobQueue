@@ -5,9 +5,9 @@
 import Foundation
 
 public enum JobCancellationReason {
-  case movedToWaiting
-  case movedToDelayed
+  case statusChangedToWaiting
+  case statusChangedToDelayed
   case removed
-  case movedToPaused
+  case statusChangedToPaused
   case queueSuspended
 }

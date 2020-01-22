@@ -45,13 +45,15 @@ public final class JobQueue {
   private let processors = JobQueueProcessors()
   private let sorter: JobSorter
   private let delayStrategy: JobQueueDelayStrategy
+  private let logger: LoggerProtocol
 
   public init(
     name: String,
     schedulers: JobQueueSchedulers,
     storage: JobStorage,
     sorter: JobSorter = DefaultJobSorter(),
-    delayStrategy: JobQueueDelayStrategy = JobQueueDelayPollingStrategy()
+    delayStrategy: JobQueueDelayStrategy = JobQueueDelayPollingStrategy(),
+    logger: Logger = ConsoleLogger()
   ) {
     self.name = name
     self.schedulers = schedulers
@@ -61,6 +63,7 @@ public final class JobQueue {
     self.isActive = Property(capturing: self._isActive)
     self.isSynchronizing = Property(capturing: self._isSynchronizing)
     self.events = self._events.output
+    self.logger = logger
 
     /**
      Monitor `shouldSynchronize`, throttling for noise, while the queue is suspended,
@@ -95,6 +98,8 @@ public final class JobQueue {
         })
       }
       .start()
+
+    logger.info("Initialized")
   }
 }
 
@@ -314,9 +319,7 @@ private extension JobQueue {
     self.shouldSynchronize.input.send(value: ())
   }
 
-  func configureDelayTimer(for jobs: [AnyJob]) {
-
-  }
+  func configureDelayTimer(for jobs: [AnyJob]) {}
 
   /**
    Synchronize the queue
@@ -344,8 +347,8 @@ private extension JobQueue {
           self._events.input.send(value: .cancelledProcessing(nil, .removed))
           return
         }
-        kvp.value.cancel(reason: .movedToWaiting)
-        self._events.input.send(value: .cancelledProcessing(job, .movedToWaiting))
+        kvp.value.cancel(reason: .statusChangedToWaiting)
+        self._events.input.send(value: .cancelledProcessing(job, .statusChangedToWaiting))
       }
 
       // Cleanup processors
