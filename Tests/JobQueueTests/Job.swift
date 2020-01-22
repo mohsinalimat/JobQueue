@@ -101,7 +101,7 @@ class JobTests: QuickSpec {
             it("should return the expected bytes") {
               let payload = "string"
               do {
-                let bytes = try [UInt8](JSONEncoder().encode(payload))
+                let bytes = try [UInt8](JSONEncoder().encode([payload]))
                 let result = try TestJob1.serialize(payload)
                 expect(result.count).to(beGreaterThan(0))
                 expect(result).to(equal(bytes))

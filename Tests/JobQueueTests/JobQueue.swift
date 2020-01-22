@@ -12,6 +12,8 @@ import ReactiveSwift
 
 @testable import JobQueue
 
+private func randomString() -> String { UUID().uuidString }
+
 class JobQueueTests: QuickSpec {
   override func spec() {
     var queue: JobQueue!
@@ -22,7 +24,7 @@ class JobQueueTests: QuickSpec {
       schedulers = JobQueueSchedulers()
       storage = TestJobStorage(scheduler: schedulers.storage)
 
-      queue = JobQueue(name: "test",
+      queue = JobQueue(name: randomString(),
                        schedulers: schedulers,
                        storage: storage,
                        delayStrategy: JobQueueDelayPollingStrategy(interval: 0.25))
@@ -111,8 +113,9 @@ class JobQueueTests: QuickSpec {
         it("can process a job") {
           let job = try! TestJob1.make(id: "0", payload: "test")
           queue.register(Processor.self)
+          var disposable: Disposable?
           waitUntil { done in
-            queue.events.producer
+            disposable = queue.events.producer
               .startWithValues { event in
                 switch event {
                 case .finishedProcessing(let j):
@@ -132,9 +135,10 @@ class JobQueueTests: QuickSpec {
               .then(queue.resume())
               .start()
           }
+          disposable?.dispose()
         }
         it("can process several jobs") {
-          let jobs = (0..<100).reduce(into: [AnyJob]()) { acc, idx in
+          let jobs = (0..<25).reduce(into: [AnyJob]()) { acc, idx in
             acc.append(try! TestJob1.make(id: "\(idx)", payload: "test.\(idx)", order: Float(idx)))
           }
           queue.register(Processor.self, concurrency: 50)

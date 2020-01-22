@@ -68,14 +68,20 @@ extension Job {
   ///
   /// - Parameter payload: the payload
   public static func serialize(_ payload: Payload) throws -> [UInt8] {
-    try .init(JSONEncoder().encode(payload))
+    if Payload.self == String.self {
+      return try .init(JSONEncoder().encode([payload]))
+    }
+    return try .init(JSONEncoder().encode(payload))
   }
 
   /// Default implementation that uses the JSONDecoder
   ///
   /// - Parameter rawPayload: the raw payload bytes
   public static func deserialize(_ rawPayload: [UInt8]) throws -> Payload {
-    try JSONDecoder().decode(Payload.self, from: .init(rawPayload))
+    if Payload.self == String.self {
+      return try JSONDecoder().decode([Payload].self, from: .init(rawPayload)).first!
+    }
+    return try JSONDecoder().decode(Payload.self, from: .init(rawPayload))
   }
 }
 
