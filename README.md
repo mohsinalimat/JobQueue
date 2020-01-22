@@ -24,3 +24,13 @@ There are other queue implementations for Swift that are based on `Operation` an
 - [ ] Couchbase Lite persistence
 - [ ] Core Data persistence
 - [ ] Realm persistence
+
+## Roadmap
+
+This is alpha level code at this time. It needs more testing and profiling before being used in production.
+
+Priorities are:
+- [ ] CocoaPods support
+- [ ] Implementing `JobStorage` for `YapDatabase`, `Core Data`, `Realm`, and `Couchbase Lite`, in that order.
+- [ ] Testing
+- [ ] Profiling
