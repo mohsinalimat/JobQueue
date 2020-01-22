@@ -20,9 +20,9 @@ let package = Package(
       ]),
   ],
   dependencies: [
-    .package(url: "git@github.com:ReactiveCocoa/ReactiveSwift", from: "6.2.0"),
-    .package(url: "git@github.com:Quick/Nimble", .branch("master")),
-    .package(url: "git@github.com:Quick/Quick", from: "2.2.0"),
+    .package(url: "https://github.com/ReactiveCocoa/ReactiveSwift", from: "6.2.0"),
+    .package(url: "https://github.com/Quick/Nimble", .branch("master")),
+    .package(url: "https://github.com/Quick/Quick", from: "2.2.0"),
   ],
   targets: [
     .target(

@@ -21,7 +21,7 @@
       },
       {
         "package": "Nimble",
-        "repositoryURL": "git@github.com:Quick/Nimble",
+        "repositoryURL": "https://github.com/Quick/Nimble",
         "state": {
           "branch": "master",
           "revision": "795fb77fe534f7514e2801bf8581b40597d1110c",
@@ -30,7 +30,7 @@
       },
       {
         "package": "Quick",
-        "repositoryURL": "git@github.com:Quick/Quick",
+        "repositoryURL": "https://github.com/Quick/Quick",
         "state": {
           "branch": null,
           "revision": "33682c2f6230c60614861dfc61df267e11a1602f",
@@ -39,7 +39,7 @@
       },
       {
         "package": "ReactiveSwift",
-        "repositoryURL": "git@github.com:ReactiveCocoa/ReactiveSwift",
+        "repositoryURL": "https://github.com/ReactiveCocoa/ReactiveSwift",
         "state": {
           "branch": null,
           "revision": "e8703715afe26a8efbb2ecfdb3454d648f58d691",
