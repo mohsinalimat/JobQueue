@@ -104,8 +104,3 @@ public final class ConsoleLogger: Logger {
     print(self.format(file: file, line: line, function: function, level: "FATAL ", message, meta), to: &stdError)
   }
 }
-
-private func abstract(_ message: @autoclosure () -> String = String(), file: StaticString = #file, line: UInt = #line) -> Never {
-  let message = message()
-  fatalError(message != String() ? message : "Function is abstract", file: file, line: line)
-}

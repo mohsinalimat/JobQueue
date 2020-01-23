@@ -17,7 +17,12 @@ public typealias JobID = String
 public typealias JobName = String
 public typealias JobQueueName = String
 
-public func notImplemented(_ message: @autoclosure () -> String = String(), file: StaticString = #file, line: UInt = #line) -> Never {
+func notImplemented(_ message: @autoclosure () -> String = String(), file: StaticString = #file, line: UInt = #line) -> Never {
   let message = message()
   fatalError(message != String() ? message : "Not implemented", file: file, line: line)
+}
+
+func abstract(_ message: @autoclosure () -> String = String(), file: StaticString = #file, line: UInt = #line) -> Never {
+  let message = message()
+  fatalError(message != String() ? message : "Function is abstract", file: file, line: line)
 }
