@@ -6,6 +6,9 @@ abstract_target 'All' do
     target 'JobQueue.iOS' do
       platform :ios, '11.0'
     end
+    target 'JobQueue.tvOS' do
+      platform :tvos, '11.0'
+    end
     target 'JobQueue.watchOS' do
       platform :watchos, '4.0'
     end
@@ -15,6 +18,9 @@ abstract_target 'All' do
 
     target 'JobQueueInMemoryStorage.iOS' do
       platform :ios, '11.0'
+    end
+    target 'JobQueueInMemoryStorage.tvOS' do
+      platform :tvos, '11.0'
     end
     target 'JobQueueInMemoryStorage.watchOS' do
       platform :watchos, '4.0'
@@ -30,6 +36,9 @@ abstract_target 'All' do
 
     target 'JobQueue.tests.iOS' do
       platform :ios, '11.0'
+    end
+    target 'JobQueue.tests.tvOS' do
+      platform :tvos, '11.0'
     end
     target 'JobQueue.tests.macOS' do
       platform :macos, '10.11'

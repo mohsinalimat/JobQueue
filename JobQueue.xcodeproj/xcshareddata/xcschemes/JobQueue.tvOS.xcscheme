@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B927049F23DA3B9C00558FFE"
-               BuildableName = "JobQueueInMemoryStorage.framework"
-               BlueprintName = "JobQueueInMemoryStorage.macOS"
+               BlueprintIdentifier = "B92704C223DA3D0100558FFE"
+               BuildableName = "JobQueue.framework"
+               BlueprintName = "JobQueue.tvOS"
                ReferencedContainer = "container:JobQueue.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B927047A23DA3AB000558FFE"
+               BlueprintIdentifier = "B92704CA23DA3D0100558FFE"
                BuildableName = "JobQueueTests.xctest"
-               BlueprintName = "JobQueue.tests.macOS"
+               BlueprintName = "JobQueue.tests.tvOS"
                ReferencedContainer = "container:JobQueue.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -60,9 +60,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B927049F23DA3B9C00558FFE"
-            BuildableName = "JobQueueInMemoryStorage.framework"
-            BlueprintName = "JobQueueInMemoryStorage.macOS"
+            BlueprintIdentifier = "B92704C223DA3D0100558FFE"
+            BuildableName = "JobQueue.framework"
+            BlueprintName = "JobQueue.tvOS"
             ReferencedContainer = "container:JobQueue.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
