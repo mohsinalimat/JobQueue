@@ -4,41 +4,43 @@
 
 import Foundation
 
-public protocol LoggerProtocol {
-  func trace(file: StaticString, line: UInt, _ message: String, _ meta: Any...)
-  func info(file: StaticString, line: UInt, _ message: String, _ meta: Any...)
-  func notice(file: StaticString, line: UInt, _ message: String, _ meta: Any...)
-  func warning(file: StaticString, line: UInt, _ message: String, _ meta: Any...)
-  func error(file: StaticString, line: UInt, _ message: String, _ meta: Any...)
-  func fatal(file: StaticString, line: UInt, _ message: String, _ meta: Any...)
+private func abstract(_ message: @autoclosure () -> String = String(), file: StaticString = #file, line: UInt = #line) -> Never {
+  let message = message()
+  fatalError(message != String() ? message : "Function is abstract", file: file, line: line)
 }
 
-open class Logger: LoggerProtocol {
+/// Abstract Logger
+///
+/// Sub-classes should override all of it's functions and not call them via super
+open class Logger {
   open func trace(file: StaticString = #file, line: UInt = #line, _ message: String, _ meta: Any...) {
-    notImplemented()
+    abstract()
   }
 
   open func info(file: StaticString = #file, line: UInt = #line, _ message: String, _ meta: Any...) {
-    notImplemented()
+    abstract()
   }
 
   open func notice(file: StaticString = #file, line: UInt = #line, _ message: String, _ meta: Any...) {
-    notImplemented()
+    abstract()
   }
 
   open func warning(file: StaticString = #file, line: UInt = #line, _ message: String, _ meta: Any...) {
-    notImplemented()
+    abstract()
   }
 
   open func error(file: StaticString = #file, line: UInt = #line, _ message: String, _ meta: Any...) {
-    notImplemented()
+    abstract()
   }
 
   open func fatal(file: StaticString = #file, line: UInt = #line, _ message: String, _ meta: Any...) {
-    notImplemented()
+    abstract()
   }
 }
 
+/// ConsoleLogger
+///
+/// A Logger subclass that logs to the console via `print``
 public final class ConsoleLogger: Logger {
   static let timestampFormatter: DateFormatter = {
     var formatter = DateFormatter()

@@ -45,7 +45,7 @@ public final class JobQueue {
   private let processors = JobQueueProcessors()
   private let sorter: JobSorter
   private let delayStrategy: JobQueueDelayStrategy
-  private let logger: LoggerProtocol
+  private let logger: Logger
 
   public init(
     name: String,
