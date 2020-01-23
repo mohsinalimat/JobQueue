@@ -47,6 +47,8 @@ public final class JobQueue {
   private let delayStrategy: JobQueueDelayStrategy
   private let logger: Logger
 
+  private var disposables = CompositeDisposable()
+
   public init(
     name: String,
     schedulers: JobQueueSchedulers,
@@ -69,39 +71,55 @@ public final class JobQueue {
      Monitor `shouldSynchronize`, throttling for noise, while the queue is suspended,
      and while the queue is synchronizing.
 
-     Once those conditions are met, the `isSynchronizing` property is set to `true`,
-     the queue's jobs are fetched, the queue is synchronized using those jobs, and
-     the `isSynchronizing` property is then set back to `false`.
+     Once those conditions are met, the `_isSynchronizing` property is set to `true`,
+     which has the side effect of triggering synchronization.
      */
-    self.shouldSynchronize.output.producer
-      .throttle(
-        0.1,
-        on: self.schedulers.shouldSynchronize
-      )
-      .throttle(
-        while: self.isActive.map { !$0 },
-        on: self.schedulers.shouldSynchronize
-      )
-      .throttle(
-        while: self.isSynchronizing.map { $0 },
-        on: self.schedulers.shouldSynchronize
-      )
+    disposables += SignalProducer.combineLatest(
+      self.shouldSynchronize.output.producer,
+      self.isActive,
+      self.isSynchronizing
+    )
+    .filter { _, isActive, isSynchronizing in
+      isActive && !isSynchronizing
+    }
+    .throttle(0.5, on: self.schedulers.shouldSynchronize)
+    .map { _ in }
+    .on(value: {
+      logger.trace("Queue (\(name)) will set _isSynchronizing to true")
+      self._isSynchronizing.value = true
+      logger.trace("Queue (\(name)) did set _isSynchronizing to true")
+    })
+    .start()
+
+    /**
+     Monitor `isSynchronizing`
+     When it becomes true, the queue's jobs are fetched, the queue is synchronized
+     using those jobs, and the `_isSynchronizing` property is then set back to `false`.
+     */
+    self.disposables += self.isSynchronizing.producer
+      .skip(first: 1)
+      .skipRepeats()
+      .filter { $0 }
+      .map { _ in
+        logger.trace("Queue (\(name)) isSynchronizing is true, will get all jobs and synchronize...")
+      }
+      .flatMap(.concat) { self.getAll() }
       .on(value: { _ in
-        self.logger.trace("Done throttling")
-        self._isSynchronizing.swap(true)
+        logger.trace("Queue (\(name)) did get all jobs, will synchronize")
       })
-      .flatMap(.concat) { _ in
-        self.getAll()
-      }
-      .flatMap(.concat) {
-        self.synchronize(jobs: $0).on(completed: {
-          self.logger.trace("Done synchronizing")
-          self._isSynchronizing.value = false
-        })
-      }
+      .flatMap(.concat) { self.synchronize(jobs: $0) }
+      .on(value: {
+        logger.trace("Queue (\(name)) did synchronize, will set _isSynchronizing to false")
+        self._isSynchronizing.value = false
+        logger.trace("Queue (\(name)) did set _isSynchronizing to false")
+      })
       .start()
 
-    logger.info("Initialized")
+    logger.info("Queue (\(name)) initialized")
+  }
+
+  deinit {
+    disposables.dispose()
   }
 }
 
@@ -122,7 +140,7 @@ public extension JobQueue {
         guard $0 else {
           return
         }
-        self.logger.trace("Resumed")
+        self.logger.trace("Queue (\(self.name)) resumed")
         self._events.input.send(value: .resumed)
       })
   }
@@ -145,6 +163,7 @@ public extension JobQueue {
         guard !$0 else {
           return
         }
+        self.logger.trace("Queue (\(self.name)) suspended")
         self._events.input.send(value: .suspended)
       })
   }
@@ -422,22 +441,27 @@ private extension JobQueue {
             self.schedulers.synchronize.schedule {
               switch result {
               case .success:
+                self.logger.trace("Queue (\(self.name)) job \(_job.id) processed")
                 self.set(_job.id, status: .completed(at: Date()))
                   .on(value: {
                     self.processors.remove(processors: [$0.id])
+                    self.logger.trace("Queue (\(self.name)) removed processor for job \($0.id)")
                     self._events.input.send(value: .finishedProcessing($0))
                 })
                   .start()
               case .failure(let error):
+                self.logger.trace("Queue (\(self.name)) job \(_job.id) failed processing \(error.localizedDescription)")
                 self.set(_job.id, status: .failed(at: Date(), message: error.localizedDescription))
                   .on(
                     value: {
                       self.processors.remove(processors: [$0.id])
+                      self.logger.trace("Queue (\(self.name)) removed processor for job \($0.id)")
                       self._events.input.send(value: .failedProcessing($0, error))
                     }
                   )
                   .start()
               }
+              self.logger.trace("Queue (\(self.name)) began processing job \(_job.id)")
               self._events.input.send(value: .beganProcessing(job))
             }
           }

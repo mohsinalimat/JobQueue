@@ -20,6 +20,15 @@
         }
       },
       {
+        "package": "NanoID",
+        "repositoryURL": "https://github.com/Tundaware/NanoID",
+        "state": {
+          "branch": null,
+          "revision": "e67a4b49aac7ebec89657a777457c2becbe56a7a",
+          "version": "1.0.0"
+        }
+      },
+      {
         "package": "Nimble",
         "repositoryURL": "https://github.com/Quick/Nimble",
         "state": {
