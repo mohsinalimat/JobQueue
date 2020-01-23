@@ -10,6 +10,7 @@
 		16C6B589F9E12F87CFB7CA5E /* Pods_All_Frameworks_JobQueue_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 996CE280A2CEA4D81D8FCCA6 /* Pods_All_Frameworks_JobQueue_iOS.framework */; };
 		2099DE9EDAC3AFD90B7B3380 /* Pods_All_Tests_JobQueue_tests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E3643A028E6E1C1DDFE7EC6 /* Pods_All_Tests_JobQueue_tests_iOS.framework */; };
 		577AE30132907B64BDF3C1C3 /* Pods_All_Frameworks_JobQueueInMemoryStorage_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 782D7D72CA30CAFF65E54483 /* Pods_All_Frameworks_JobQueueInMemoryStorage_iOS.framework */; };
+		64C73E6A4A9037D532188C47 /* Pods_All_Frameworks_JobQueue_watchOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299FEBD0140565ADC2D17D5F /* Pods_All_Frameworks_JobQueue_watchOS.framework */; };
 		B92703C823DA2E7E00558FFE /* JobQueue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92703BE23DA2E7E00558FFE /* JobQueue.framework */; };
 		B92703EF23DA302E00558FFE /* JobCancellation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703DD23DA302E00558FFE /* JobCancellation.swift */; };
 		B92703F023DA302E00558FFE /* JobStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703DE23DA302E00558FFE /* JobStorage.swift */; };
@@ -42,6 +43,24 @@
 		B927042D23DA33AA00558FFE /* The.swift in Sources */ = {isa = PBXBuildFile; fileRef = B927042223DA33AA00558FFE /* The.swift */; };
 		B927042E23DA33AA00558FFE /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = B927042323DA33AA00558FFE /* Job.swift */; };
 		B927043323DA371300558FFE /* JobQueueInMemoryStorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B927040C23DA313200558FFE /* JobQueueInMemoryStorage.framework */; };
+		B927044123DA38BD00558FFE /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E423DA302E00558FFE /* Common.swift */; };
+		B927044223DA38BD00558FFE /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703EB23DA302E00558FFE /* Date+Extensions.swift */; };
+		B927044323DA38BD00558FFE /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703EA23DA302E00558FFE /* Dictionary+Extensions.swift */; };
+		B927044423DA38BD00558FFE /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703ED23DA302E00558FFE /* Job.swift */; };
+		B927044523DA38BD00558FFE /* JobCancellation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703DD23DA302E00558FFE /* JobCancellation.swift */; };
+		B927044623DA38BD00558FFE /* JobProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E823DA302E00558FFE /* JobProcessor.swift */; };
+		B927044723DA38BD00558FFE /* JobQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E023DA302E00558FFE /* JobQueue.swift */; };
+		B927044823DA38BD00558FFE /* JobQueueDelayStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E723DA302E00558FFE /* JobQueueDelayStrategy.swift */; };
+		B927044923DA38BD00558FFE /* JobQueueProcessors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E923DA302E00558FFE /* JobQueueProcessors.swift */; };
+		B927044A23DA38BD00558FFE /* JobQueueSchedulers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E123DA302E00558FFE /* JobQueueSchedulers.swift */; };
+		B927044B23DA38BD00558FFE /* JobSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703DF23DA302E00558FFE /* JobSchedule.swift */; };
+		B927044C23DA38BD00558FFE /* JobSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703EC23DA302E00558FFE /* JobSorter.swift */; };
+		B927044D23DA38BD00558FFE /* JobStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E323DA302E00558FFE /* JobStatus.swift */; };
+		B927044E23DA38BD00558FFE /* JobStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703DE23DA302E00558FFE /* JobStorage.swift */; };
+		B927044F23DA38BD00558FFE /* JobType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E623DA302E00558FFE /* JobType.swift */; };
+		B927045023DA38BD00558FFE /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E223DA302E00558FFE /* Logger.swift */; };
+		B927045123DA38BD00558FFE /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E523DA302E00558FFE /* Sequence+Extensions.swift */; };
+		E497E197436815F111148881 /* Pods_All_Frameworks_JobQueueInMemoryStorage_watchOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1F9A852E7CC44A03CAA803B /* Pods_All_Frameworks_JobQueueInMemoryStorage_watchOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,13 +81,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04A5A3BFD5CB23E919FF3D57 /* Pods-All-Frameworks-JobQueue.watchOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueue.watchOS.debug.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueue.watchOS/Pods-All-Frameworks-JobQueue.watchOS.debug.xcconfig"; sourceTree = "<group>"; };
 		1E3643A028E6E1C1DDFE7EC6 /* Pods_All_Tests_JobQueue_tests_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Tests_JobQueue_tests_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		299FEBD0140565ADC2D17D5F /* Pods_All_Frameworks_JobQueue_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Frameworks_JobQueue_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B43E4583A46CD72293BB48C /* Pods-All-Tests-JobQueue.tests.iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Tests-JobQueue.tests.iOS.release.xcconfig"; path = "Target Support Files/Pods-All-Tests-JobQueue.tests.iOS/Pods-All-Tests-JobQueue.tests.iOS.release.xcconfig"; sourceTree = "<group>"; };
 		782D7D72CA30CAFF65E54483 /* Pods_All_Frameworks_JobQueueInMemoryStorage_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Frameworks_JobQueueInMemoryStorage_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C04A858FEB7053CFE584207 /* Pods-All-JobQueue.iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-JobQueue.iOS.release.xcconfig"; path = "Target Support Files/Pods-All-JobQueue.iOS/Pods-All-JobQueue.iOS.release.xcconfig"; sourceTree = "<group>"; };
 		86BD5FB6DB08E70720F5AE44 /* Pods-All-Frameworks-JobQueueInMemoryStorage.iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueueInMemoryStorage.iOS.release.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueueInMemoryStorage.iOS/Pods-All-Frameworks-JobQueueInMemoryStorage.iOS.release.xcconfig"; sourceTree = "<group>"; };
 		891AAE188865ED5D61678013 /* Pods-All-Tests-JobQueue.tests.iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Tests-JobQueue.tests.iOS.debug.xcconfig"; path = "Target Support Files/Pods-All-Tests-JobQueue.tests.iOS/Pods-All-Tests-JobQueue.tests.iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		996CE280A2CEA4D81D8FCCA6 /* Pods_All_Frameworks_JobQueue_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Frameworks_JobQueue_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1F9A852E7CC44A03CAA803B /* Pods_All_Frameworks_JobQueueInMemoryStorage_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Frameworks_JobQueueInMemoryStorage_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8682289ED45D23545CF130A /* Pods-All-Frameworks-JobQueueInMemoryStorage.watchOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueueInMemoryStorage.watchOS.debug.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueueInMemoryStorage.watchOS/Pods-All-Frameworks-JobQueueInMemoryStorage.watchOS.debug.xcconfig"; sourceTree = "<group>"; };
 		B92703BE23DA2E7E00558FFE /* JobQueue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JobQueue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B92703C723DA2E7E00558FFE /* JobQueueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JobQueueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B92703DB23DA302E00558FFE /* JobStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobStorage.swift; sourceTree = "<group>"; };
@@ -104,12 +127,16 @@
 		B927042123DA33AA00558FFE /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		B927042223DA33AA00558FFE /* The.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = The.swift; sourceTree = "<group>"; };
 		B927042323DA33AA00558FFE /* Job.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
-		B927043023DA356A00558FFE /* JobQueue */ = {isa = PBXFileReference; lastKnownFileType = folder; name = JobQueue; sourceTree = "<group>"; };
+		B927043923DA386100558FFE /* JobQueue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JobQueue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B927045223DA391300558FFE /* JobQueue */ = {isa = PBXFileReference; lastKnownFileType = folder; name = JobQueue; sourceTree = "<group>"; };
+		B927046623DA39E700558FFE /* JobQueueInMemoryStorage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JobQueueInMemoryStorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA5ADCCB95BDE8FE49BA114C /* Pods-All-Frameworks-JobQueue.iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueue.iOS.debug.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueue.iOS/Pods-All-Frameworks-JobQueue.iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		C4F94EAEBFB5D1AD1A14B1E8 /* Pods-All-Frameworks-JobQueueInMemoryStorage.watchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueueInMemoryStorage.watchOS.release.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueueInMemoryStorage.watchOS/Pods-All-Frameworks-JobQueueInMemoryStorage.watchOS.release.xcconfig"; sourceTree = "<group>"; };
 		CD806CA966A83FCDA3175336 /* Pods-All-JobQueueInMemoryStorage.iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-JobQueueInMemoryStorage.iOS.debug.xcconfig"; path = "Target Support Files/Pods-All-JobQueueInMemoryStorage.iOS/Pods-All-JobQueueInMemoryStorage.iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		CFB36BB3C708803309D46BC4 /* Pods-All-Frameworks-JobQueue.iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueue.iOS.release.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueue.iOS/Pods-All-Frameworks-JobQueue.iOS.release.xcconfig"; sourceTree = "<group>"; };
 		DA51E0B989FD404B9CF507E2 /* Pods-All-JobQueueInMemoryStorage.iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-JobQueueInMemoryStorage.iOS.release.xcconfig"; path = "Target Support Files/Pods-All-JobQueueInMemoryStorage.iOS/Pods-All-JobQueueInMemoryStorage.iOS.release.xcconfig"; sourceTree = "<group>"; };
 		DC5CD7AF0A0512A9909113A4 /* Pods-All-JobQueue.iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-JobQueue.iOS.debug.xcconfig"; path = "Target Support Files/Pods-All-JobQueue.iOS/Pods-All-JobQueue.iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		E12ED475485CF3879619E7B5 /* Pods-All-Frameworks-JobQueue.watchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueue.watchOS.release.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueue.watchOS/Pods-All-Frameworks-JobQueue.watchOS.release.xcconfig"; sourceTree = "<group>"; };
 		F77D887CFA5B486F86174BF1 /* Pods-All-Frameworks-JobQueueInMemoryStorage.iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueueInMemoryStorage.iOS.debug.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueueInMemoryStorage.iOS/Pods-All-Frameworks-JobQueueInMemoryStorage.iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,6 +167,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B927043623DA386100558FFE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64C73E6A4A9037D532188C47 /* Pods_All_Frameworks_JobQueue_watchOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B927046323DA39E700558FFE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E497E197436815F111148881 /* Pods_All_Frameworks_JobQueueInMemoryStorage_watchOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -149,6 +192,8 @@
 				996CE280A2CEA4D81D8FCCA6 /* Pods_All_Frameworks_JobQueue_iOS.framework */,
 				782D7D72CA30CAFF65E54483 /* Pods_All_Frameworks_JobQueueInMemoryStorage_iOS.framework */,
 				1E3643A028E6E1C1DDFE7EC6 /* Pods_All_Tests_JobQueue_tests_iOS.framework */,
+				299FEBD0140565ADC2D17D5F /* Pods_All_Frameworks_JobQueue_watchOS.framework */,
+				A1F9A852E7CC44A03CAA803B /* Pods_All_Frameworks_JobQueueInMemoryStorage_watchOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -166,6 +211,10 @@
 				86BD5FB6DB08E70720F5AE44 /* Pods-All-Frameworks-JobQueueInMemoryStorage.iOS.release.xcconfig */,
 				891AAE188865ED5D61678013 /* Pods-All-Tests-JobQueue.tests.iOS.debug.xcconfig */,
 				3B43E4583A46CD72293BB48C /* Pods-All-Tests-JobQueue.tests.iOS.release.xcconfig */,
+				04A5A3BFD5CB23E919FF3D57 /* Pods-All-Frameworks-JobQueue.watchOS.debug.xcconfig */,
+				E12ED475485CF3879619E7B5 /* Pods-All-Frameworks-JobQueue.watchOS.release.xcconfig */,
+				B8682289ED45D23545CF130A /* Pods-All-Frameworks-JobQueueInMemoryStorage.watchOS.debug.xcconfig */,
+				C4F94EAEBFB5D1AD1A14B1E8 /* Pods-All-Frameworks-JobQueueInMemoryStorage.watchOS.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -173,7 +222,7 @@
 		B92703B423DA2E7D00558FFE = {
 			isa = PBXGroup;
 			children = (
-				B927043023DA356A00558FFE /* JobQueue */,
+				B927045223DA391300558FFE /* JobQueue */,
 				B927040023DA307700558FFE /* Support Files */,
 				B92703D923DA302E00558FFE /* Sources */,
 				B927041523DA33AA00558FFE /* Tests */,
@@ -189,6 +238,8 @@
 				B92703BE23DA2E7E00558FFE /* JobQueue.framework */,
 				B92703C723DA2E7E00558FFE /* JobQueueTests.xctest */,
 				B927040C23DA313200558FFE /* JobQueueInMemoryStorage.framework */,
+				B927043923DA386100558FFE /* JobQueue.framework */,
+				B927046623DA39E700558FFE /* JobQueueInMemoryStorage.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -304,6 +355,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B927043423DA386100558FFE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B927046123DA39E700558FFE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -366,6 +431,44 @@
 			productReference = B927040C23DA313200558FFE /* JobQueueInMemoryStorage.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		B927043823DA386100558FFE /* JobQueue.watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B927043E23DA386100558FFE /* Build configuration list for PBXNativeTarget "JobQueue.watchOS" */;
+			buildPhases = (
+				0589A60976849B329B92AC19 /* [CP] Check Pods Manifest.lock */,
+				B927043423DA386100558FFE /* Headers */,
+				B927043523DA386100558FFE /* Sources */,
+				B927043623DA386100558FFE /* Frameworks */,
+				B927043723DA386100558FFE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JobQueue.watchOS;
+			productName = JobQueue;
+			productReference = B927043923DA386100558FFE /* JobQueue.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B927046523DA39E700558FFE /* JobQueueInMemoryStorage.watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B927046B23DA39E700558FFE /* Build configuration list for PBXNativeTarget "JobQueueInMemoryStorage.watchOS" */;
+			buildPhases = (
+				F13EBB7254B8707E80DBCBEA /* [CP] Check Pods Manifest.lock */,
+				B927046123DA39E700558FFE /* Headers */,
+				B927046223DA39E700558FFE /* Sources */,
+				B927046323DA39E700558FFE /* Frameworks */,
+				B927046423DA39E700558FFE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JobQueueInMemoryStorage.watchOS;
+			productName = JobQueueInMemoryStorageWatchOS;
+			productReference = B927046623DA39E700558FFE /* JobQueueInMemoryStorage.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -385,6 +488,12 @@
 					B927040B23DA313200558FFE = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
+					B927043823DA386100558FFE = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					B927046523DA39E700558FFE = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
 				};
 			};
 			buildConfigurationList = B92703B823DA2E7D00558FFE /* Build configuration list for PBXProject "JobQueue" */;
@@ -401,7 +510,9 @@
 			projectRoot = "";
 			targets = (
 				B92703BD23DA2E7E00558FFE /* JobQueue.iOS */,
+				B927043823DA386100558FFE /* JobQueue.watchOS */,
 				B927040B23DA313200558FFE /* JobQueueInMemoryStorage.iOS */,
+				B927046523DA39E700558FFE /* JobQueueInMemoryStorage.watchOS */,
 				B92703C623DA2E7E00558FFE /* JobQueue.tests.iOS */,
 			);
 		};
@@ -429,9 +540,45 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B927043723DA386100558FFE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B927046423DA39E700558FFE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0589A60976849B329B92AC19 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-All-Frameworks-JobQueue.watchOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		67BF3274AEE85A37CE87F86B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -491,6 +638,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-All-Tests-JobQueue.tests.iOS/Pods-All-Tests-JobQueue.tests.iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F13EBB7254B8707E80DBCBEA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-All-Frameworks-JobQueueInMemoryStorage.watchOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FFA4D057541B107137AB883A /* [CP] Check Pods Manifest.lock */ = {
@@ -565,6 +734,37 @@
 			buildActionMask = 2147483647;
 			files = (
 				B927041423DA317900558FFE /* JobStorage.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B927043523DA386100558FFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B927044923DA38BD00558FFE /* JobQueueProcessors.swift in Sources */,
+				B927044F23DA38BD00558FFE /* JobType.swift in Sources */,
+				B927044E23DA38BD00558FFE /* JobStorage.swift in Sources */,
+				B927044B23DA38BD00558FFE /* JobSchedule.swift in Sources */,
+				B927044823DA38BD00558FFE /* JobQueueDelayStrategy.swift in Sources */,
+				B927044623DA38BD00558FFE /* JobProcessor.swift in Sources */,
+				B927044123DA38BD00558FFE /* Common.swift in Sources */,
+				B927045023DA38BD00558FFE /* Logger.swift in Sources */,
+				B927045123DA38BD00558FFE /* Sequence+Extensions.swift in Sources */,
+				B927044223DA38BD00558FFE /* Date+Extensions.swift in Sources */,
+				B927044A23DA38BD00558FFE /* JobQueueSchedulers.swift in Sources */,
+				B927044323DA38BD00558FFE /* Dictionary+Extensions.swift in Sources */,
+				B927044D23DA38BD00558FFE /* JobStatus.swift in Sources */,
+				B927044C23DA38BD00558FFE /* JobSorter.swift in Sources */,
+				B927044423DA38BD00558FFE /* Job.swift in Sources */,
+				B927044723DA38BD00558FFE /* JobQueue.swift in Sources */,
+				B927044523DA38BD00558FFE /* JobCancellation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B927046223DA39E700558FFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -842,6 +1042,118 @@
 			};
 			name = Release;
 		};
+		B927043F23DA386100558FFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04A5A3BFD5CB23E919FF3D57 /* Pods-All-Frameworks-JobQueue.watchOS.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8Y2R2YMCQT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Support Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tundaware.jobqueue;
+				PRODUCT_NAME = JobQueue;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Debug;
+		};
+		B927044023DA386100558FFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E12ED475485CF3879619E7B5 /* Pods-All-Frameworks-JobQueue.watchOS.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8Y2R2YMCQT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Support Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tundaware.jobqueue;
+				PRODUCT_NAME = JobQueue;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Release;
+		};
+		B927046C23DA39E700558FFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8682289ED45D23545CF130A /* Pods-All-Frameworks-JobQueueInMemoryStorage.watchOS.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8Y2R2YMCQT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Support Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tundaware.jobqueue.storage.inmemory;
+				PRODUCT_NAME = JobQueueInMemoryStorage;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Debug;
+		};
+		B927046D23DA39E700558FFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4F94EAEBFB5D1AD1A14B1E8 /* Pods-All-Frameworks-JobQueueInMemoryStorage.watchOS.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8Y2R2YMCQT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Support Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tundaware.jobqueue.storage.inmemory;
+				PRODUCT_NAME = JobQueueInMemoryStorage;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -877,6 +1189,24 @@
 			buildConfigurations = (
 				B927041223DA313200558FFE /* Debug */,
 				B927041323DA313200558FFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B927043E23DA386100558FFE /* Build configuration list for PBXNativeTarget "JobQueue.watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B927043F23DA386100558FFE /* Debug */,
+				B927044023DA386100558FFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B927046B23DA39E700558FFE /* Build configuration list for PBXNativeTarget "JobQueueInMemoryStorage.watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B927046C23DA39E700558FFE /* Debug */,
+				B927046D23DA39E700558FFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
