@@ -87,6 +87,7 @@ public final class JobQueue {
         on: self.schedulers.shouldSynchronize
       )
       .on(value: { _ in
+        self.logger.trace("Done throttling")
         self._isSynchronizing.swap(true)
       })
       .flatMap(.concat) { _ in
@@ -94,6 +95,7 @@ public final class JobQueue {
       }
       .flatMap(.concat) {
         self.synchronize(jobs: $0).on(completed: {
+          self.logger.trace("Done synchronizing")
           self._isSynchronizing.value = false
         })
       }
@@ -120,6 +122,7 @@ public extension JobQueue {
         guard $0 else {
           return
         }
+        self.logger.trace("Resumed")
         self._events.input.send(value: .resumed)
       })
   }
