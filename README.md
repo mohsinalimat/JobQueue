@@ -25,6 +25,14 @@ There are other queue implementations for Swift that are based on `Operation` an
 - [ ] Core Data persistence
 - [ ] Realm persistence
 
+## Dependencies
+### [ReactiveSwift](https://github.com/ReactiveCocoa/ReactiveSwift)
+I didn't want to make a hard choice here, but I didn't have time to come up with a more 
+flexible implementation. 
+Ideally, I'd like to refactor it to have a core implementation that is
+interacted with via an adapter that implements the asynchronous behavior so adapters 
+could be written for GCD, RxSwift, ReactiveSwift, Combine, etc.
+
 ## Roadmap
 
 This is alpha level code at this time. It needs more testing and profiling before being used in production.
