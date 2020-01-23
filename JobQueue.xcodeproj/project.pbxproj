@@ -11,6 +11,7 @@
 		2099DE9EDAC3AFD90B7B3380 /* Pods_All_Tests_JobQueue_tests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E3643A028E6E1C1DDFE7EC6 /* Pods_All_Tests_JobQueue_tests_iOS.framework */; };
 		577AE30132907B64BDF3C1C3 /* Pods_All_Frameworks_JobQueueInMemoryStorage_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 782D7D72CA30CAFF65E54483 /* Pods_All_Frameworks_JobQueueInMemoryStorage_iOS.framework */; };
 		64C73E6A4A9037D532188C47 /* Pods_All_Frameworks_JobQueue_watchOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299FEBD0140565ADC2D17D5F /* Pods_All_Frameworks_JobQueue_watchOS.framework */; };
+		9543B072E6BCB33A3BE83AD1 /* Pods_All_Tests_JobQueue_tests_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 327911DD81E0D482E20A043B /* Pods_All_Tests_JobQueue_tests_macOS.framework */; };
 		B92703C823DA2E7E00558FFE /* JobQueue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92703BE23DA2E7E00558FFE /* JobQueue.framework */; };
 		B92703EF23DA302E00558FFE /* JobCancellation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703DD23DA302E00558FFE /* JobCancellation.swift */; };
 		B92703F023DA302E00558FFE /* JobStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703DE23DA302E00558FFE /* JobStorage.swift */; };
@@ -60,7 +61,43 @@
 		B927044F23DA38BD00558FFE /* JobType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E623DA302E00558FFE /* JobType.swift */; };
 		B927045023DA38BD00558FFE /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E223DA302E00558FFE /* Logger.swift */; };
 		B927045123DA38BD00558FFE /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E523DA302E00558FFE /* Sequence+Extensions.swift */; };
+		B927047C23DA3AB000558FFE /* JobQueue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B927047323DA3AB000558FFE /* JobQueue.framework */; };
+		B927048A23DA3AF000558FFE /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E423DA302E00558FFE /* Common.swift */; };
+		B927048B23DA3AF000558FFE /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703EB23DA302E00558FFE /* Date+Extensions.swift */; };
+		B927048C23DA3AF000558FFE /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703EA23DA302E00558FFE /* Dictionary+Extensions.swift */; };
+		B927048D23DA3AF000558FFE /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703ED23DA302E00558FFE /* Job.swift */; };
+		B927048E23DA3AF000558FFE /* JobCancellation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703DD23DA302E00558FFE /* JobCancellation.swift */; };
+		B927048F23DA3AF000558FFE /* JobProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E823DA302E00558FFE /* JobProcessor.swift */; };
+		B927049023DA3AF000558FFE /* JobQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E023DA302E00558FFE /* JobQueue.swift */; };
+		B927049123DA3AF000558FFE /* JobQueueDelayStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E723DA302E00558FFE /* JobQueueDelayStrategy.swift */; };
+		B927049223DA3AF000558FFE /* JobQueueProcessors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E923DA302E00558FFE /* JobQueueProcessors.swift */; };
+		B927049323DA3AF000558FFE /* JobQueueSchedulers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E123DA302E00558FFE /* JobQueueSchedulers.swift */; };
+		B927049423DA3AF000558FFE /* JobSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703DF23DA302E00558FFE /* JobSchedule.swift */; };
+		B927049523DA3AF000558FFE /* JobSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703EC23DA302E00558FFE /* JobSorter.swift */; };
+		B927049623DA3AF000558FFE /* JobStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E323DA302E00558FFE /* JobStatus.swift */; };
+		B927049723DA3AF000558FFE /* JobStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703DE23DA302E00558FFE /* JobStorage.swift */; };
+		B927049823DA3AF000558FFE /* JobType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E623DA302E00558FFE /* JobType.swift */; };
+		B927049923DA3AF000558FFE /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E223DA302E00558FFE /* Logger.swift */; };
+		B927049A23DA3AF000558FFE /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E523DA302E00558FFE /* Sequence+Extensions.swift */; };
+		B92704A823DA3BF900558FFE /* JobStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703DB23DA302E00558FFE /* JobStorage.swift */; };
+		B92704A923DA3BF900558FFE /* JobStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703DB23DA302E00558FFE /* JobStorage.swift */; };
+		B92704AC23DA3C0E00558FFE /* JobQueue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B927043923DA386100558FFE /* JobQueue.framework */; };
+		B92704AF23DA3C1900558FFE /* JobQueue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B927047323DA3AB000558FFE /* JobQueue.framework */; };
+		B92704B223DA3C7A00558FFE /* JobQueueInMemoryStorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92704A023DA3B9C00558FFE /* JobQueueInMemoryStorage.framework */; };
+		B92704B323DA3C8E00558FFE /* JobSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B927041723DA33AA00558FFE /* JobSchedule.swift */; };
+		B92704B423DA3C8E00558FFE /* JobQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B927041823DA33AA00558FFE /* JobQueue.swift */; };
+		B92704B523DA3C8E00558FFE /* JobStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B927041923DA33AA00558FFE /* JobStatus.swift */; };
+		B92704B623DA3C8E00558FFE /* DefaultJobProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B927041A23DA33AA00558FFE /* DefaultJobProcessor.swift */; };
+		B92704B723DA3C8E00558FFE /* JobQueueProcessors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B927041B23DA33AA00558FFE /* JobQueueProcessors.swift */; };
+		B92704B823DA3C8E00558FFE /* DefaultJobSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B927041C23DA33AA00558FFE /* DefaultJobSorter.swift */; };
+		B92704B923DA3C9600558FFE /* TestJob1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B927041E23DA33AA00558FFE /* TestJob1.swift */; };
+		B92704BA23DA3C9600558FFE /* TestJob2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B927041F23DA33AA00558FFE /* TestJob2.swift */; };
+		B92704BB23DA3C9600558FFE /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B927042123DA33AA00558FFE /* Storage.swift */; };
+		B92704BC23DA3C9600558FFE /* The.swift in Sources */ = {isa = PBXBuildFile; fileRef = B927042223DA33AA00558FFE /* The.swift */; };
+		B92704BD23DA3C9600558FFE /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = B927042323DA33AA00558FFE /* Job.swift */; };
+		C9EDB04115BAAFD9B331523D /* Pods_All_Frameworks_JobQueueInMemoryStorage_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17353D1DEFD255DBC1D6450F /* Pods_All_Frameworks_JobQueueInMemoryStorage_macOS.framework */; };
 		E497E197436815F111148881 /* Pods_All_Frameworks_JobQueueInMemoryStorage_watchOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1F9A852E7CC44A03CAA803B /* Pods_All_Frameworks_JobQueueInMemoryStorage_watchOS.framework */; };
+		E9817FA93AF1B6EF71759447 /* Pods_All_Frameworks_JobQueue_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C885964ED560D015C5A398E2 /* Pods_All_Frameworks_JobQueue_macOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,19 +115,52 @@
 			remoteGlobalIDString = B927040B23DA313200558FFE;
 			remoteInfo = JobQueueInMemoryStorage.iOS;
 		};
+		B927047D23DA3AB000558FFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B92703B523DA2E7D00558FFE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B927047223DA3AB000558FFE;
+			remoteInfo = JobQueuemacOS;
+		};
+		B92704AA23DA3C0600558FFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B92703B523DA2E7D00558FFE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B927043823DA386100558FFE;
+			remoteInfo = JobQueue.watchOS;
+		};
+		B92704AD23DA3C1400558FFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B92703B523DA2E7D00558FFE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B927047223DA3AB000558FFE;
+			remoteInfo = JobQueue.macOS;
+		};
+		B92704B023DA3C6C00558FFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B92703B523DA2E7D00558FFE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B927049F23DA3B9C00558FFE;
+			remoteInfo = JobQueueInMemoryStorage.macOS;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		04A5A3BFD5CB23E919FF3D57 /* Pods-All-Frameworks-JobQueue.watchOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueue.watchOS.debug.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueue.watchOS/Pods-All-Frameworks-JobQueue.watchOS.debug.xcconfig"; sourceTree = "<group>"; };
+		17353D1DEFD255DBC1D6450F /* Pods_All_Frameworks_JobQueueInMemoryStorage_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Frameworks_JobQueueInMemoryStorage_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E3643A028E6E1C1DDFE7EC6 /* Pods_All_Tests_JobQueue_tests_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Tests_JobQueue_tests_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		299FEBD0140565ADC2D17D5F /* Pods_All_Frameworks_JobQueue_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Frameworks_JobQueue_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		327911DD81E0D482E20A043B /* Pods_All_Tests_JobQueue_tests_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Tests_JobQueue_tests_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B43E4583A46CD72293BB48C /* Pods-All-Tests-JobQueue.tests.iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Tests-JobQueue.tests.iOS.release.xcconfig"; path = "Target Support Files/Pods-All-Tests-JobQueue.tests.iOS/Pods-All-Tests-JobQueue.tests.iOS.release.xcconfig"; sourceTree = "<group>"; };
+		514EE50F2B7B3389836FAC94 /* Pods-All-Tests-JobQueue.tests.macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Tests-JobQueue.tests.macOS.release.xcconfig"; path = "Target Support Files/Pods-All-Tests-JobQueue.tests.macOS/Pods-All-Tests-JobQueue.tests.macOS.release.xcconfig"; sourceTree = "<group>"; };
 		782D7D72CA30CAFF65E54483 /* Pods_All_Frameworks_JobQueueInMemoryStorage_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Frameworks_JobQueueInMemoryStorage_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C04A858FEB7053CFE584207 /* Pods-All-JobQueue.iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-JobQueue.iOS.release.xcconfig"; path = "Target Support Files/Pods-All-JobQueue.iOS/Pods-All-JobQueue.iOS.release.xcconfig"; sourceTree = "<group>"; };
 		86BD5FB6DB08E70720F5AE44 /* Pods-All-Frameworks-JobQueueInMemoryStorage.iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueueInMemoryStorage.iOS.release.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueueInMemoryStorage.iOS/Pods-All-Frameworks-JobQueueInMemoryStorage.iOS.release.xcconfig"; sourceTree = "<group>"; };
 		891AAE188865ED5D61678013 /* Pods-All-Tests-JobQueue.tests.iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Tests-JobQueue.tests.iOS.debug.xcconfig"; path = "Target Support Files/Pods-All-Tests-JobQueue.tests.iOS/Pods-All-Tests-JobQueue.tests.iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		915CA15A6AECCB71ECC6AF7F /* Pods-All-Frameworks-JobQueueInMemoryStorage.macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueueInMemoryStorage.macOS.release.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueueInMemoryStorage.macOS/Pods-All-Frameworks-JobQueueInMemoryStorage.macOS.release.xcconfig"; sourceTree = "<group>"; };
 		996CE280A2CEA4D81D8FCCA6 /* Pods_All_Frameworks_JobQueue_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Frameworks_JobQueue_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1F9A852E7CC44A03CAA803B /* Pods_All_Frameworks_JobQueueInMemoryStorage_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Frameworks_JobQueueInMemoryStorage_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7DCF46540C79257BB06092D /* Pods-All-Tests-JobQueue.tests.macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Tests-JobQueue.tests.macOS.debug.xcconfig"; path = "Target Support Files/Pods-All-Tests-JobQueue.tests.macOS/Pods-All-Tests-JobQueue.tests.macOS.debug.xcconfig"; sourceTree = "<group>"; };
 		B8682289ED45D23545CF130A /* Pods-All-Frameworks-JobQueueInMemoryStorage.watchOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueueInMemoryStorage.watchOS.debug.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueueInMemoryStorage.watchOS/Pods-All-Frameworks-JobQueueInMemoryStorage.watchOS.debug.xcconfig"; sourceTree = "<group>"; };
 		B92703BE23DA2E7E00558FFE /* JobQueue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JobQueue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B92703C723DA2E7E00558FFE /* JobQueueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JobQueueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,16 +198,23 @@
 		B927042223DA33AA00558FFE /* The.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = The.swift; sourceTree = "<group>"; };
 		B927042323DA33AA00558FFE /* Job.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		B927043923DA386100558FFE /* JobQueue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JobQueue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B927045223DA391300558FFE /* JobQueue */ = {isa = PBXFileReference; lastKnownFileType = folder; name = JobQueue; sourceTree = "<group>"; };
+		B927045223DA391300558FFE /* JobQueue */ = {isa = PBXFileReference; lastKnownFileType = folder; path = JobQueue; sourceTree = "<group>"; };
 		B927046623DA39E700558FFE /* JobQueueInMemoryStorage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JobQueueInMemoryStorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B927047323DA3AB000558FFE /* JobQueue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JobQueue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B927047B23DA3AB000558FFE /* JobQueue.tests.macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JobQueue.tests.macOS.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B92704A023DA3B9C00558FFE /* JobQueueInMemoryStorage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JobQueueInMemoryStorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA5ADCCB95BDE8FE49BA114C /* Pods-All-Frameworks-JobQueue.iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueue.iOS.debug.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueue.iOS/Pods-All-Frameworks-JobQueue.iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		BC2ECAF0E99561B95422F35B /* Pods-All-Frameworks-JobQueue.macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueue.macOS.debug.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueue.macOS/Pods-All-Frameworks-JobQueue.macOS.debug.xcconfig"; sourceTree = "<group>"; };
 		C4F94EAEBFB5D1AD1A14B1E8 /* Pods-All-Frameworks-JobQueueInMemoryStorage.watchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueueInMemoryStorage.watchOS.release.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueueInMemoryStorage.watchOS/Pods-All-Frameworks-JobQueueInMemoryStorage.watchOS.release.xcconfig"; sourceTree = "<group>"; };
+		C885964ED560D015C5A398E2 /* Pods_All_Frameworks_JobQueue_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Frameworks_JobQueue_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD806CA966A83FCDA3175336 /* Pods-All-JobQueueInMemoryStorage.iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-JobQueueInMemoryStorage.iOS.debug.xcconfig"; path = "Target Support Files/Pods-All-JobQueueInMemoryStorage.iOS/Pods-All-JobQueueInMemoryStorage.iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		CFB36BB3C708803309D46BC4 /* Pods-All-Frameworks-JobQueue.iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueue.iOS.release.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueue.iOS/Pods-All-Frameworks-JobQueue.iOS.release.xcconfig"; sourceTree = "<group>"; };
 		DA51E0B989FD404B9CF507E2 /* Pods-All-JobQueueInMemoryStorage.iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-JobQueueInMemoryStorage.iOS.release.xcconfig"; path = "Target Support Files/Pods-All-JobQueueInMemoryStorage.iOS/Pods-All-JobQueueInMemoryStorage.iOS.release.xcconfig"; sourceTree = "<group>"; };
 		DC5CD7AF0A0512A9909113A4 /* Pods-All-JobQueue.iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-JobQueue.iOS.debug.xcconfig"; path = "Target Support Files/Pods-All-JobQueue.iOS/Pods-All-JobQueue.iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		E12ED475485CF3879619E7B5 /* Pods-All-Frameworks-JobQueue.watchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueue.watchOS.release.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueue.watchOS/Pods-All-Frameworks-JobQueue.watchOS.release.xcconfig"; sourceTree = "<group>"; };
+		EA98D545F4DC5F7286118228 /* Pods-All-Frameworks-JobQueue.macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueue.macOS.release.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueue.macOS/Pods-All-Frameworks-JobQueue.macOS.release.xcconfig"; sourceTree = "<group>"; };
 		F77D887CFA5B486F86174BF1 /* Pods-All-Frameworks-JobQueueInMemoryStorage.iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueueInMemoryStorage.iOS.debug.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueueInMemoryStorage.iOS/Pods-All-Frameworks-JobQueueInMemoryStorage.iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		FF069178B5478FD78B30927A /* Pods-All-Frameworks-JobQueueInMemoryStorage.macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueueInMemoryStorage.macOS.debug.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueueInMemoryStorage.macOS/Pods-All-Frameworks-JobQueueInMemoryStorage.macOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,7 +256,35 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B92704AC23DA3C0E00558FFE /* JobQueue.framework in Frameworks */,
 				E497E197436815F111148881 /* Pods_All_Frameworks_JobQueueInMemoryStorage_watchOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B927047023DA3AB000558FFE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9817FA93AF1B6EF71759447 /* Pods_All_Frameworks_JobQueue_macOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B927047823DA3AB000558FFE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B92704B223DA3C7A00558FFE /* JobQueueInMemoryStorage.framework in Frameworks */,
+				B927047C23DA3AB000558FFE /* JobQueue.framework in Frameworks */,
+				9543B072E6BCB33A3BE83AD1 /* Pods_All_Tests_JobQueue_tests_macOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B927049D23DA3B9C00558FFE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B92704AF23DA3C1900558FFE /* JobQueue.framework in Frameworks */,
+				C9EDB04115BAAFD9B331523D /* Pods_All_Frameworks_JobQueueInMemoryStorage_macOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +299,9 @@
 				1E3643A028E6E1C1DDFE7EC6 /* Pods_All_Tests_JobQueue_tests_iOS.framework */,
 				299FEBD0140565ADC2D17D5F /* Pods_All_Frameworks_JobQueue_watchOS.framework */,
 				A1F9A852E7CC44A03CAA803B /* Pods_All_Frameworks_JobQueueInMemoryStorage_watchOS.framework */,
+				C885964ED560D015C5A398E2 /* Pods_All_Frameworks_JobQueue_macOS.framework */,
+				327911DD81E0D482E20A043B /* Pods_All_Tests_JobQueue_tests_macOS.framework */,
+				17353D1DEFD255DBC1D6450F /* Pods_All_Frameworks_JobQueueInMemoryStorage_macOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -215,6 +323,12 @@
 				E12ED475485CF3879619E7B5 /* Pods-All-Frameworks-JobQueue.watchOS.release.xcconfig */,
 				B8682289ED45D23545CF130A /* Pods-All-Frameworks-JobQueueInMemoryStorage.watchOS.debug.xcconfig */,
 				C4F94EAEBFB5D1AD1A14B1E8 /* Pods-All-Frameworks-JobQueueInMemoryStorage.watchOS.release.xcconfig */,
+				BC2ECAF0E99561B95422F35B /* Pods-All-Frameworks-JobQueue.macOS.debug.xcconfig */,
+				EA98D545F4DC5F7286118228 /* Pods-All-Frameworks-JobQueue.macOS.release.xcconfig */,
+				A7DCF46540C79257BB06092D /* Pods-All-Tests-JobQueue.tests.macOS.debug.xcconfig */,
+				514EE50F2B7B3389836FAC94 /* Pods-All-Tests-JobQueue.tests.macOS.release.xcconfig */,
+				FF069178B5478FD78B30927A /* Pods-All-Frameworks-JobQueueInMemoryStorage.macOS.debug.xcconfig */,
+				915CA15A6AECCB71ECC6AF7F /* Pods-All-Frameworks-JobQueueInMemoryStorage.macOS.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -240,6 +354,9 @@
 				B927040C23DA313200558FFE /* JobQueueInMemoryStorage.framework */,
 				B927043923DA386100558FFE /* JobQueue.framework */,
 				B927046623DA39E700558FFE /* JobQueueInMemoryStorage.framework */,
+				B927047323DA3AB000558FFE /* JobQueue.framework */,
+				B927047B23DA3AB000558FFE /* JobQueue.tests.macOS.xctest */,
+				B92704A023DA3B9C00558FFE /* JobQueueInMemoryStorage.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -369,6 +486,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B927046E23DA3AB000558FFE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B927049B23DA3B9C00558FFE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -463,10 +594,71 @@
 			buildRules = (
 			);
 			dependencies = (
+				B92704AB23DA3C0600558FFE /* PBXTargetDependency */,
 			);
 			name = JobQueueInMemoryStorage.watchOS;
 			productName = JobQueueInMemoryStorageWatchOS;
 			productReference = B927046623DA39E700558FFE /* JobQueueInMemoryStorage.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B927047223DA3AB000558FFE /* JobQueue.macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B927048823DA3AB000558FFE /* Build configuration list for PBXNativeTarget "JobQueue.macOS" */;
+			buildPhases = (
+				A65F60B0492791B065ED0C1D /* [CP] Check Pods Manifest.lock */,
+				B927046E23DA3AB000558FFE /* Headers */,
+				B927046F23DA3AB000558FFE /* Sources */,
+				B927047023DA3AB000558FFE /* Frameworks */,
+				B927047123DA3AB000558FFE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JobQueue.macOS;
+			productName = JobQueuemacOS;
+			productReference = B927047323DA3AB000558FFE /* JobQueue.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B927047A23DA3AB000558FFE /* JobQueue.tests.macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B927048923DA3AB000558FFE /* Build configuration list for PBXNativeTarget "JobQueue.tests.macOS" */;
+			buildPhases = (
+				DA6712205466F535916751C8 /* [CP] Check Pods Manifest.lock */,
+				B927047723DA3AB000558FFE /* Sources */,
+				B927047823DA3AB000558FFE /* Frameworks */,
+				B927047923DA3AB000558FFE /* Resources */,
+				F6F5492DEBA73B9B1D4295AD /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B92704B123DA3C6C00558FFE /* PBXTargetDependency */,
+				B927047E23DA3AB000558FFE /* PBXTargetDependency */,
+			);
+			name = JobQueue.tests.macOS;
+			productName = JobQueuemacOSTests;
+			productReference = B927047B23DA3AB000558FFE /* JobQueue.tests.macOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B927049F23DA3B9C00558FFE /* JobQueueInMemoryStorage.macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B92704A723DA3B9C00558FFE /* Build configuration list for PBXNativeTarget "JobQueueInMemoryStorage.macOS" */;
+			buildPhases = (
+				3CBDF40A171D6887A37ECF49 /* [CP] Check Pods Manifest.lock */,
+				B927049B23DA3B9C00558FFE /* Headers */,
+				B927049C23DA3B9C00558FFE /* Sources */,
+				B927049D23DA3B9C00558FFE /* Frameworks */,
+				B927049E23DA3B9C00558FFE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B92704AE23DA3C1400558FFE /* PBXTargetDependency */,
+			);
+			name = JobQueueInMemoryStorage.macOS;
+			productName = JobQueueInMemoryStoragemacOS;
+			productReference = B92704A023DA3B9C00558FFE /* JobQueueInMemoryStorage.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -494,6 +686,15 @@
 					B927046523DA39E700558FFE = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
+					B927047223DA3AB000558FFE = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					B927047A23DA3AB000558FFE = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					B927049F23DA3B9C00558FFE = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
 				};
 			};
 			buildConfigurationList = B92703B823DA2E7D00558FFE /* Build configuration list for PBXProject "JobQueue" */;
@@ -511,9 +712,12 @@
 			targets = (
 				B92703BD23DA2E7E00558FFE /* JobQueue.iOS */,
 				B927043823DA386100558FFE /* JobQueue.watchOS */,
+				B927047223DA3AB000558FFE /* JobQueue.macOS */,
 				B927040B23DA313200558FFE /* JobQueueInMemoryStorage.iOS */,
 				B927046523DA39E700558FFE /* JobQueueInMemoryStorage.watchOS */,
+				B927049F23DA3B9C00558FFE /* JobQueueInMemoryStorage.macOS */,
 				B92703C623DA2E7E00558FFE /* JobQueue.tests.iOS */,
+				B927047A23DA3AB000558FFE /* JobQueue.tests.macOS */,
 			);
 		};
 /* End PBXProject section */
@@ -554,6 +758,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B927047123DA3AB000558FFE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B927047923DA3AB000558FFE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B927049E23DA3B9C00558FFE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -573,6 +798,28 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-All-Frameworks-JobQueue.watchOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3CBDF40A171D6887A37ECF49 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-All-Frameworks-JobQueueInMemoryStorage.macOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -623,6 +870,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A65F60B0492791B065ED0C1D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-All-Frameworks-JobQueue.macOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C7D897F4415D2D0643880FAE /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -638,6 +907,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-All-Tests-JobQueue.tests.iOS/Pods-All-Tests-JobQueue.tests.iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA6712205466F535916751C8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-All-Tests-JobQueue.tests.macOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F13EBB7254B8707E80DBCBEA /* [CP] Check Pods Manifest.lock */ = {
@@ -660,6 +951,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6F5492DEBA73B9B1D4295AD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-All-Tests-JobQueue.tests.macOS/Pods-All-Tests-JobQueue.tests.macOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-All-Tests-JobQueue.tests.macOS/Pods-All-Tests-JobQueue.tests.macOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-All-Tests-JobQueue.tests.macOS/Pods-All-Tests-JobQueue.tests.macOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FFA4D057541B107137AB883A /* [CP] Check Pods Manifest.lock */ = {
@@ -765,6 +1073,57 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B92704A923DA3BF900558FFE /* JobStorage.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B927046F23DA3AB000558FFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B927049223DA3AF000558FFE /* JobQueueProcessors.swift in Sources */,
+				B927049823DA3AF000558FFE /* JobType.swift in Sources */,
+				B927049723DA3AF000558FFE /* JobStorage.swift in Sources */,
+				B927049423DA3AF000558FFE /* JobSchedule.swift in Sources */,
+				B927049123DA3AF000558FFE /* JobQueueDelayStrategy.swift in Sources */,
+				B927048F23DA3AF000558FFE /* JobProcessor.swift in Sources */,
+				B927048A23DA3AF000558FFE /* Common.swift in Sources */,
+				B927049923DA3AF000558FFE /* Logger.swift in Sources */,
+				B927049A23DA3AF000558FFE /* Sequence+Extensions.swift in Sources */,
+				B927048B23DA3AF000558FFE /* Date+Extensions.swift in Sources */,
+				B927049323DA3AF000558FFE /* JobQueueSchedulers.swift in Sources */,
+				B927048C23DA3AF000558FFE /* Dictionary+Extensions.swift in Sources */,
+				B927049623DA3AF000558FFE /* JobStatus.swift in Sources */,
+				B927049523DA3AF000558FFE /* JobSorter.swift in Sources */,
+				B927048D23DA3AF000558FFE /* Job.swift in Sources */,
+				B927049023DA3AF000558FFE /* JobQueue.swift in Sources */,
+				B927048E23DA3AF000558FFE /* JobCancellation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B927047723DA3AB000558FFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B92704B823DA3C8E00558FFE /* DefaultJobSorter.swift in Sources */,
+				B92704B623DA3C8E00558FFE /* DefaultJobProcessor.swift in Sources */,
+				B92704B323DA3C8E00558FFE /* JobSchedule.swift in Sources */,
+				B92704B723DA3C8E00558FFE /* JobQueueProcessors.swift in Sources */,
+				B92704B923DA3C9600558FFE /* TestJob1.swift in Sources */,
+				B92704BB23DA3C9600558FFE /* Storage.swift in Sources */,
+				B92704B423DA3C8E00558FFE /* JobQueue.swift in Sources */,
+				B92704BD23DA3C9600558FFE /* Job.swift in Sources */,
+				B92704BC23DA3C9600558FFE /* The.swift in Sources */,
+				B92704BA23DA3C9600558FFE /* TestJob2.swift in Sources */,
+				B92704B523DA3C8E00558FFE /* JobStatus.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B927049C23DA3B9C00558FFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B92704A823DA3BF900558FFE /* JobStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -780,6 +1139,26 @@
 			isa = PBXTargetDependency;
 			target = B927040B23DA313200558FFE /* JobQueueInMemoryStorage.iOS */;
 			targetProxy = B927043123DA370A00558FFE /* PBXContainerItemProxy */;
+		};
+		B927047E23DA3AB000558FFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B927047223DA3AB000558FFE /* JobQueue.macOS */;
+			targetProxy = B927047D23DA3AB000558FFE /* PBXContainerItemProxy */;
+		};
+		B92704AB23DA3C0600558FFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B927043823DA386100558FFE /* JobQueue.watchOS */;
+			targetProxy = B92704AA23DA3C0600558FFE /* PBXContainerItemProxy */;
+		};
+		B92704AE23DA3C1400558FFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B927047223DA3AB000558FFE /* JobQueue.macOS */;
+			targetProxy = B92704AD23DA3C1400558FFE /* PBXContainerItemProxy */;
+		};
+		B92704B123DA3C6C00558FFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B927049F23DA3B9C00558FFE /* JobQueueInMemoryStorage.macOS */;
+			targetProxy = B92704B023DA3C6C00558FFE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -966,7 +1345,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tundaware.JobQueueTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tundaware.jobqueue.tests;
 				PRODUCT_NAME = JobQueueTests;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -985,7 +1364,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tundaware.JobQueueTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tundaware.jobqueue.tests;
 				PRODUCT_NAME = JobQueueTests;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1154,6 +1533,156 @@
 			};
 			name = Release;
 		};
+		B927048423DA3AB000558FFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC2ECAF0E99561B95422F35B /* Pods-All-Frameworks-JobQueue.macOS.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8Y2R2YMCQT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Support Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tundaware.jobqueue;
+				PRODUCT_NAME = JobQueue;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		B927048523DA3AB000558FFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA98D545F4DC5F7286118228 /* Pods-All-Frameworks-JobQueue.macOS.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8Y2R2YMCQT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Support Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tundaware.jobqueue;
+				PRODUCT_NAME = JobQueue;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		B927048623DA3AB000558FFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7DCF46540C79257BB06092D /* Pods-All-Tests-JobQueue.tests.macOS.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 8Y2R2YMCQT;
+				INFOPLIST_FILE = "$(SRCROOT)/Support Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tundaware.jobqueue.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		B927048723DA3AB000558FFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 514EE50F2B7B3389836FAC94 /* Pods-All-Tests-JobQueue.tests.macOS.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 8Y2R2YMCQT;
+				INFOPLIST_FILE = "$(SRCROOT)/Support Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tundaware.jobqueue.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		B92704A523DA3B9C00558FFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF069178B5478FD78B30927A /* Pods-All-Frameworks-JobQueueInMemoryStorage.macOS.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8Y2R2YMCQT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Support Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tundaware.jobqueue.storage.inmemory;
+				PRODUCT_NAME = JobQueueInMemoryStorage;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		B92704A623DA3B9C00558FFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 915CA15A6AECCB71ECC6AF7F /* Pods-All-Frameworks-JobQueueInMemoryStorage.macOS.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8Y2R2YMCQT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Support Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tundaware.jobqueue.storage.inmemory;
+				PRODUCT_NAME = JobQueueInMemoryStorage;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1207,6 +1736,33 @@
 			buildConfigurations = (
 				B927046C23DA39E700558FFE /* Debug */,
 				B927046D23DA39E700558FFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B927048823DA3AB000558FFE /* Build configuration list for PBXNativeTarget "JobQueue.macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B927048423DA3AB000558FFE /* Debug */,
+				B927048523DA3AB000558FFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B927048923DA3AB000558FFE /* Build configuration list for PBXNativeTarget "JobQueue.tests.macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B927048623DA3AB000558FFE /* Debug */,
+				B927048723DA3AB000558FFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B92704A723DA3B9C00558FFE /* Build configuration list for PBXNativeTarget "JobQueueInMemoryStorage.macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B92704A523DA3B9C00558FFE /* Debug */,
+				B92704A623DA3B9C00558FFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
