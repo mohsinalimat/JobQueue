@@ -6,12 +6,10 @@ import Foundation
 import Nimble
 import Quick
 import ReactiveSwift
-import NanoID
 
 @testable import JobQueue
 
-private let idGenerator = ID(size: 10)
-private func randomString() -> String { idGenerator.generate() }
+private func randomString() -> String { UUID().uuidString }
 
 class JobQueueTests: QuickSpec {
   override func spec() {

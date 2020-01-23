@@ -17,13 +17,13 @@ let package = Package(
       targets: [
         "JobQueue",
         "JobQueueInMemoryStorage"
-      ]),
+      ]
+    )
   ],
   dependencies: [
     .package(url: "https://github.com/ReactiveCocoa/ReactiveSwift", from: "6.2.0"),
     .package(url: "https://github.com/Quick/Nimble", .branch("master")),
-    .package(url: "https://github.com/Quick/Quick", from: "2.2.0"),
-    .package(url: "https://github.com/Tundaware/NanoID", from: "1.0.0")
+    .package(url: "https://github.com/Quick/Quick", from: "2.2.0")
   ],
   targets: [
     .target(
@@ -36,6 +36,7 @@ let package = Package(
     ),
     .testTarget(
       name: "JobQueueTests",
-      dependencies: ["JobQueue", "JobQueueInMemoryStorage", "Nimble", "Quick", "ReactiveSwift", "NanoID"]
+      dependencies: ["JobQueue", "JobQueueInMemoryStorage", "Nimble", "Quick", "ReactiveSwift"]
     )
-  ])
+  ]
+)
