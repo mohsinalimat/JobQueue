@@ -10,7 +10,7 @@ public struct TestPayload1: Codable, Equatable {
 }
 public struct TestJob2: Job {
   public var id: JobID
-  public var rawPayload: [UInt8]?
+  public var rawPayload: [UInt8]
   public var payload: TestPayload1
   public var status: JobStatus
   public var schedule: JobSchedule?

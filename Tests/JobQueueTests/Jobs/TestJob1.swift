@@ -7,7 +7,7 @@ import JobQueue
 
 public struct TestJob1: Job {
   public var id: JobID
-  public var rawPayload: [UInt8]?
+  public var rawPayload: [UInt8]
   public var payload: String
   public var status: JobStatus
   public var schedule: JobSchedule?

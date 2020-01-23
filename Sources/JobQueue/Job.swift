@@ -12,7 +12,7 @@ public protocol AnyJob: StaticallyNamed {
   var id: JobID { get }
 
   /// Raw payload bytes
-  var rawPayload: [UInt8]? { get }
+  var rawPayload: [UInt8] { get }
 
   /// The job's status
   var status: JobStatus { get set }
