@@ -4,15 +4,12 @@
 
 import Foundation
 import ReactiveSwift
-#if SWIFT_PACKAGE
-import JobQueueCore
-#endif
 
 public struct JobQueueSchedulers {
-  let synchronize: Scheduler
-  let shouldSynchronize: DateScheduler
-  let storage: Scheduler
-  let delay: DateScheduler
+  public let synchronize: Scheduler
+  public let shouldSynchronize: DateScheduler
+  public let storage: Scheduler
+  public let delay: DateScheduler
 
   /**
    Initializes a `JobQueueSchedulers` instance.
