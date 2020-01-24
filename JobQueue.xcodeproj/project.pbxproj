@@ -61,7 +61,6 @@
 		B958D3C423DA409500A4E144 /* JobQueueInMemoryStorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92704DF23DA3D2900558FFE /* JobQueueInMemoryStorage.framework */; };
 		B9E9D1C923DA693A00D89111 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C523DA68C300D89111 /* Date+Extensions.swift */; };
 		B9E9D1CA23DA693A00D89111 /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C423DA68C300D89111 /* Dictionary+Extensions.swift */; };
-		B9E9D1CB23DA693A00D89111 /* Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1BB23DA68C300D89111 /* Index.swift */; };
 		B9E9D1CC23DA693A00D89111 /* JobCancellation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1BA23DA68C300D89111 /* JobCancellation.swift */; };
 		B9E9D1CD23DA693A00D89111 /* JobProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C223DA68C300D89111 /* JobProcessor.swift */; };
 		B9E9D1CE23DA693A00D89111 /* JobQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1BC23DA68C300D89111 /* JobQueue.swift */; };
@@ -74,7 +73,6 @@
 		B9E9D1D523DA693A00D89111 /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1BF23DA68C300D89111 /* Sequence+Extensions.swift */; };
 		B9E9D1D623DA693B00D89111 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C523DA68C300D89111 /* Date+Extensions.swift */; };
 		B9E9D1D723DA693B00D89111 /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C423DA68C300D89111 /* Dictionary+Extensions.swift */; };
-		B9E9D1D823DA693B00D89111 /* Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1BB23DA68C300D89111 /* Index.swift */; };
 		B9E9D1D923DA693B00D89111 /* JobCancellation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1BA23DA68C300D89111 /* JobCancellation.swift */; };
 		B9E9D1DA23DA693B00D89111 /* JobProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C223DA68C300D89111 /* JobProcessor.swift */; };
 		B9E9D1DB23DA693B00D89111 /* JobQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1BC23DA68C300D89111 /* JobQueue.swift */; };
@@ -87,7 +85,6 @@
 		B9E9D1E223DA693B00D89111 /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1BF23DA68C300D89111 /* Sequence+Extensions.swift */; };
 		B9E9D1E323DA693B00D89111 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C523DA68C300D89111 /* Date+Extensions.swift */; };
 		B9E9D1E423DA693B00D89111 /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C423DA68C300D89111 /* Dictionary+Extensions.swift */; };
-		B9E9D1E523DA693C00D89111 /* Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1BB23DA68C300D89111 /* Index.swift */; };
 		B9E9D1E623DA693C00D89111 /* JobCancellation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1BA23DA68C300D89111 /* JobCancellation.swift */; };
 		B9E9D1E723DA693C00D89111 /* JobProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C223DA68C300D89111 /* JobProcessor.swift */; };
 		B9E9D1E823DA693C00D89111 /* JobQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1BC23DA68C300D89111 /* JobQueue.swift */; };
@@ -100,7 +97,6 @@
 		B9E9D1EF23DA693C00D89111 /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1BF23DA68C300D89111 /* Sequence+Extensions.swift */; };
 		B9E9D1F023DA693C00D89111 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C523DA68C300D89111 /* Date+Extensions.swift */; };
 		B9E9D1F123DA693C00D89111 /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C423DA68C300D89111 /* Dictionary+Extensions.swift */; };
-		B9E9D1F223DA693C00D89111 /* Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1BB23DA68C300D89111 /* Index.swift */; };
 		B9E9D1F323DA693C00D89111 /* JobCancellation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1BA23DA68C300D89111 /* JobCancellation.swift */; };
 		B9E9D1F423DA693C00D89111 /* JobProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C223DA68C300D89111 /* JobProcessor.swift */; };
 		B9E9D1F523DA693C00D89111 /* JobQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1BC23DA68C300D89111 /* JobQueue.swift */; };
@@ -318,7 +314,6 @@
 		B9E9D1B723DA68C300D89111 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		B9E9D1B823DA68C300D89111 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		B9E9D1BA23DA68C300D89111 /* JobCancellation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobCancellation.swift; sourceTree = "<group>"; };
-		B9E9D1BB23DA68C300D89111 /* Index.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Index.swift; sourceTree = "<group>"; };
 		B9E9D1BC23DA68C300D89111 /* JobQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobQueue.swift; sourceTree = "<group>"; };
 		B9E9D1BD23DA68C300D89111 /* JobQueueSchedulers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobQueueSchedulers.swift; sourceTree = "<group>"; };
 		B9E9D1BE23DA68C300D89111 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
@@ -669,7 +664,6 @@
 			children = (
 				B9E9D1C523DA68C300D89111 /* Date+Extensions.swift */,
 				B9E9D1C423DA68C300D89111 /* Dictionary+Extensions.swift */,
-				B9E9D1BB23DA68C300D89111 /* Index.swift */,
 				B9E9D1BA23DA68C300D89111 /* JobCancellation.swift */,
 				B9E9D1C223DA68C300D89111 /* JobProcessor.swift */,
 				B9E9D1BC23DA68C300D89111 /* JobQueue.swift */,
@@ -1674,7 +1668,6 @@
 				B9E9D1D123DA693A00D89111 /* JobQueueSchedulers.swift in Sources */,
 				B9E9D1CD23DA693A00D89111 /* JobProcessor.swift in Sources */,
 				B9E9D1CA23DA693A00D89111 /* Dictionary+Extensions.swift in Sources */,
-				B9E9D1CB23DA693A00D89111 /* Index.swift in Sources */,
 				B9E9D1D423DA693A00D89111 /* Logger.swift in Sources */,
 				B9E9D1D023DA693A00D89111 /* JobQueueProcessors.swift in Sources */,
 				B9E9D1D523DA693A00D89111 /* Sequence+Extensions.swift in Sources */,
@@ -1720,7 +1713,6 @@
 				B9E9D1DE23DA693B00D89111 /* JobQueueSchedulers.swift in Sources */,
 				B9E9D1DA23DA693B00D89111 /* JobProcessor.swift in Sources */,
 				B9E9D1D723DA693B00D89111 /* Dictionary+Extensions.swift in Sources */,
-				B9E9D1D823DA693B00D89111 /* Index.swift in Sources */,
 				B9E9D1E123DA693B00D89111 /* Logger.swift in Sources */,
 				B9E9D1DD23DA693B00D89111 /* JobQueueProcessors.swift in Sources */,
 				B9E9D1E223DA693B00D89111 /* Sequence+Extensions.swift in Sources */,
@@ -1748,7 +1740,6 @@
 				B9E9D1EB23DA693C00D89111 /* JobQueueSchedulers.swift in Sources */,
 				B9E9D1E723DA693C00D89111 /* JobProcessor.swift in Sources */,
 				B9E9D1E423DA693B00D89111 /* Dictionary+Extensions.swift in Sources */,
-				B9E9D1E523DA693C00D89111 /* Index.swift in Sources */,
 				B9E9D1EE23DA693C00D89111 /* Logger.swift in Sources */,
 				B9E9D1EA23DA693C00D89111 /* JobQueueProcessors.swift in Sources */,
 				B9E9D1EF23DA693C00D89111 /* Sequence+Extensions.swift in Sources */,
@@ -1794,7 +1785,6 @@
 				B9E9D1F823DA693C00D89111 /* JobQueueSchedulers.swift in Sources */,
 				B9E9D1F423DA693C00D89111 /* JobProcessor.swift in Sources */,
 				B9E9D1F123DA693C00D89111 /* Dictionary+Extensions.swift in Sources */,
-				B9E9D1F223DA693C00D89111 /* Index.swift in Sources */,
 				B9E9D1FB23DA693C00D89111 /* Logger.swift in Sources */,
 				B9E9D1F723DA693C00D89111 /* JobQueueProcessors.swift in Sources */,
 				B9E9D1FC23DA693C00D89111 /* Sequence+Extensions.swift in Sources */,
