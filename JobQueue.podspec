@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "JobQueue"
-  s.version      = "0.0.17"
+  s.version      = "0.0.18"
   s.summary      = "A persistent and flexible job queue for Swift applications"
   s.description  = <<-DESC
   JobQueue is a persistent job queue with a simple API that does not depend on `Operation`/`OperationQueue`, is storage agnostic, supports for manual execution order, per job type concurrency limits, delayed jobs, and more.
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '11.0'
   s.tvos.deployment_target = '11.0'
   s.watchos.deployment_target = '4.0'
-  s.osx.deployment_target = '10.12'
+  s.osx.deployment_target = '10.13'
 
   s.source = {
     :git => "https://github.com/Tundaware/JobQueue.git",
