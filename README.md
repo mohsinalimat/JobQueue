@@ -3,9 +3,7 @@
 
 # JobQueue
 
-A persistent and flexible job queue for Swift applications.
-
-There are other queue implementations for Swift that are based on `Operation` and `OperationQueue`. Unfortunately, those classes have several drawbacks, all due to being closed source.
+A persistent job queue with a simple API that does not depend on `Operation`/`OperationQueue`, is storage agnostic, supports for manual execution order, per job type concurrency limits, delayed jobs, and more.
 
 ## Features
 
