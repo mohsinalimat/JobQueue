@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "JobQueue"
-  s.version      = "0.0.7"
+  s.version      = "0.0.9"
   s.summary      = "A persistent and flexible job queue for Swift applications"
   s.description  = <<-DESC
   A persistent and flexible job queue for Swift applications.
