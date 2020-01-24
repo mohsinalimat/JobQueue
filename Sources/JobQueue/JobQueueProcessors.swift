@@ -57,6 +57,15 @@ class JobQueueProcessors {
   }
 
   /**
+   Return true if the job already has an active processor
+
+   - Parameter job: the job to check
+   */
+  func isProcessing(job: AnyJob) -> Bool {
+    return self.active[job.name]?[job.id] != nil
+  }
+
+  /**
    Gets or creates a processor for the provided job
 
    A new processor is created if a configuration exists for the job type, there

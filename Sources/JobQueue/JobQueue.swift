@@ -107,9 +107,12 @@ public final class JobQueue: JobQueueProtocol {
         logger.trace("Queue (\(name)) isSynchronizing is true, will get all jobs and synchronize...")
       }
       .flatMap(.concat) { self.getAll() }
-      .on(value: { _ in
-        logger.trace("Queue (\(name)) did get all jobs, will synchronize")
-      })
+      .on(
+        value: { jobs in
+          logger.trace("Queue (\(name)) jobs to synchronize: \(jobs.map { ($0.id, $0.status) })")
+          logger.trace("Queue (\(name)) did get all jobs, will synchronize")
+        }
+      )
       .flatMap(.concat) { self.synchronize(jobs: $0) }
       .on(value: {
         logger.trace("Queue (\(name)) did synchronize, will set _isSynchronizing to false")
@@ -189,10 +192,11 @@ public extension JobQueue {
   func set(_ id: JobID, status: JobStatus) -> SignalProducer<AnyJob, Error> {
     return self.transaction {
       var job = (try $0.get(id).get())
-      guard !job.status.isActive else {
+      guard job.status != status else {
         return job
       }
       job.status = status
+      self.logger.trace("QUEUE (\(self.name)) storing job with new status of \(job.status)")
       return try $0.store(job).get()
     }.on(completed: {
       self.logger.trace("QUEUE (\(self.name)) set job \(id) status to \(status)")
@@ -386,7 +390,7 @@ private extension JobQueue {
       // Process jobs to process
       lt += SignalProducer(
         jobsToProcessByName.reduce(into: [AnyJob]()) { acc, kvp in
-          acc.append(contentsOf: kvp.value)
+          acc.append(contentsOf: kvp.value.filter { !self.processors.isProcessing(job: $0) })
         }
       ).flatMap(.concat) {
         self.beginProcessing(job: $0)
@@ -438,7 +442,18 @@ private extension JobQueue {
    - Parameter job: the job to process
    */
   func beginProcessing(job: AnyJob) -> SignalProducer<AnyJob, Error> {
-    return self.set(job, status: .active)
+    return
+      self.get(job.id)
+        .filter {
+          self.logger.trace("Queue \(self.name) beginProcessing job \(($0.id, $0.status))")
+          switch $0.status {
+          case .active, .waiting:
+            return true
+          default:
+            return false
+          }
+        }
+      .flatMap(.concat) { self.set($0, status: .active) }
       .on(
         value: { _job in
           guard let processor = self.processors.activeProcessor(for: _job) else {

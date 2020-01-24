@@ -15,15 +15,19 @@ public enum JobStorageTransactionChange {
 }
 
 public class JobQueueInMemoryStorageTransaction: JobStorageTransaction {
+  private let logger: Logger
   private var data: [JobQueueName: [JobID: AnyJob]]
   private var queue: JobQueueProtocol?
 
   internal var changes = [JobStorageTransactionChange]()
+  internal let id = UUID().uuidString
 
   public init(
     queue: JobQueueProtocol? = nil,
-    data: [JobQueueName: [JobID: AnyJob]]
+    data: [JobQueueName: [JobID: AnyJob]],
+    logger: Logger
   ) {
+    self.logger = logger
     self.queue = queue
     self.data = data
   }
@@ -161,19 +165,23 @@ public class JobQueueInMemoryStorageTransaction: JobStorageTransaction {
 public class JobQueueInMemoryStorage: JobStorage {
   private var data = [JobQueueName: [JobID: AnyJob]]()
   private let scheduler: Scheduler
+  private let logger: Logger
 
-  public init(scheduler: Scheduler) {
+  public init(scheduler: Scheduler, logger: Logger = ConsoleLogger()) {
     self.scheduler = scheduler
+    self.logger = logger
   }
 
   public func transaction<T>(queue: JobQueueProtocol, _ closure: @escaping (JobStorageTransaction) throws -> T) -> SignalProducer<T, Error> {
     return SignalProducer { o, lt in
-      let transaction = JobQueueInMemoryStorageTransaction(queue: queue, data: self.data)
+      let transaction = JobQueueInMemoryStorageTransaction(queue: queue, data: self.data, logger: self.logger)
+
       do {
         let result = try closure(transaction)
         transaction.changes.forEach { change in
           switch change {
           case .stored(let queueName, let jobId, let job):
+            self.logger.trace("Storage applying .stored(\(queueName), \(jobId), \(job.status) from tx \(transaction.id)")
             var jobs = self.data[queueName, default: [JobID: AnyJob]()]
             jobs[jobId] = job
             self.data[queueName] = jobs
@@ -181,12 +189,15 @@ public class JobQueueInMemoryStorage: JobStorage {
             guard var jobs = self.data[queueName] else {
               return
             }
+            self.logger.trace("Storage applying .removed(\(queueName), \(jobId), \(job.status) from tx \(transaction.id)")
             jobs[jobId] = job
             self.data[queueName] = jobs
           case .removedAll(let queueName):
+            self.logger.trace("Storage applying .removedAll(\(queueName)) from tx \(transaction.id)")
             self.data.removeValue(forKey: queueName)
           }
         }
+        self.logger.trace("COMMITTED TRANSACTION \(transaction.id)")
         o.send(value: result)
         o.sendCompleted()
       } catch {
