@@ -1,36 +1,39 @@
-Pod::Spec.new do |spec|
-  spec.name         = "JobQueue"
-  spec.version      = "0.0.7"
-  spec.summary      = "A persistent and flexible job queue for Swift applications"
-  spec.description  = <<-DESC
+Pod::Spec.new do |s|
+  s.name         = "JobQueue"
+  s.version      = "0.0.7"
+  s.summary      = "A persistent and flexible job queue for Swift applications"
+  s.description  = <<-DESC
   A persistent and flexible job queue for Swift applications.
                    DESC
 
-  spec.homepage     = "https://tundaware.com"
-  spec.license      = { :type => "MIT", :file => "LICENSE" }
-  spec.author             = { "George Cox" => "george@tundaware.com" }
-  spec.social_media_url   = "https://twitter.com/Tundaware"
+  s.homepage     = "https://tundaware.com"
+  s.license      = { :type => "MIT", :file => "LICENSE" }
+  s.author             = { "George Cox" => "george@tundaware.com" }
+  s.social_media_url   = "https://twitter.com/Tundaware"
 
-  spec.ios.deployment_target = '11.0'
-  spec.tvos.deployment_target = '11.0'
-  spec.watchos.deployment_target = '4.0'
-  spec.osx.deployment_target = '10.12'
+  s.ios.deployment_target = '11.0'
+  s.tvos.deployment_target = '11.0'
+  s.watchos.deployment_target = '4.0'
+  s.osx.deployment_target = '10.12'
 
-  spec.source = {
+  s.source = {
     :git => "https://github.com/Tundaware/JobQueue.git",
-    :tag => spec.version.to_s
+    :tag => s.version.to_s
   }
-  spec.swift_version = '5.1'
+  s.swift_version = '5.1'
 
-  spec.default_subspecs = 'Standard'
+  s.default_subspecs = 'Standard'
 
-  spec.subspec 'Standard' do |ss|
-    ss.subspec 'JobQueueCore' do |q|
-      q.source_files = 'Sources/JobQueueCore/**/*.swift'
-    end
+  s.subspec 'Standard' do |ss|
+    ss.subspec 'JobQueue' do |sss|
+      sss.source_files = 'Sources/JobQueue/**/*.swift'
+      sss.dependency = 'JobQueue/JobQueueCore'
+      sss.dependency = 'ReactiveSwift', '~> 6.2.0'
 
-    ss.subspec 'JobQueue' do |q|
-      q.source_files = 'Sources/JobQueue/**/*.swift', 'Sources/JobQueueCore/**/*.swift'
+      sss.subspec 'JobQueueCore' do |ssss|
+        ssss.source_files = 'Sources/JobQueueCore/**/*.swift'
+        sss.dependency = 'ReactiveSwift', '~> 6.2.0'
+      end
     end
   end
 
