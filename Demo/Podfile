@@ -1,0 +1,7 @@
+target 'JobQueueDemo' do
+  use_frameworks!
+
+  pod 'JobQueue/JobQueue', :path => "../"
+  pod 'JobQueue/JobQueueInMemoryStorage', :path => "../"
+  pod 'ReactiveSwift'
+end

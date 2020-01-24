@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "JobQueue"
-  s.version      = "0.0.10"
+  s.version      = "0.0.15"
   s.summary      = "A persistent and flexible job queue for Swift applications"
   s.description  = <<-DESC
   A persistent and flexible job queue for Swift applications.
@@ -22,19 +22,24 @@ Pod::Spec.new do |s|
   }
   s.swift_version = '5.1'
 
-  s.default_subspecs = 'Standard'
+  #s.default_subspecs = 'Standard'
 
-  s.subspec 'Standard' do |ss|
-    ss.subspec 'JobQueueCore' do |sss|
+  #s.subspec 'Standard' do |ss|
+    s.subspec 'JobQueueCore' do |sss|
       sss.source_files = 'Sources/JobQueueCore/**/*.swift'
       sss.dependency 'ReactiveSwift', '~> 6.2.0'
     end
-    ss.subspec 'JobQueue' do |sss|
+    s.subspec 'JobQueue' do |sss|
       sss.source_files = 'Sources/JobQueue/**/*.swift'
-      sss.dependency 'JobQueue/Standard/JobQueueCore'
+      sss.dependency 'JobQueue/JobQueueCore'
       sss.dependency 'ReactiveSwift', '~> 6.2.0'
     end
-  end
+    s.subspec 'JobQueueInMemoryStorage' do |sss|
+      sss.source_files = 'Sources/JobQueueInMemoryStorage/**/*.swift'
+      sss.dependency 'JobQueue/JobQueueCore'
+      sss.dependency 'ReactiveSwift', '~> 6.2.0'
+    end
+  #end
 
   # spec.subspec 'InMemoryStorage' do |sp|
   #   sp.source_files = 'Sources/JobQueueInMemoryStorage/**/*.swift'
