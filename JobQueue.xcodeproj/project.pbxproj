@@ -119,12 +119,6 @@
 		B9E9D24623DA6BAB00D89111 /* JobQueueCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E9D21323DA696F00D89111 /* JobQueueCore.framework */; };
 		B9E9D24923DA6BC000D89111 /* JobQueueCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E9D22D23DA699200D89111 /* JobQueueCore.framework */; };
 		B9E9D24C23DA6BE000D89111 /* JobQueueCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E9D22023DA697C00D89111 /* JobQueueCore.framework */; };
-		B9E9D24D23DA6C1D00D89111 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B723DA68C300D89111 /* Common.swift */; };
-		B9E9D24E23DA6C1D00D89111 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B823DA68C300D89111 /* Job.swift */; };
-		B9E9D24F23DA6C1D00D89111 /* JobQueueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B523DA68C300D89111 /* JobQueueProtocol.swift */; };
-		B9E9D25023DA6C1D00D89111 /* JobSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B423DA68C300D89111 /* JobSchedule.swift */; };
-		B9E9D25123DA6C1D00D89111 /* JobStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B623DA68C300D89111 /* JobStatus.swift */; };
-		B9E9D25223DA6C1D00D89111 /* JobStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B323DA68C300D89111 /* JobStorage.swift */; };
 		B9E9D25323DA6C1D00D89111 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B723DA68C300D89111 /* Common.swift */; };
 		B9E9D25423DA6C1D00D89111 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B823DA68C300D89111 /* Job.swift */; };
 		B9E9D25523DA6C1D00D89111 /* JobQueueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B523DA68C300D89111 /* JobQueueProtocol.swift */; };
@@ -143,6 +137,12 @@
 		B9E9D26223DA6C1E00D89111 /* JobSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B423DA68C300D89111 /* JobSchedule.swift */; };
 		B9E9D26323DA6C1E00D89111 /* JobStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B623DA68C300D89111 /* JobStatus.swift */; };
 		B9E9D26423DA6C1E00D89111 /* JobStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B323DA68C300D89111 /* JobStorage.swift */; };
+		B9E9D26723DAFF8000D89111 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B723DA68C300D89111 /* Common.swift */; };
+		B9E9D26823DAFF8000D89111 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B823DA68C300D89111 /* Job.swift */; };
+		B9E9D26923DAFF8000D89111 /* JobQueueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B523DA68C300D89111 /* JobQueueProtocol.swift */; };
+		B9E9D26A23DAFF8000D89111 /* JobSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B423DA68C300D89111 /* JobSchedule.swift */; };
+		B9E9D26B23DAFF8000D89111 /* JobStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B623DA68C300D89111 /* JobStatus.swift */; };
+		B9E9D26C23DAFF8000D89111 /* JobStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B323DA68C300D89111 /* JobStorage.swift */; };
 		C9EDB04115BAAFD9B331523D /* Pods_All_Frameworks_JobQueueInMemoryStorage_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17353D1DEFD255DBC1D6450F /* Pods_All_Frameworks_JobQueueInMemoryStorage_macOS.framework */; };
 		E497E197436815F111148881 /* Pods_All_Frameworks_JobQueueInMemoryStorage_watchOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1F9A852E7CC44A03CAA803B /* Pods_All_Frameworks_JobQueueInMemoryStorage_watchOS.framework */; };
 		E9817FA93AF1B6EF71759447 /* Pods_All_Frameworks_JobQueue_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C885964ED560D015C5A398E2 /* Pods_All_Frameworks_JobQueue_macOS.framework */; };
@@ -1824,12 +1824,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9E9D25023DA6C1D00D89111 /* JobSchedule.swift in Sources */,
-				B9E9D24F23DA6C1D00D89111 /* JobQueueProtocol.swift in Sources */,
-				B9E9D25123DA6C1D00D89111 /* JobStatus.swift in Sources */,
-				B9E9D25223DA6C1D00D89111 /* JobStorage.swift in Sources */,
-				B9E9D24D23DA6C1D00D89111 /* Common.swift in Sources */,
-				B9E9D24E23DA6C1D00D89111 /* Job.swift in Sources */,
+				B9E9D26A23DAFF8000D89111 /* JobSchedule.swift in Sources */,
+				B9E9D26923DAFF8000D89111 /* JobQueueProtocol.swift in Sources */,
+				B9E9D26B23DAFF8000D89111 /* JobStatus.swift in Sources */,
+				B9E9D26C23DAFF8000D89111 /* JobStorage.swift in Sources */,
+				B9E9D26723DAFF8000D89111 /* Common.swift in Sources */,
+				B9E9D26823DAFF8000D89111 /* Job.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
