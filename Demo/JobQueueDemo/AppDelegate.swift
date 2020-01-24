@@ -19,9 +19,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       schedulers: schedulers,
       storage: JobQueueInMemoryStorage(scheduler: schedulers.storage)
     )
-    self.queue?.register(Processor.self)
+    self.queue?.register(Processor.self, concurrency: 3)
     self.queue?.resume().start()
-    self.queue?.store(try! TestJob(id: "jobs/TestJob/1", payload: "First Job", status: .waiting)).start()
+
+    // Add 10 jobs
+    let jobs = (0..<10).map {
+      try! TestJob(id: "jobs/TestJob/\($0)", payload: "Job #\($0)")
+    }
+    SignalProducer(jobs)
+      .flatMap(.merge) { self.queue!.store($0) }
+      .startWithCompleted {
+        print("Finished storing jobs")
+      }
+
     return true
   }
 

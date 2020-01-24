@@ -1,10 +1,10 @@
 PODS:
-  - JobQueue/JobQueue (0.0.14):
+  - JobQueue/JobQueue (0.0.15):
     - JobQueue/JobQueueCore
     - ReactiveSwift (~> 6.2.0)
-  - JobQueue/JobQueueCore (0.0.14):
+  - JobQueue/JobQueueCore (0.0.15):
     - ReactiveSwift (~> 6.2.0)
-  - JobQueue/JobQueueInMemoryStorage (0.0.14):
+  - JobQueue/JobQueueInMemoryStorage (0.0.15):
     - JobQueue/JobQueueCore
     - ReactiveSwift (~> 6.2.0)
   - ReactiveSwift (6.2.0)
@@ -23,7 +23,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JobQueue: 88151322c326fa6106e66f27bde8e4a22ab98cda
+  JobQueue: bf155b2a637096f90eba432db82514fe57df0f97
   ReactiveSwift: 3dc8800378110b13d40b46ab362afa9f6bcffc6c
 
 PODFILE CHECKSUM: 08b3fd75662bfcf542569cef204bf48beac573e2
