@@ -3,6 +3,9 @@
 ///
 
 import Foundation
+#if SWIFT_PACKAGE
+import JobQueueCore
+#endif
 
 public enum JobType {
   case standard

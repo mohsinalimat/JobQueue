@@ -14,28 +14,38 @@ let package = Package(
   products: [
     .library(
       name: "JobQueue",
-      targets: [
-        "JobQueue",
-        "JobQueueInMemoryStorage"
-      ]),
+      targets: ["JobQueue"]
+    ),
+    .library(
+      name: "JobQueueCore",
+      targets: ["JobQueueCore"]
+    ),
+    .library(
+      name: "JobQueueInMemoryStorage",
+      targets: ["JobQueueInMemoryStorage"]
+    )
   ],
   dependencies: [
     .package(url: "https://github.com/ReactiveCocoa/ReactiveSwift", from: "6.2.0"),
     .package(url: "https://github.com/Quick/Nimble", .branch("master")),
-    .package(url: "https://github.com/Quick/Quick", from: "2.2.0"),
-    .package(url: "https://github.com/Tundaware/NanoID", from: "1.0.0")
+    .package(url: "https://github.com/Quick/Quick", from: "2.2.0")
   ],
   targets: [
     .target(
       name: "JobQueue",
+      dependencies: ["JobQueueCore", "ReactiveSwift"]
+    ),
+    .target(
+      name: "JobQueueCore",
       dependencies: ["ReactiveSwift"]
     ),
     .target(
       name: "JobQueueInMemoryStorage",
-      dependencies: ["JobQueue", "ReactiveSwift"]
+      dependencies: ["JobQueueCore", "ReactiveSwift"]
     ),
     .testTarget(
       name: "JobQueueTests",
-      dependencies: ["JobQueue", "JobQueueInMemoryStorage", "Nimble", "Quick", "ReactiveSwift", "NanoID"]
+      dependencies: ["JobQueue", "JobQueueInMemoryStorage", "Nimble", "Quick", "ReactiveSwift"]
     )
-  ])
+  ]
+)

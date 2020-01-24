@@ -3,6 +3,9 @@
 ///
 
 import Foundation
+#if SWIFT_PACKAGE
+import JobQueueCore
+#endif
 
 public protocol JobSorter {
   func sort(jobs: [AnyJob]) -> [AnyJob]

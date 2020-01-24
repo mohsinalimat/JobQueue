@@ -3,7 +3,9 @@
 ///
 
 import Foundation
-
+#if SWIFT_PACKAGE
+import JobQueueCore
+#endif
 internal extension Dictionary where Key == JobName, Value == [AnyJob] {
   var jobIDs: [JobID] {
     return self.reduce(into: [JobID]()) { acc, kvp in

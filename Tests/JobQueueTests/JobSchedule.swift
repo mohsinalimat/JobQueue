@@ -5,6 +5,7 @@
 import Foundation
 import Nimble
 import Quick
+import JobQueueCore
 
 @testable import JobQueue
 

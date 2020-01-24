@@ -3,8 +3,10 @@
 ///
 
 import Foundation
-import JobQueue
 import ReactiveSwift
+#if SWIFT_PACKAGE
+import JobQueueCore
+#endif
 
 public enum JobStorageTransactionChange {
   case stored(JobQueueName, JobID, AnyJob)
@@ -13,20 +15,24 @@ public enum JobStorageTransactionChange {
 }
 
 public class JobQueueInMemoryStorageTransaction: JobStorageTransaction {
+  private let logger: Logger
   private var data: [JobQueueName: [JobID: AnyJob]]
-  private var queue: JobQueue?
+  private var queue: JobQueueProtocol?
 
   internal var changes = [JobStorageTransactionChange]()
+  internal let id = UUID().uuidString
 
   public init(
-    queue: JobQueue? = nil,
-    data: [JobQueueName: [JobID: AnyJob]]
+    queue: JobQueueProtocol? = nil,
+    data: [JobQueueName: [JobID: AnyJob]],
+    logger: Logger
   ) {
+    self.logger = logger
     self.queue = queue
     self.data = data
   }
 
-  public func get(_ id: JobID, queue: JobQueue?) -> Result<AnyJob, Error> {
+  public func get(_ id: JobID, queue: JobQueueProtocol?) -> Result<AnyJob, Error> {
     guard let queue = (queue ?? self.queue) else {
       return .failure(JobStorageError.noQueueProvided)
     }
@@ -39,7 +45,7 @@ public class JobQueueInMemoryStorageTransaction: JobStorageTransaction {
     return .success(job)
   }
 
-  public func get<T>(_ id: JobID, queue: JobQueue?) -> Result<T, Error> where T: Job {
+  public func get<T>(_ id: JobID, queue: JobQueueProtocol?) -> Result<T, Error> where T: Job {
     switch self.get(id, queue: queue) {
     case .success(let job):
       guard let job = job as? T else {
@@ -51,11 +57,11 @@ public class JobQueueInMemoryStorageTransaction: JobStorageTransaction {
     }
   }
 
-  public func get<T>(_ type: T.Type, _ id: JobID, queue: JobQueue?) -> Result<T, Error> where T : Job {
+  public func get<T>(_ type: T.Type, _ id: JobID, queue: JobQueueProtocol?) -> Result<T, Error> where T : Job {
     self.get(id, queue: queue)
   }
 
-  public func getAll(queue: JobQueue?) -> Result<[AnyJob], Error> {
+  public func getAll(queue: JobQueueProtocol?) -> Result<[AnyJob], Error> {
     guard let queue = (queue ?? self.queue) else {
       return .failure(JobStorageError.noQueueProvided)
     }
@@ -65,7 +71,7 @@ public class JobQueueInMemoryStorageTransaction: JobStorageTransaction {
     return .success(jobs.values.map { $0 })
   }
 
-  public func store(_ job: AnyJob, queue: JobQueue?) -> Result<AnyJob, Error> {
+  public func store(_ job: AnyJob, queue: JobQueueProtocol?) -> Result<AnyJob, Error> {
     guard let queue = (queue ?? self.queue) else {
       return .failure(JobStorageError.noQueueProvided)
     }
@@ -76,7 +82,7 @@ public class JobQueueInMemoryStorageTransaction: JobStorageTransaction {
     return .success(job)
   }
 
-  public func store<T>(_ job: T, queue: JobQueue?) -> Result<T, Error> where T: Job {
+  public func store<T>(_ job: T, queue: JobQueueProtocol?) -> Result<T, Error> where T: Job {
     guard let queue = (queue ?? self.queue) else {
       return .failure(JobStorageError.noQueueProvided)
     }
@@ -87,11 +93,11 @@ public class JobQueueInMemoryStorageTransaction: JobStorageTransaction {
     return .success(job)
   }
 
-  public func store<T>(_ type: T.Type, _ job: T, queue: JobQueue?) -> Result<T, Error> where T : Job {
+  public func store<T>(_ type: T.Type, _ job: T, queue: JobQueueProtocol?) -> Result<T, Error> where T : Job {
     self.store(job, queue: queue)
   }
 
-  public func remove(_ id: JobID, queue: JobQueue?) -> Result<JobID, Error> {
+  public func remove(_ id: JobID, queue: JobQueueProtocol?) -> Result<JobID, Error> {
     guard let queue = (queue ?? self.queue) else {
       return .failure(JobStorageError.noQueueProvided)
     }
@@ -107,7 +113,7 @@ public class JobQueueInMemoryStorageTransaction: JobStorageTransaction {
     return .success(id)
   }
 
-  public func remove(_ job: AnyJob, queue: JobQueue?) -> Result<AnyJob, Error> {
+  public func remove(_ job: AnyJob, queue: JobQueueProtocol?) -> Result<AnyJob, Error> {
     guard let queue = (queue ?? self.queue) else {
       return .failure(JobStorageError.noQueueProvided)
     }
@@ -123,7 +129,7 @@ public class JobQueueInMemoryStorageTransaction: JobStorageTransaction {
     return .success(job)
   }
 
-  public func remove<T>(_ job: T, queue: JobQueue?) -> Result<T, Error> where T: Job {
+  public func remove<T>(_ job: T, queue: JobQueueProtocol?) -> Result<T, Error> where T: Job {
     guard let queue = (queue ?? self.queue) else {
       return .failure(JobStorageError.noQueueProvided)
     }
@@ -139,11 +145,11 @@ public class JobQueueInMemoryStorageTransaction: JobStorageTransaction {
     return .success(job)
   }
 
-  public func remove<T>(_ type: T.Type, _ job: T, queue: JobQueue?) -> Result<T, Error> where T : Job {
+  public func remove<T>(_ type: T.Type, _ job: T, queue: JobQueueProtocol?) -> Result<T, Error> where T : Job {
     self.remove(job, queue: queue)
   }
 
-  public func removeAll(queue: JobQueue?) -> Result<Void, Error> {
+  public func removeAll(queue: JobQueueProtocol?) -> Result<Void, Error> {
     guard let queue = (queue ?? self.queue) else {
       return .failure(JobStorageError.noQueueProvided)
     }
@@ -159,19 +165,23 @@ public class JobQueueInMemoryStorageTransaction: JobStorageTransaction {
 public class JobQueueInMemoryStorage: JobStorage {
   private var data = [JobQueueName: [JobID: AnyJob]]()
   private let scheduler: Scheduler
+  private let logger: Logger
 
-  public init(scheduler: Scheduler) {
+  public init(scheduler: Scheduler, logger: Logger = ConsoleLogger()) {
     self.scheduler = scheduler
+    self.logger = logger
   }
 
-  public func transaction<T>(queue: JobQueue, _ closure: @escaping (JobStorageTransaction) throws -> T) -> SignalProducer<T, Error> {
+  public func transaction<T>(queue: JobQueueProtocol, _ closure: @escaping (JobStorageTransaction) throws -> T) -> SignalProducer<T, Error> {
     return SignalProducer { o, lt in
-      let transaction = JobQueueInMemoryStorageTransaction(queue: queue, data: self.data)
+      let transaction = JobQueueInMemoryStorageTransaction(queue: queue, data: self.data, logger: self.logger)
+
       do {
         let result = try closure(transaction)
         transaction.changes.forEach { change in
           switch change {
           case .stored(let queueName, let jobId, let job):
+            self.logger.trace("Storage applying .stored(\(queueName), \(jobId), \(job.status) from tx \(transaction.id)")
             var jobs = self.data[queueName, default: [JobID: AnyJob]()]
             jobs[jobId] = job
             self.data[queueName] = jobs
@@ -179,12 +189,15 @@ public class JobQueueInMemoryStorage: JobStorage {
             guard var jobs = self.data[queueName] else {
               return
             }
+            self.logger.trace("Storage applying .removed(\(queueName), \(jobId), \(job.status) from tx \(transaction.id)")
             jobs[jobId] = job
             self.data[queueName] = jobs
           case .removedAll(let queueName):
+            self.logger.trace("Storage applying .removedAll(\(queueName)) from tx \(transaction.id)")
             self.data.removeValue(forKey: queueName)
           }
         }
+        self.logger.trace("COMMITTED TRANSACTION \(transaction.id)")
         o.send(value: result)
         o.sendCompleted()
       } catch {

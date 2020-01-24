@@ -4,6 +4,9 @@
 
 import Foundation
 import ReactiveSwift
+#if SWIFT_PACKAGE
+import JobQueueCore
+#endif
 
 public enum JobQueueError: Error {
   case jobNotFound(JobID)
@@ -24,7 +27,7 @@ public enum JobQueueEvent {
   case finishedProcessing(AnyJob)
 }
 
-public final class JobQueue {
+public final class JobQueue: JobQueueProtocol {
   public let name: String
 
   private let _isActive = MutableProperty(false)
@@ -34,6 +37,8 @@ public final class JobQueue {
 
   private let _isSynchronizing = MutableProperty(false)
   private let isSynchronizing: Property<Bool>
+  private let _isSynchronizePending = MutableProperty(false)
+  private let isSynchronizePending: Property<Bool>
 
   private let _events = Signal<JobQueueEvent, Never>.pipe()
   /// An observable stream of events produced by the queue
@@ -64,6 +69,7 @@ public final class JobQueue {
     self.delayStrategy = delayStrategy
     self.isActive = Property(capturing: self._isActive)
     self.isSynchronizing = Property(capturing: self._isSynchronizing)
+    self.isSynchronizePending = Property(capturing: self._isSynchronizePending)
     self.events = self._events.output
     self.logger = logger
 
@@ -74,22 +80,19 @@ public final class JobQueue {
      Once those conditions are met, the `_isSynchronizing` property is set to `true`,
      which has the side effect of triggering synchronization.
      */
-    disposables += SignalProducer.combineLatest(
-      self.shouldSynchronize.output.producer,
-      self.isActive,
-      self.isSynchronizing
-    )
-    .filter { _, isActive, isSynchronizing in
-      isActive && !isSynchronizing
-    }
-    .throttle(0.5, on: self.schedulers.shouldSynchronize)
-    .map { _ in }
-    .on(value: {
-      logger.trace("Queue (\(name)) will set _isSynchronizing to true")
-      self._isSynchronizing.value = true
-      logger.trace("Queue (\(name)) did set _isSynchronizing to true")
-    })
-    .start()
+    self.disposables += self.isSynchronizePending.producer
+      .filter { $0 }
+      .throttle(0.5, on: self.schedulers.synchronizePending)
+      .throttle(while: self.isActive.map { !$0 }, on: self.schedulers.synchronizePending)
+      .throttle(while: self.isSynchronizing.map { $0 }, on: self.schedulers.synchronizePending)
+      .map { _ in }
+      .on(value: {
+        logger.trace("Queue (\(name)) will set _isSynchronizing to true")
+        self._isSynchronizePending.value = false
+        self._isSynchronizing.value = true
+        logger.trace("Queue (\(name)) did set _isSynchronizing to true")
+      })
+      .start()
 
     /**
      Monitor `isSynchronizing`
@@ -104,9 +107,12 @@ public final class JobQueue {
         logger.trace("Queue (\(name)) isSynchronizing is true, will get all jobs and synchronize...")
       }
       .flatMap(.concat) { self.getAll() }
-      .on(value: { _ in
-        logger.trace("Queue (\(name)) did get all jobs, will synchronize")
-      })
+      .on(
+        value: { jobs in
+          logger.trace("Queue (\(name)) jobs to synchronize: \(jobs.map { ($0.id, $0.status) })")
+          logger.trace("Queue (\(name)) did get all jobs, will synchronize")
+        }
+      )
       .flatMap(.concat) { self.synchronize(jobs: $0) }
       .on(value: {
         logger.trace("Queue (\(name)) did synchronize, will set _isSynchronizing to false")
@@ -186,12 +192,14 @@ public extension JobQueue {
   func set(_ id: JobID, status: JobStatus) -> SignalProducer<AnyJob, Error> {
     return self.transaction {
       var job = (try $0.get(id).get())
-      guard !job.status.isActive else {
+      guard job.status != status else {
         return job
       }
       job.status = status
+      self.logger.trace("QUEUE (\(self.name)) storing job with new status of \(job.status)")
       return try $0.store(job).get()
     }.on(completed: {
+      self.logger.trace("QUEUE (\(self.name)) set job \(id) status to \(status)")
       self.scheduleSynchronization()
     })
   }
@@ -338,7 +346,10 @@ public extension JobQueue {
 
 private extension JobQueue {
   func scheduleSynchronization() {
-    self.shouldSynchronize.input.send(value: ())
+    guard !self.isSynchronizePending.value else {
+      return
+    }
+    self._isSynchronizePending.swap(true)
   }
 
   func configureDelayTimer(for jobs: [AnyJob]) {}
@@ -379,7 +390,7 @@ private extension JobQueue {
       // Process jobs to process
       lt += SignalProducer(
         jobsToProcessByName.reduce(into: [AnyJob]()) { acc, kvp in
-          acc.append(contentsOf: kvp.value)
+          acc.append(contentsOf: kvp.value.filter { !self.processors.isProcessing(job: $0) })
         }
       ).flatMap(.concat) {
         self.beginProcessing(job: $0)
@@ -431,7 +442,18 @@ private extension JobQueue {
    - Parameter job: the job to process
    */
   func beginProcessing(job: AnyJob) -> SignalProducer<AnyJob, Error> {
-    return self.set(job, status: .active)
+    return
+      self.get(job.id)
+        .filter {
+          self.logger.trace("Queue \(self.name) beginProcessing job \(($0.id, $0.status))")
+          switch $0.status {
+          case .active, .waiting:
+            return true
+          default:
+            return false
+          }
+        }
+      .flatMap(.concat) { self.set($0, status: .active) }
       .on(
         value: { _job in
           guard let processor = self.processors.activeProcessor(for: _job) else {
@@ -443,11 +465,13 @@ private extension JobQueue {
               case .success:
                 self.logger.trace("Queue (\(self.name)) job \(_job.id) processed")
                 self.set(_job.id, status: .completed(at: Date()))
-                  .on(value: {
-                    self.processors.remove(processors: [$0.id])
-                    self.logger.trace("Queue (\(self.name)) removed processor for job \($0.id)")
-                    self._events.input.send(value: .finishedProcessing($0))
-                })
+                  .on(
+                    value: {
+                      self.processors.remove(processors: [$0.id])
+                      self.logger.trace("Queue (\(self.name)) removed processor for job \($0.id)")
+                      self._events.input.send(value: .finishedProcessing($0))
+                    }
+                  )
                   .start()
               case .failure(let error):
                 self.logger.trace("Queue (\(self.name)) job \(_job.id) failed processing \(error.localizedDescription)")

@@ -21,3 +21,8 @@ public func notImplemented(_ message: @autoclosure () -> String = String(), file
   let message = message()
   fatalError(message != String() ? message : "Not implemented", file: file, line: line)
 }
+
+public func abstract(_ message: @autoclosure () -> String = String(), file: StaticString = #file, line: UInt = #line) -> Never {
+  let message = message()
+  fatalError(message != String() ? message : "Function is abstract", file: file, line: line)
+}

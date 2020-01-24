@@ -3,6 +3,9 @@
 ///
 
 import Foundation
+#if SWIFT_PACKAGE
+import JobQueueCore
+#endif
 
 struct JobProcessorConfiguration {
   let concurrency: Int
@@ -51,6 +54,15 @@ class JobQueueProcessors {
       }
       acc[kvp.key] = nextProcessorsByJobID
     }
+  }
+
+  /**
+   Return true if the job already has an active processor
+
+   - Parameter job: the job to check
+   */
+  func isProcessing(job: AnyJob) -> Bool {
+    return self.active[job.name]?[job.id] != nil
   }
 
   /**

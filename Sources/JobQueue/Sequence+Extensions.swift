@@ -3,6 +3,9 @@
 ///
 
 import Foundation
+#if SWIFT_PACKAGE
+import JobQueueCore
+#endif
 
 internal extension Sequence where Element == AnyJob {
   var earliestDelayedJob: Element? {

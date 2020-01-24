@@ -13,24 +13,24 @@ public enum JobStorageError: Error {
 }
 
 public protocol JobStorage {
-  func transaction<T>(queue: JobQueue, _ closure: @escaping (JobStorageTransaction) throws -> T) -> SignalProducer<T, Error>
+  func transaction<T>(queue: JobQueueProtocol, _ closure: @escaping (JobStorageTransaction) throws -> T) -> SignalProducer<T, Error>
 }
 
 public protocol JobStorageTransaction {
-  func get(_ id: JobID, queue: JobQueue?) -> Result<AnyJob, Error>
-  func get<T>(_ id: JobID, queue: JobQueue?) -> Result<T, Error> where T: Job
-  func get<T>(_ type: T.Type, _ id: JobID, queue: JobQueue?) -> Result<T, Error> where T: Job
-  func getAll(queue: JobQueue?) -> Result<[AnyJob], Error>
+  func get(_ id: JobID, queue: JobQueueProtocol?) -> Result<AnyJob, Error>
+  func get<T>(_ id: JobID, queue: JobQueueProtocol?) -> Result<T, Error> where T: Job
+  func get<T>(_ type: T.Type, _ id: JobID, queue: JobQueueProtocol?) -> Result<T, Error> where T: Job
+  func getAll(queue: JobQueueProtocol?) -> Result<[AnyJob], Error>
 
-  func store(_ job: AnyJob, queue: JobQueue?) -> Result<AnyJob, Error>
-  func store<T>(_ job: T, queue: JobQueue?) -> Result<T, Error> where T: Job
-  func store<T>(_ type: T.Type, _ job: T, queue: JobQueue?) -> Result<T, Error> where T: Job
+  func store(_ job: AnyJob, queue: JobQueueProtocol?) -> Result<AnyJob, Error>
+  func store<T>(_ job: T, queue: JobQueueProtocol?) -> Result<T, Error> where T: Job
+  func store<T>(_ type: T.Type, _ job: T, queue: JobQueueProtocol?) -> Result<T, Error> where T: Job
 
-  func remove(_ id: JobID, queue: JobQueue?) -> Result<JobID, Error>
-  func remove(_ job: AnyJob, queue: JobQueue?) -> Result<AnyJob, Error>
-  func remove<T>(_ job: T, queue: JobQueue?) -> Result<T, Error> where T: Job
-  func remove<T>(_ type: T.Type, _ job: T, queue: JobQueue?) -> Result<T, Error> where T: Job
-  func removeAll(queue: JobQueue?) -> Result<Void, Error>
+  func remove(_ id: JobID, queue: JobQueueProtocol?) -> Result<JobID, Error>
+  func remove(_ job: AnyJob, queue: JobQueueProtocol?) -> Result<AnyJob, Error>
+  func remove<T>(_ job: T, queue: JobQueueProtocol?) -> Result<T, Error> where T: Job
+  func remove<T>(_ type: T.Type, _ job: T, queue: JobQueueProtocol?) -> Result<T, Error> where T: Job
+  func removeAll(queue: JobQueueProtocol?) -> Result<Void, Error>
 }
 
 public extension JobStorageTransaction {
