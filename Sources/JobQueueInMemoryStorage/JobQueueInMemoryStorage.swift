@@ -3,8 +3,10 @@
 ///
 
 import Foundation
-import JobQueueCore
 import ReactiveSwift
+#if SWIFT_PACKAGE
+import JobQueueCore
+#endif
 
 public enum JobStorageTransactionChange {
   case stored(JobQueueName, JobID, AnyJob)
