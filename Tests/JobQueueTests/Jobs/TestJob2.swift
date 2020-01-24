@@ -3,6 +3,7 @@
 ///
 
 import Foundation
+import JobQueueCore
 import JobQueue
 
 struct TestPayload1: Codable, Equatable {

@@ -14,10 +14,15 @@ let package = Package(
   products: [
     .library(
       name: "JobQueue",
-      targets: [
-        "JobQueue",
-        "JobQueueInMemoryStorage"
-      ]
+      targets: ["JobQueue"]
+    ),
+    .library(
+      name: "JobQueueCore",
+      targets: ["JobQueueCore"]
+    ),
+    .library(
+      name: "JobQueueInMemoryStorage",
+      targets: ["JobQueueInMemoryStorage"]
     )
   ],
   dependencies: [
@@ -28,11 +33,15 @@ let package = Package(
   targets: [
     .target(
       name: "JobQueue",
+      dependencies: ["JobQueueCore", "ReactiveSwift"]
+    ),
+    .target(
+      name: "JobQueueCore",
       dependencies: ["ReactiveSwift"]
     ),
     .target(
       name: "JobQueueInMemoryStorage",
-      dependencies: ["JobQueue", "ReactiveSwift"]
+      dependencies: ["JobQueueCore", "ReactiveSwift"]
     ),
     .testTarget(
       name: "JobQueueTests",

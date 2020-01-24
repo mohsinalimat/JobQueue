@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B927040B23DA313200558FFE"
-               BuildableName = "JobQueueInMemoryStorage.framework"
-               BlueprintName = "JobQueueInMemoryStorage.iOS"
+               BlueprintIdentifier = "B9E9D21F23DA697C00D89111"
+               BuildableName = "JobQueueCore.framework"
+               BlueprintName = "JobQueueCore.tvOS"
                ReferencedContainer = "container:JobQueue.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,20 +28,10 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B92703C623DA2E7E00558FFE"
-               BuildableName = "JobQueueTests.xctest"
-               BlueprintName = "JobQueue.tests.iOS"
-               ReferencedContainer = "container:JobQueue.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -60,15 +50,15 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B927040B23DA313200558FFE"
-            BuildableName = "JobQueueInMemoryStorage.framework"
-            BlueprintName = "JobQueueInMemoryStorage.iOS"
+            BlueprintIdentifier = "B9E9D21F23DA697C00D89111"
+            BuildableName = "JobQueueCore.framework"
+            BlueprintName = "JobQueueCore.tvOS"
             ReferencedContainer = "container:JobQueue.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
-      buildConfiguration = "Release">
+      buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"

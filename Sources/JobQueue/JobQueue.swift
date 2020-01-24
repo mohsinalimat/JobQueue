@@ -24,7 +24,7 @@ public enum JobQueueEvent {
   case finishedProcessing(AnyJob)
 }
 
-public final class JobQueue {
+public final class JobQueue: JobQueueProtocol {
   public let name: String
 
   private let _isActive = MutableProperty(false)

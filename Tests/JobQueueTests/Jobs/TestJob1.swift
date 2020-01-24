@@ -3,6 +3,7 @@
 ///
 
 import Foundation
+import JobQueueCore
 import JobQueue
 
 struct TestJob1: Job {

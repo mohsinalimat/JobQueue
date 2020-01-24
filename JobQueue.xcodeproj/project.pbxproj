@@ -10,31 +10,17 @@
 		16C6B589F9E12F87CFB7CA5E /* Pods_All_Frameworks_JobQueue_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 996CE280A2CEA4D81D8FCCA6 /* Pods_All_Frameworks_JobQueue_iOS.framework */; };
 		2099DE9EDAC3AFD90B7B3380 /* Pods_All_Tests_JobQueue_tests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E3643A028E6E1C1DDFE7EC6 /* Pods_All_Tests_JobQueue_tests_iOS.framework */; };
 		26DA9821D08A040E161B27F4 /* Pods_All_Frameworks_JobQueueInMemoryStorage_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EE919418E9E778CFAF02915 /* Pods_All_Frameworks_JobQueueInMemoryStorage_tvOS.framework */; };
+		3BDB1334BD7E12351F608193 /* Pods_All_Frameworks_JobQueueCore_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E87037DBFA33C9DF106401 /* Pods_All_Frameworks_JobQueueCore_tvOS.framework */; };
+		3C1080F2A245CE2256E79B95 /* Pods_All_Frameworks_JobQueueCore_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66E7C355FA1316664C816993 /* Pods_All_Frameworks_JobQueueCore_iOS.framework */; };
 		577AE30132907B64BDF3C1C3 /* Pods_All_Frameworks_JobQueueInMemoryStorage_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 782D7D72CA30CAFF65E54483 /* Pods_All_Frameworks_JobQueueInMemoryStorage_iOS.framework */; };
 		64C73E6A4A9037D532188C47 /* Pods_All_Frameworks_JobQueue_watchOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299FEBD0140565ADC2D17D5F /* Pods_All_Frameworks_JobQueue_watchOS.framework */; };
+		85FD43363A92EDCD7161AE9A /* Pods_All_Frameworks_JobQueueCore_watchOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69D80BD02C0307362950B994 /* Pods_All_Frameworks_JobQueueCore_watchOS.framework */; };
 		9543B072E6BCB33A3BE83AD1 /* Pods_All_Tests_JobQueue_tests_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 327911DD81E0D482E20A043B /* Pods_All_Tests_JobQueue_tests_macOS.framework */; };
 		96FBC82860D78D973B4A5EE3 /* Pods_All_Tests_JobQueue_tests_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D193EA324B38B47B50C332E /* Pods_All_Tests_JobQueue_tests_tvOS.framework */; };
 		AA52AC03300A93F1CBA172B0 /* Pods_All_Frameworks_JobQueue_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8B482A7659CD75E03774EFC /* Pods_All_Frameworks_JobQueue_tvOS.framework */; };
+		B7F63F1DE6A940FC7707854E /* Pods_All_Frameworks_JobQueueCore_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0434719EE7DBA67DF3E339A /* Pods_All_Frameworks_JobQueueCore_macOS.framework */; };
 		B92703C823DA2E7E00558FFE /* JobQueue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92703BE23DA2E7E00558FFE /* JobQueue.framework */; };
-		B92703EF23DA302E00558FFE /* JobCancellation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703DD23DA302E00558FFE /* JobCancellation.swift */; };
-		B92703F023DA302E00558FFE /* JobStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703DE23DA302E00558FFE /* JobStorage.swift */; };
-		B92703F123DA302E00558FFE /* JobSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703DF23DA302E00558FFE /* JobSchedule.swift */; };
-		B92703F223DA302E00558FFE /* JobQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E023DA302E00558FFE /* JobQueue.swift */; };
-		B92703F323DA302E00558FFE /* JobQueueSchedulers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E123DA302E00558FFE /* JobQueueSchedulers.swift */; };
-		B92703F423DA302E00558FFE /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E223DA302E00558FFE /* Logger.swift */; };
-		B92703F523DA302E00558FFE /* JobStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E323DA302E00558FFE /* JobStatus.swift */; };
-		B92703F623DA302E00558FFE /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E423DA302E00558FFE /* Common.swift */; };
-		B92703F723DA302E00558FFE /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E523DA302E00558FFE /* Sequence+Extensions.swift */; };
-		B92703F823DA302E00558FFE /* JobType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E623DA302E00558FFE /* JobType.swift */; };
-		B92703F923DA302E00558FFE /* JobQueueDelayStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E723DA302E00558FFE /* JobQueueDelayStrategy.swift */; };
-		B92703FA23DA302E00558FFE /* JobProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E823DA302E00558FFE /* JobProcessor.swift */; };
-		B92703FB23DA302E00558FFE /* JobQueueProcessors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E923DA302E00558FFE /* JobQueueProcessors.swift */; };
-		B92703FC23DA302E00558FFE /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703EA23DA302E00558FFE /* Dictionary+Extensions.swift */; };
-		B92703FD23DA302E00558FFE /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703EB23DA302E00558FFE /* Date+Extensions.swift */; };
-		B92703FE23DA302E00558FFE /* JobSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703EC23DA302E00558FFE /* JobSorter.swift */; };
-		B92703FF23DA302E00558FFE /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703ED23DA302E00558FFE /* Job.swift */; };
 		B927040423DA307700558FFE /* JobQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = B927040123DA307700558FFE /* JobQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B927041423DA317900558FFE /* JobStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703DB23DA302E00558FFE /* JobStorage.swift */; };
 		B927042423DA33AA00558FFE /* JobSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B927041723DA33AA00558FFE /* JobSchedule.swift */; };
 		B927042523DA33AA00558FFE /* JobQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B927041823DA33AA00558FFE /* JobQueue.swift */; };
 		B927042623DA33AA00558FFE /* JobStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B927041923DA33AA00558FFE /* JobStatus.swift */; };
@@ -47,45 +33,7 @@
 		B927042D23DA33AA00558FFE /* The.swift in Sources */ = {isa = PBXBuildFile; fileRef = B927042223DA33AA00558FFE /* The.swift */; };
 		B927042E23DA33AA00558FFE /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = B927042323DA33AA00558FFE /* Job.swift */; };
 		B927043323DA371300558FFE /* JobQueueInMemoryStorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B927040C23DA313200558FFE /* JobQueueInMemoryStorage.framework */; };
-		B927044123DA38BD00558FFE /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E423DA302E00558FFE /* Common.swift */; };
-		B927044223DA38BD00558FFE /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703EB23DA302E00558FFE /* Date+Extensions.swift */; };
-		B927044323DA38BD00558FFE /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703EA23DA302E00558FFE /* Dictionary+Extensions.swift */; };
-		B927044423DA38BD00558FFE /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703ED23DA302E00558FFE /* Job.swift */; };
-		B927044523DA38BD00558FFE /* JobCancellation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703DD23DA302E00558FFE /* JobCancellation.swift */; };
-		B927044623DA38BD00558FFE /* JobProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E823DA302E00558FFE /* JobProcessor.swift */; };
-		B927044723DA38BD00558FFE /* JobQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E023DA302E00558FFE /* JobQueue.swift */; };
-		B927044823DA38BD00558FFE /* JobQueueDelayStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E723DA302E00558FFE /* JobQueueDelayStrategy.swift */; };
-		B927044923DA38BD00558FFE /* JobQueueProcessors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E923DA302E00558FFE /* JobQueueProcessors.swift */; };
-		B927044A23DA38BD00558FFE /* JobQueueSchedulers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E123DA302E00558FFE /* JobQueueSchedulers.swift */; };
-		B927044B23DA38BD00558FFE /* JobSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703DF23DA302E00558FFE /* JobSchedule.swift */; };
-		B927044C23DA38BD00558FFE /* JobSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703EC23DA302E00558FFE /* JobSorter.swift */; };
-		B927044D23DA38BD00558FFE /* JobStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E323DA302E00558FFE /* JobStatus.swift */; };
-		B927044E23DA38BD00558FFE /* JobStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703DE23DA302E00558FFE /* JobStorage.swift */; };
-		B927044F23DA38BD00558FFE /* JobType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E623DA302E00558FFE /* JobType.swift */; };
-		B927045023DA38BD00558FFE /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E223DA302E00558FFE /* Logger.swift */; };
-		B927045123DA38BD00558FFE /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E523DA302E00558FFE /* Sequence+Extensions.swift */; };
 		B927047C23DA3AB000558FFE /* JobQueue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B927047323DA3AB000558FFE /* JobQueue.framework */; };
-		B927048A23DA3AF000558FFE /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E423DA302E00558FFE /* Common.swift */; };
-		B927048B23DA3AF000558FFE /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703EB23DA302E00558FFE /* Date+Extensions.swift */; };
-		B927048C23DA3AF000558FFE /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703EA23DA302E00558FFE /* Dictionary+Extensions.swift */; };
-		B927048D23DA3AF000558FFE /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703ED23DA302E00558FFE /* Job.swift */; };
-		B927048E23DA3AF000558FFE /* JobCancellation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703DD23DA302E00558FFE /* JobCancellation.swift */; };
-		B927048F23DA3AF000558FFE /* JobProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E823DA302E00558FFE /* JobProcessor.swift */; };
-		B927049023DA3AF000558FFE /* JobQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E023DA302E00558FFE /* JobQueue.swift */; };
-		B927049123DA3AF000558FFE /* JobQueueDelayStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E723DA302E00558FFE /* JobQueueDelayStrategy.swift */; };
-		B927049223DA3AF000558FFE /* JobQueueProcessors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E923DA302E00558FFE /* JobQueueProcessors.swift */; };
-		B927049323DA3AF000558FFE /* JobQueueSchedulers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E123DA302E00558FFE /* JobQueueSchedulers.swift */; };
-		B927049423DA3AF000558FFE /* JobSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703DF23DA302E00558FFE /* JobSchedule.swift */; };
-		B927049523DA3AF000558FFE /* JobSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703EC23DA302E00558FFE /* JobSorter.swift */; };
-		B927049623DA3AF000558FFE /* JobStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E323DA302E00558FFE /* JobStatus.swift */; };
-		B927049723DA3AF000558FFE /* JobStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703DE23DA302E00558FFE /* JobStorage.swift */; };
-		B927049823DA3AF000558FFE /* JobType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E623DA302E00558FFE /* JobType.swift */; };
-		B927049923DA3AF000558FFE /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E223DA302E00558FFE /* Logger.swift */; };
-		B927049A23DA3AF000558FFE /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E523DA302E00558FFE /* Sequence+Extensions.swift */; };
-		B92704A823DA3BF900558FFE /* JobStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703DB23DA302E00558FFE /* JobStorage.swift */; };
-		B92704A923DA3BF900558FFE /* JobStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703DB23DA302E00558FFE /* JobStorage.swift */; };
-		B92704AC23DA3C0E00558FFE /* JobQueue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B927043923DA386100558FFE /* JobQueue.framework */; };
-		B92704AF23DA3C1900558FFE /* JobQueue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B927047323DA3AB000558FFE /* JobQueue.framework */; };
 		B92704B223DA3C7A00558FFE /* JobQueueInMemoryStorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92704A023DA3B9C00558FFE /* JobQueueInMemoryStorage.framework */; };
 		B92704B323DA3C8E00558FFE /* JobSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B927041723DA33AA00558FFE /* JobSchedule.swift */; };
 		B92704B423DA3C8E00558FFE /* JobQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B927041823DA33AA00558FFE /* JobQueue.swift */; };
@@ -98,24 +46,6 @@
 		B92704BB23DA3C9600558FFE /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B927042123DA33AA00558FFE /* Storage.swift */; };
 		B92704BC23DA3C9600558FFE /* The.swift in Sources */ = {isa = PBXBuildFile; fileRef = B927042223DA33AA00558FFE /* The.swift */; };
 		B92704BD23DA3C9600558FFE /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = B927042323DA33AA00558FFE /* Job.swift */; };
-		B92704E723DA3DF500558FFE /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E423DA302E00558FFE /* Common.swift */; };
-		B92704E823DA3DF500558FFE /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703EB23DA302E00558FFE /* Date+Extensions.swift */; };
-		B92704E923DA3DF500558FFE /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703EA23DA302E00558FFE /* Dictionary+Extensions.swift */; };
-		B92704EA23DA3DF500558FFE /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703ED23DA302E00558FFE /* Job.swift */; };
-		B92704EB23DA3DF500558FFE /* JobCancellation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703DD23DA302E00558FFE /* JobCancellation.swift */; };
-		B92704EC23DA3DF500558FFE /* JobProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E823DA302E00558FFE /* JobProcessor.swift */; };
-		B92704ED23DA3DF500558FFE /* JobQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E023DA302E00558FFE /* JobQueue.swift */; };
-		B92704EE23DA3DF500558FFE /* JobQueueDelayStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E723DA302E00558FFE /* JobQueueDelayStrategy.swift */; };
-		B92704EF23DA3DF500558FFE /* JobQueueProcessors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E923DA302E00558FFE /* JobQueueProcessors.swift */; };
-		B92704F023DA3DF500558FFE /* JobQueueSchedulers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E123DA302E00558FFE /* JobQueueSchedulers.swift */; };
-		B92704F123DA3DF500558FFE /* JobSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703DF23DA302E00558FFE /* JobSchedule.swift */; };
-		B92704F223DA3DF500558FFE /* JobSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703EC23DA302E00558FFE /* JobSorter.swift */; };
-		B92704F323DA3DF500558FFE /* JobStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E323DA302E00558FFE /* JobStatus.swift */; };
-		B92704F423DA3DF500558FFE /* JobStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703DE23DA302E00558FFE /* JobStorage.swift */; };
-		B92704F523DA3DF500558FFE /* JobType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E623DA302E00558FFE /* JobType.swift */; };
-		B92704F623DA3DF500558FFE /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E223DA302E00558FFE /* Logger.swift */; };
-		B92704F723DA3DF500558FFE /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703E523DA302E00558FFE /* Sequence+Extensions.swift */; };
-		B92704F823DA3DFA00558FFE /* JobStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92703DB23DA302E00558FFE /* JobStorage.swift */; };
 		B92704F923DA3E0600558FFE /* JobSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B927041723DA33AA00558FFE /* JobSchedule.swift */; };
 		B92704FA23DA3E0600558FFE /* JobQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B927041823DA33AA00558FFE /* JobQueue.swift */; };
 		B92704FB23DA3E0600558FFE /* JobStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B927041923DA33AA00558FFE /* JobStatus.swift */; };
@@ -127,9 +57,96 @@
 		B927050123DA3E0600558FFE /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B927042123DA33AA00558FFE /* Storage.swift */; };
 		B927050223DA3E0600558FFE /* The.swift in Sources */ = {isa = PBXBuildFile; fileRef = B927042223DA33AA00558FFE /* The.swift */; };
 		B927050323DA3E0600558FFE /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = B927042323DA33AA00558FFE /* Job.swift */; };
-		B927050623DA3E2300558FFE /* JobQueue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92704C323DA3D0100558FFE /* JobQueue.framework */; };
 		B958D3C323DA409500A4E144 /* JobQueue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92704C323DA3D0100558FFE /* JobQueue.framework */; };
 		B958D3C423DA409500A4E144 /* JobQueueInMemoryStorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92704DF23DA3D2900558FFE /* JobQueueInMemoryStorage.framework */; };
+		B9E9D1C923DA693A00D89111 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C523DA68C300D89111 /* Date+Extensions.swift */; };
+		B9E9D1CA23DA693A00D89111 /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C423DA68C300D89111 /* Dictionary+Extensions.swift */; };
+		B9E9D1CB23DA693A00D89111 /* Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1BB23DA68C300D89111 /* Index.swift */; };
+		B9E9D1CC23DA693A00D89111 /* JobCancellation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1BA23DA68C300D89111 /* JobCancellation.swift */; };
+		B9E9D1CD23DA693A00D89111 /* JobProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C223DA68C300D89111 /* JobProcessor.swift */; };
+		B9E9D1CE23DA693A00D89111 /* JobQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1BC23DA68C300D89111 /* JobQueue.swift */; };
+		B9E9D1CF23DA693A00D89111 /* JobQueueDelayStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C123DA68C300D89111 /* JobQueueDelayStrategy.swift */; };
+		B9E9D1D023DA693A00D89111 /* JobQueueProcessors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C323DA68C300D89111 /* JobQueueProcessors.swift */; };
+		B9E9D1D123DA693A00D89111 /* JobQueueSchedulers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1BD23DA68C300D89111 /* JobQueueSchedulers.swift */; };
+		B9E9D1D223DA693A00D89111 /* JobSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C623DA68C300D89111 /* JobSorter.swift */; };
+		B9E9D1D323DA693A00D89111 /* JobType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C023DA68C300D89111 /* JobType.swift */; };
+		B9E9D1D423DA693A00D89111 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1BE23DA68C300D89111 /* Logger.swift */; };
+		B9E9D1D523DA693A00D89111 /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1BF23DA68C300D89111 /* Sequence+Extensions.swift */; };
+		B9E9D1D623DA693B00D89111 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C523DA68C300D89111 /* Date+Extensions.swift */; };
+		B9E9D1D723DA693B00D89111 /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C423DA68C300D89111 /* Dictionary+Extensions.swift */; };
+		B9E9D1D823DA693B00D89111 /* Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1BB23DA68C300D89111 /* Index.swift */; };
+		B9E9D1D923DA693B00D89111 /* JobCancellation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1BA23DA68C300D89111 /* JobCancellation.swift */; };
+		B9E9D1DA23DA693B00D89111 /* JobProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C223DA68C300D89111 /* JobProcessor.swift */; };
+		B9E9D1DB23DA693B00D89111 /* JobQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1BC23DA68C300D89111 /* JobQueue.swift */; };
+		B9E9D1DC23DA693B00D89111 /* JobQueueDelayStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C123DA68C300D89111 /* JobQueueDelayStrategy.swift */; };
+		B9E9D1DD23DA693B00D89111 /* JobQueueProcessors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C323DA68C300D89111 /* JobQueueProcessors.swift */; };
+		B9E9D1DE23DA693B00D89111 /* JobQueueSchedulers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1BD23DA68C300D89111 /* JobQueueSchedulers.swift */; };
+		B9E9D1DF23DA693B00D89111 /* JobSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C623DA68C300D89111 /* JobSorter.swift */; };
+		B9E9D1E023DA693B00D89111 /* JobType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C023DA68C300D89111 /* JobType.swift */; };
+		B9E9D1E123DA693B00D89111 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1BE23DA68C300D89111 /* Logger.swift */; };
+		B9E9D1E223DA693B00D89111 /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1BF23DA68C300D89111 /* Sequence+Extensions.swift */; };
+		B9E9D1E323DA693B00D89111 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C523DA68C300D89111 /* Date+Extensions.swift */; };
+		B9E9D1E423DA693B00D89111 /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C423DA68C300D89111 /* Dictionary+Extensions.swift */; };
+		B9E9D1E523DA693C00D89111 /* Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1BB23DA68C300D89111 /* Index.swift */; };
+		B9E9D1E623DA693C00D89111 /* JobCancellation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1BA23DA68C300D89111 /* JobCancellation.swift */; };
+		B9E9D1E723DA693C00D89111 /* JobProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C223DA68C300D89111 /* JobProcessor.swift */; };
+		B9E9D1E823DA693C00D89111 /* JobQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1BC23DA68C300D89111 /* JobQueue.swift */; };
+		B9E9D1E923DA693C00D89111 /* JobQueueDelayStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C123DA68C300D89111 /* JobQueueDelayStrategy.swift */; };
+		B9E9D1EA23DA693C00D89111 /* JobQueueProcessors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C323DA68C300D89111 /* JobQueueProcessors.swift */; };
+		B9E9D1EB23DA693C00D89111 /* JobQueueSchedulers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1BD23DA68C300D89111 /* JobQueueSchedulers.swift */; };
+		B9E9D1EC23DA693C00D89111 /* JobSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C623DA68C300D89111 /* JobSorter.swift */; };
+		B9E9D1ED23DA693C00D89111 /* JobType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C023DA68C300D89111 /* JobType.swift */; };
+		B9E9D1EE23DA693C00D89111 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1BE23DA68C300D89111 /* Logger.swift */; };
+		B9E9D1EF23DA693C00D89111 /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1BF23DA68C300D89111 /* Sequence+Extensions.swift */; };
+		B9E9D1F023DA693C00D89111 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C523DA68C300D89111 /* Date+Extensions.swift */; };
+		B9E9D1F123DA693C00D89111 /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C423DA68C300D89111 /* Dictionary+Extensions.swift */; };
+		B9E9D1F223DA693C00D89111 /* Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1BB23DA68C300D89111 /* Index.swift */; };
+		B9E9D1F323DA693C00D89111 /* JobCancellation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1BA23DA68C300D89111 /* JobCancellation.swift */; };
+		B9E9D1F423DA693C00D89111 /* JobProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C223DA68C300D89111 /* JobProcessor.swift */; };
+		B9E9D1F523DA693C00D89111 /* JobQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1BC23DA68C300D89111 /* JobQueue.swift */; };
+		B9E9D1F623DA693C00D89111 /* JobQueueDelayStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C123DA68C300D89111 /* JobQueueDelayStrategy.swift */; };
+		B9E9D1F723DA693C00D89111 /* JobQueueProcessors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C323DA68C300D89111 /* JobQueueProcessors.swift */; };
+		B9E9D1F823DA693C00D89111 /* JobQueueSchedulers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1BD23DA68C300D89111 /* JobQueueSchedulers.swift */; };
+		B9E9D1F923DA693C00D89111 /* JobSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C623DA68C300D89111 /* JobSorter.swift */; };
+		B9E9D1FA23DA693C00D89111 /* JobType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C023DA68C300D89111 /* JobType.swift */; };
+		B9E9D1FB23DA693C00D89111 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1BE23DA68C300D89111 /* Logger.swift */; };
+		B9E9D1FC23DA693C00D89111 /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1BF23DA68C300D89111 /* Sequence+Extensions.swift */; };
+		B9E9D1FD23DA694300D89111 /* JobQueueInMemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C823DA68C400D89111 /* JobQueueInMemoryStorage.swift */; };
+		B9E9D1FE23DA694300D89111 /* JobQueueInMemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C823DA68C400D89111 /* JobQueueInMemoryStorage.swift */; };
+		B9E9D1FF23DA694400D89111 /* JobQueueInMemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C823DA68C400D89111 /* JobQueueInMemoryStorage.swift */; };
+		B9E9D20023DA694400D89111 /* JobQueueInMemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1C823DA68C400D89111 /* JobQueueInMemoryStorage.swift */; };
+		B9E9D23723DA6A8800D89111 /* JobQueueCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E9D20623DA695E00D89111 /* JobQueueCore.framework */; };
+		B9E9D23A23DA6A9700D89111 /* JobQueueCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E9D21323DA696F00D89111 /* JobQueueCore.framework */; };
+		B9E9D23D23DA6AAD00D89111 /* JobQueueCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E9D22D23DA699200D89111 /* JobQueueCore.framework */; };
+		B9E9D24023DA6AFC00D89111 /* JobQueueCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E9D22023DA697C00D89111 /* JobQueueCore.framework */; };
+		B9E9D24323DA6B9800D89111 /* JobQueueCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E9D20623DA695E00D89111 /* JobQueueCore.framework */; };
+		B9E9D24623DA6BAB00D89111 /* JobQueueCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E9D21323DA696F00D89111 /* JobQueueCore.framework */; };
+		B9E9D24923DA6BC000D89111 /* JobQueueCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E9D22D23DA699200D89111 /* JobQueueCore.framework */; };
+		B9E9D24C23DA6BE000D89111 /* JobQueueCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E9D22023DA697C00D89111 /* JobQueueCore.framework */; };
+		B9E9D24D23DA6C1D00D89111 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B723DA68C300D89111 /* Common.swift */; };
+		B9E9D24E23DA6C1D00D89111 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B823DA68C300D89111 /* Job.swift */; };
+		B9E9D24F23DA6C1D00D89111 /* JobQueueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B523DA68C300D89111 /* JobQueueProtocol.swift */; };
+		B9E9D25023DA6C1D00D89111 /* JobSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B423DA68C300D89111 /* JobSchedule.swift */; };
+		B9E9D25123DA6C1D00D89111 /* JobStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B623DA68C300D89111 /* JobStatus.swift */; };
+		B9E9D25223DA6C1D00D89111 /* JobStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B323DA68C300D89111 /* JobStorage.swift */; };
+		B9E9D25323DA6C1D00D89111 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B723DA68C300D89111 /* Common.swift */; };
+		B9E9D25423DA6C1D00D89111 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B823DA68C300D89111 /* Job.swift */; };
+		B9E9D25523DA6C1D00D89111 /* JobQueueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B523DA68C300D89111 /* JobQueueProtocol.swift */; };
+		B9E9D25623DA6C1D00D89111 /* JobSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B423DA68C300D89111 /* JobSchedule.swift */; };
+		B9E9D25723DA6C1D00D89111 /* JobStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B623DA68C300D89111 /* JobStatus.swift */; };
+		B9E9D25823DA6C1D00D89111 /* JobStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B323DA68C300D89111 /* JobStorage.swift */; };
+		B9E9D25923DA6C1E00D89111 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B723DA68C300D89111 /* Common.swift */; };
+		B9E9D25A23DA6C1E00D89111 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B823DA68C300D89111 /* Job.swift */; };
+		B9E9D25B23DA6C1E00D89111 /* JobQueueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B523DA68C300D89111 /* JobQueueProtocol.swift */; };
+		B9E9D25C23DA6C1E00D89111 /* JobSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B423DA68C300D89111 /* JobSchedule.swift */; };
+		B9E9D25D23DA6C1E00D89111 /* JobStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B623DA68C300D89111 /* JobStatus.swift */; };
+		B9E9D25E23DA6C1E00D89111 /* JobStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B323DA68C300D89111 /* JobStorage.swift */; };
+		B9E9D25F23DA6C1E00D89111 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B723DA68C300D89111 /* Common.swift */; };
+		B9E9D26023DA6C1E00D89111 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B823DA68C300D89111 /* Job.swift */; };
+		B9E9D26123DA6C1E00D89111 /* JobQueueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B523DA68C300D89111 /* JobQueueProtocol.swift */; };
+		B9E9D26223DA6C1E00D89111 /* JobSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B423DA68C300D89111 /* JobSchedule.swift */; };
+		B9E9D26323DA6C1E00D89111 /* JobStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B623DA68C300D89111 /* JobStatus.swift */; };
+		B9E9D26423DA6C1E00D89111 /* JobStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D1B323DA68C300D89111 /* JobStorage.swift */; };
 		C9EDB04115BAAFD9B331523D /* Pods_All_Frameworks_JobQueueInMemoryStorage_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17353D1DEFD255DBC1D6450F /* Pods_All_Frameworks_JobQueueInMemoryStorage_macOS.framework */; };
 		E497E197436815F111148881 /* Pods_All_Frameworks_JobQueueInMemoryStorage_watchOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1F9A852E7CC44A03CAA803B /* Pods_All_Frameworks_JobQueueInMemoryStorage_watchOS.framework */; };
 		E9817FA93AF1B6EF71759447 /* Pods_All_Frameworks_JobQueue_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C885964ED560D015C5A398E2 /* Pods_All_Frameworks_JobQueue_macOS.framework */; };
@@ -157,20 +174,6 @@
 			remoteGlobalIDString = B927047223DA3AB000558FFE;
 			remoteInfo = JobQueuemacOS;
 		};
-		B92704AA23DA3C0600558FFE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B92703B523DA2E7D00558FFE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B927043823DA386100558FFE;
-			remoteInfo = JobQueue.watchOS;
-		};
-		B92704AD23DA3C1400558FFE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B92703B523DA2E7D00558FFE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B927047223DA3AB000558FFE;
-			remoteInfo = JobQueue.macOS;
-		};
 		B92704B023DA3C6C00558FFE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B92703B523DA2E7D00558FFE /* Project object */;
@@ -185,13 +188,6 @@
 			remoteGlobalIDString = B92704C223DA3D0100558FFE;
 			remoteInfo = JobQueuetvOS;
 		};
-		B927050423DA3E1B00558FFE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B92703B523DA2E7D00558FFE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B92704C223DA3D0100558FFE;
-			remoteInfo = JobQueue.tvOS;
-		};
 		B927050823DA3E3400558FFE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B92703B523DA2E7D00558FFE /* Project object */;
@@ -199,20 +195,83 @@
 			remoteGlobalIDString = B92704DE23DA3D2900558FFE;
 			remoteInfo = JobQueueInMemoryStorage.tvOS;
 		};
+		B9E9D23523DA6A8000D89111 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B92703B523DA2E7D00558FFE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B9E9D20523DA695E00D89111;
+			remoteInfo = JobQueueCore.iOS;
+		};
+		B9E9D23823DA6A9100D89111 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B92703B523DA2E7D00558FFE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B9E9D21223DA696F00D89111;
+			remoteInfo = JobQueueCore.watchOS;
+		};
+		B9E9D23B23DA6AA300D89111 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B92703B523DA2E7D00558FFE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B9E9D22C23DA699200D89111;
+			remoteInfo = JobQueueCore.macOS;
+		};
+		B9E9D23E23DA6AEF00D89111 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B92703B523DA2E7D00558FFE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B9E9D21F23DA697C00D89111;
+			remoteInfo = JobQueueCore.tvOS;
+		};
+		B9E9D24123DA6B9100D89111 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B92703B523DA2E7D00558FFE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B9E9D20523DA695E00D89111;
+			remoteInfo = JobQueueCore.iOS;
+		};
+		B9E9D24423DA6BA300D89111 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B92703B523DA2E7D00558FFE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B9E9D21223DA696F00D89111;
+			remoteInfo = JobQueueCore.watchOS;
+		};
+		B9E9D24723DA6BB800D89111 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B92703B523DA2E7D00558FFE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B9E9D22C23DA699200D89111;
+			remoteInfo = JobQueueCore.macOS;
+		};
+		B9E9D24A23DA6BD900D89111 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B92703B523DA2E7D00558FFE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B9E9D21F23DA697C00D89111;
+			remoteInfo = JobQueueCore.tvOS;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		04A5A3BFD5CB23E919FF3D57 /* Pods-All-Frameworks-JobQueue.watchOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueue.watchOS.debug.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueue.watchOS/Pods-All-Frameworks-JobQueue.watchOS.debug.xcconfig"; sourceTree = "<group>"; };
 		0D193EA324B38B47B50C332E /* Pods_All_Tests_JobQueue_tests_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Tests_JobQueue_tests_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		17353D1DEFD255DBC1D6450F /* Pods_All_Frameworks_JobQueueInMemoryStorage_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Frameworks_JobQueueInMemoryStorage_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		17E87037DBFA33C9DF106401 /* Pods_All_Frameworks_JobQueueCore_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Frameworks_JobQueueCore_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E3643A028E6E1C1DDFE7EC6 /* Pods_All_Tests_JobQueue_tests_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Tests_JobQueue_tests_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2822AD3F2C78368EADCBE079 /* Pods-All-Tests-JobQueue.tests.tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Tests-JobQueue.tests.tvOS.release.xcconfig"; path = "Target Support Files/Pods-All-Tests-JobQueue.tests.tvOS/Pods-All-Tests-JobQueue.tests.tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		290E1496266F82CC91359B17 /* Pods-All-Tests-JobQueue.tests.tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Tests-JobQueue.tests.tvOS.debug.xcconfig"; path = "Target Support Files/Pods-All-Tests-JobQueue.tests.tvOS/Pods-All-Tests-JobQueue.tests.tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		299FEBD0140565ADC2D17D5F /* Pods_All_Frameworks_JobQueue_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Frameworks_JobQueue_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		327911DD81E0D482E20A043B /* Pods_All_Tests_JobQueue_tests_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Tests_JobQueue_tests_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		32AE247DC066789F6A7D1362 /* Pods-All-Frameworks-JobQueueCore.tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueueCore.tvOS.debug.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueueCore.tvOS/Pods-All-Frameworks-JobQueueCore.tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		3B43E4583A46CD72293BB48C /* Pods-All-Tests-JobQueue.tests.iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Tests-JobQueue.tests.iOS.release.xcconfig"; path = "Target Support Files/Pods-All-Tests-JobQueue.tests.iOS/Pods-All-Tests-JobQueue.tests.iOS.release.xcconfig"; sourceTree = "<group>"; };
 		4189D6D87975738B233DC739 /* Pods-All-Frameworks-JobQueueInMemoryStorage.tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueueInMemoryStorage.tvOS.debug.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueueInMemoryStorage.tvOS/Pods-All-Frameworks-JobQueueInMemoryStorage.tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		514EE50F2B7B3389836FAC94 /* Pods-All-Tests-JobQueue.tests.macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Tests-JobQueue.tests.macOS.release.xcconfig"; path = "Target Support Files/Pods-All-Tests-JobQueue.tests.macOS/Pods-All-Tests-JobQueue.tests.macOS.release.xcconfig"; sourceTree = "<group>"; };
+		5474824CAA02CFA2CC9648B1 /* Pods-All-Frameworks-JobQueueCore.watchOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueueCore.watchOS.debug.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueueCore.watchOS/Pods-All-Frameworks-JobQueueCore.watchOS.debug.xcconfig"; sourceTree = "<group>"; };
+		63237C5B0EC59613579B96A1 /* Pods-All-Frameworks-JobQueueCore.iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueueCore.iOS.release.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueueCore.iOS/Pods-All-Frameworks-JobQueueCore.iOS.release.xcconfig"; sourceTree = "<group>"; };
+		643DA0D18E7AC41780EA6A35 /* Pods-All-Frameworks-JobQueueCore.watchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueueCore.watchOS.release.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueueCore.watchOS/Pods-All-Frameworks-JobQueueCore.watchOS.release.xcconfig"; sourceTree = "<group>"; };
+		66E7C355FA1316664C816993 /* Pods_All_Frameworks_JobQueueCore_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Frameworks_JobQueueCore_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		69D80BD02C0307362950B994 /* Pods_All_Frameworks_JobQueueCore_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Frameworks_JobQueueCore_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AA2B1685E46A41A08260FE2 /* Pods-All-Frameworks-JobQueueInMemoryStorage.tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueueInMemoryStorage.tvOS.release.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueueInMemoryStorage.tvOS/Pods-All-Frameworks-JobQueueInMemoryStorage.tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		782D7D72CA30CAFF65E54483 /* Pods_All_Frameworks_JobQueueInMemoryStorage_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Frameworks_JobQueueInMemoryStorage_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C04A858FEB7053CFE584207 /* Pods-All-JobQueue.iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-JobQueue.iOS.release.xcconfig"; path = "Target Support Files/Pods-All-JobQueue.iOS/Pods-All-JobQueue.iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -221,6 +280,7 @@
 		915CA15A6AECCB71ECC6AF7F /* Pods-All-Frameworks-JobQueueInMemoryStorage.macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueueInMemoryStorage.macOS.release.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueueInMemoryStorage.macOS/Pods-All-Frameworks-JobQueueInMemoryStorage.macOS.release.xcconfig"; sourceTree = "<group>"; };
 		996CE280A2CEA4D81D8FCCA6 /* Pods_All_Frameworks_JobQueue_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Frameworks_JobQueue_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EE919418E9E778CFAF02915 /* Pods_All_Frameworks_JobQueueInMemoryStorage_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Frameworks_JobQueueInMemoryStorage_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0434719EE7DBA67DF3E339A /* Pods_All_Frameworks_JobQueueCore_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Frameworks_JobQueueCore_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1F9A852E7CC44A03CAA803B /* Pods_All_Frameworks_JobQueueInMemoryStorage_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Frameworks_JobQueueInMemoryStorage_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A58E9AD271AFDF5F8E4F9C7D /* Pods-All-Frameworks-JobQueue.tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueue.tvOS.debug.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueue.tvOS/Pods-All-Frameworks-JobQueue.tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		A7DCF46540C79257BB06092D /* Pods-All-Tests-JobQueue.tests.macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Tests-JobQueue.tests.macOS.debug.xcconfig"; path = "Target Support Files/Pods-All-Tests-JobQueue.tests.macOS/Pods-All-Tests-JobQueue.tests.macOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -228,24 +288,6 @@
 		B8B482A7659CD75E03774EFC /* Pods_All_Frameworks_JobQueue_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Frameworks_JobQueue_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B92703BE23DA2E7E00558FFE /* JobQueue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JobQueue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B92703C723DA2E7E00558FFE /* JobQueueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JobQueueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B92703DB23DA302E00558FFE /* JobStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobStorage.swift; sourceTree = "<group>"; };
-		B92703DD23DA302E00558FFE /* JobCancellation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobCancellation.swift; sourceTree = "<group>"; };
-		B92703DE23DA302E00558FFE /* JobStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobStorage.swift; sourceTree = "<group>"; };
-		B92703DF23DA302E00558FFE /* JobSchedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobSchedule.swift; sourceTree = "<group>"; };
-		B92703E023DA302E00558FFE /* JobQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobQueue.swift; sourceTree = "<group>"; };
-		B92703E123DA302E00558FFE /* JobQueueSchedulers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobQueueSchedulers.swift; sourceTree = "<group>"; };
-		B92703E223DA302E00558FFE /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
-		B92703E323DA302E00558FFE /* JobStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobStatus.swift; sourceTree = "<group>"; };
-		B92703E423DA302E00558FFE /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
-		B92703E523DA302E00558FFE /* Sequence+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sequence+Extensions.swift"; sourceTree = "<group>"; };
-		B92703E623DA302E00558FFE /* JobType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobType.swift; sourceTree = "<group>"; };
-		B92703E723DA302E00558FFE /* JobQueueDelayStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobQueueDelayStrategy.swift; sourceTree = "<group>"; };
-		B92703E823DA302E00558FFE /* JobProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobProcessor.swift; sourceTree = "<group>"; };
-		B92703E923DA302E00558FFE /* JobQueueProcessors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobQueueProcessors.swift; sourceTree = "<group>"; };
-		B92703EA23DA302E00558FFE /* Dictionary+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extensions.swift"; sourceTree = "<group>"; };
-		B92703EB23DA302E00558FFE /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
-		B92703EC23DA302E00558FFE /* JobSorter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobSorter.swift; sourceTree = "<group>"; };
-		B92703ED23DA302E00558FFE /* Job.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		B927040123DA307700558FFE /* JobQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JobQueue.h; sourceTree = "<group>"; };
 		B927040223DA307700558FFE /* Info.tests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.tests.plist; sourceTree = "<group>"; };
 		B927040323DA307700558FFE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -269,18 +311,46 @@
 		B92704C323DA3D0100558FFE /* JobQueue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JobQueue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B92704CB23DA3D0100558FFE /* JobQueueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JobQueueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B92704DF23DA3D2900558FFE /* JobQueueInMemoryStorage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JobQueueInMemoryStorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9E9D1B323DA68C300D89111 /* JobStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobStorage.swift; sourceTree = "<group>"; };
+		B9E9D1B423DA68C300D89111 /* JobSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSchedule.swift; sourceTree = "<group>"; };
+		B9E9D1B523DA68C300D89111 /* JobQueueProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobQueueProtocol.swift; sourceTree = "<group>"; };
+		B9E9D1B623DA68C300D89111 /* JobStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobStatus.swift; sourceTree = "<group>"; };
+		B9E9D1B723DA68C300D89111 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		B9E9D1B823DA68C300D89111 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
+		B9E9D1BA23DA68C300D89111 /* JobCancellation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobCancellation.swift; sourceTree = "<group>"; };
+		B9E9D1BB23DA68C300D89111 /* Index.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Index.swift; sourceTree = "<group>"; };
+		B9E9D1BC23DA68C300D89111 /* JobQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobQueue.swift; sourceTree = "<group>"; };
+		B9E9D1BD23DA68C300D89111 /* JobQueueSchedulers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobQueueSchedulers.swift; sourceTree = "<group>"; };
+		B9E9D1BE23DA68C300D89111 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		B9E9D1BF23DA68C300D89111 /* Sequence+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extensions.swift"; sourceTree = "<group>"; };
+		B9E9D1C023DA68C300D89111 /* JobType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobType.swift; sourceTree = "<group>"; };
+		B9E9D1C123DA68C300D89111 /* JobQueueDelayStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobQueueDelayStrategy.swift; sourceTree = "<group>"; };
+		B9E9D1C223DA68C300D89111 /* JobProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobProcessor.swift; sourceTree = "<group>"; };
+		B9E9D1C323DA68C300D89111 /* JobQueueProcessors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobQueueProcessors.swift; sourceTree = "<group>"; };
+		B9E9D1C423DA68C300D89111 /* Dictionary+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extensions.swift"; sourceTree = "<group>"; };
+		B9E9D1C523DA68C300D89111 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		B9E9D1C623DA68C300D89111 /* JobSorter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSorter.swift; sourceTree = "<group>"; };
+		B9E9D1C823DA68C400D89111 /* JobQueueInMemoryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobQueueInMemoryStorage.swift; sourceTree = "<group>"; };
+		B9E9D20623DA695E00D89111 /* JobQueueCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JobQueueCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9E9D21323DA696F00D89111 /* JobQueueCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JobQueueCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9E9D22023DA697C00D89111 /* JobQueueCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JobQueueCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9E9D22D23DA699200D89111 /* JobQueueCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JobQueueCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA5ADCCB95BDE8FE49BA114C /* Pods-All-Frameworks-JobQueue.iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueue.iOS.debug.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueue.iOS/Pods-All-Frameworks-JobQueue.iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		BC2ECAF0E99561B95422F35B /* Pods-All-Frameworks-JobQueue.macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueue.macOS.debug.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueue.macOS/Pods-All-Frameworks-JobQueue.macOS.debug.xcconfig"; sourceTree = "<group>"; };
 		BD69C861B522286EBF557B9F /* Pods-All-Frameworks-JobQueue.tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueue.tvOS.release.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueue.tvOS/Pods-All-Frameworks-JobQueue.tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		C2216AC43B1F37EDEA82F04D /* Pods-All-Frameworks-JobQueueCore.iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueueCore.iOS.debug.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueueCore.iOS/Pods-All-Frameworks-JobQueueCore.iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		C4F94EAEBFB5D1AD1A14B1E8 /* Pods-All-Frameworks-JobQueueInMemoryStorage.watchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueueInMemoryStorage.watchOS.release.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueueInMemoryStorage.watchOS/Pods-All-Frameworks-JobQueueInMemoryStorage.watchOS.release.xcconfig"; sourceTree = "<group>"; };
 		C885964ED560D015C5A398E2 /* Pods_All_Frameworks_JobQueue_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_All_Frameworks_JobQueue_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD806CA966A83FCDA3175336 /* Pods-All-JobQueueInMemoryStorage.iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-JobQueueInMemoryStorage.iOS.debug.xcconfig"; path = "Target Support Files/Pods-All-JobQueueInMemoryStorage.iOS/Pods-All-JobQueueInMemoryStorage.iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		CFB36BB3C708803309D46BC4 /* Pods-All-Frameworks-JobQueue.iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueue.iOS.release.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueue.iOS/Pods-All-Frameworks-JobQueue.iOS.release.xcconfig"; sourceTree = "<group>"; };
 		DA51E0B989FD404B9CF507E2 /* Pods-All-JobQueueInMemoryStorage.iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-JobQueueInMemoryStorage.iOS.release.xcconfig"; path = "Target Support Files/Pods-All-JobQueueInMemoryStorage.iOS/Pods-All-JobQueueInMemoryStorage.iOS.release.xcconfig"; sourceTree = "<group>"; };
 		DC5CD7AF0A0512A9909113A4 /* Pods-All-JobQueue.iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-JobQueue.iOS.debug.xcconfig"; path = "Target Support Files/Pods-All-JobQueue.iOS/Pods-All-JobQueue.iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		DDD28870058CCC2E88BA5423 /* Pods-All-Frameworks-JobQueueCore.macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueueCore.macOS.debug.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueueCore.macOS/Pods-All-Frameworks-JobQueueCore.macOS.debug.xcconfig"; sourceTree = "<group>"; };
 		E12ED475485CF3879619E7B5 /* Pods-All-Frameworks-JobQueue.watchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueue.watchOS.release.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueue.watchOS/Pods-All-Frameworks-JobQueue.watchOS.release.xcconfig"; sourceTree = "<group>"; };
 		EA98D545F4DC5F7286118228 /* Pods-All-Frameworks-JobQueue.macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueue.macOS.release.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueue.macOS/Pods-All-Frameworks-JobQueue.macOS.release.xcconfig"; sourceTree = "<group>"; };
 		F77D887CFA5B486F86174BF1 /* Pods-All-Frameworks-JobQueueInMemoryStorage.iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueueInMemoryStorage.iOS.debug.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueueInMemoryStorage.iOS/Pods-All-Frameworks-JobQueueInMemoryStorage.iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		F8884D3245F5083B752ADA78 /* Pods-All-Frameworks-JobQueueCore.macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueueCore.macOS.release.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueueCore.macOS/Pods-All-Frameworks-JobQueueCore.macOS.release.xcconfig"; sourceTree = "<group>"; };
+		FC955EF9F04E3E4261F22539 /* Pods-All-Frameworks-JobQueueCore.tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueueCore.tvOS.release.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueueCore.tvOS/Pods-All-Frameworks-JobQueueCore.tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		FF069178B5478FD78B30927A /* Pods-All-Frameworks-JobQueueInMemoryStorage.macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-All-Frameworks-JobQueueInMemoryStorage.macOS.debug.xcconfig"; path = "Target Support Files/Pods-All-Frameworks-JobQueueInMemoryStorage.macOS/Pods-All-Frameworks-JobQueueInMemoryStorage.macOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -289,6 +359,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9E9D23723DA6A8800D89111 /* JobQueueCore.framework in Frameworks */,
 				16C6B589F9E12F87CFB7CA5E /* Pods_All_Frameworks_JobQueue_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,6 +378,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9E9D24323DA6B9800D89111 /* JobQueueCore.framework in Frameworks */,
 				577AE30132907B64BDF3C1C3 /* Pods_All_Frameworks_JobQueueInMemoryStorage_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -315,6 +387,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9E9D23A23DA6A9700D89111 /* JobQueueCore.framework in Frameworks */,
 				64C73E6A4A9037D532188C47 /* Pods_All_Frameworks_JobQueue_watchOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,7 +396,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B92704AC23DA3C0E00558FFE /* JobQueue.framework in Frameworks */,
+				B9E9D24623DA6BAB00D89111 /* JobQueueCore.framework in Frameworks */,
 				E497E197436815F111148881 /* Pods_All_Frameworks_JobQueueInMemoryStorage_watchOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,6 +405,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9E9D23D23DA6AAD00D89111 /* JobQueueCore.framework in Frameworks */,
 				E9817FA93AF1B6EF71759447 /* Pods_All_Frameworks_JobQueue_macOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,7 +424,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B92704AF23DA3C1900558FFE /* JobQueue.framework in Frameworks */,
+				B9E9D24923DA6BC000D89111 /* JobQueueCore.framework in Frameworks */,
 				C9EDB04115BAAFD9B331523D /* Pods_All_Frameworks_JobQueueInMemoryStorage_macOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,6 +433,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9E9D24023DA6AFC00D89111 /* JobQueueCore.framework in Frameworks */,
 				AA52AC03300A93F1CBA172B0 /* Pods_All_Frameworks_JobQueue_tvOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,8 +452,40 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B927050623DA3E2300558FFE /* JobQueue.framework in Frameworks */,
+				B9E9D24C23DA6BE000D89111 /* JobQueueCore.framework in Frameworks */,
 				26DA9821D08A040E161B27F4 /* Pods_All_Frameworks_JobQueueInMemoryStorage_tvOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9E9D20323DA695E00D89111 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C1080F2A245CE2256E79B95 /* Pods_All_Frameworks_JobQueueCore_iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9E9D21023DA696F00D89111 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85FD43363A92EDCD7161AE9A /* Pods_All_Frameworks_JobQueueCore_watchOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9E9D21D23DA697C00D89111 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BDB1334BD7E12351F608193 /* Pods_All_Frameworks_JobQueueCore_tvOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9E9D22A23DA699200D89111 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7F63F1DE6A940FC7707854E /* Pods_All_Frameworks_JobQueueCore_macOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +506,10 @@
 				B8B482A7659CD75E03774EFC /* Pods_All_Frameworks_JobQueue_tvOS.framework */,
 				9EE919418E9E778CFAF02915 /* Pods_All_Frameworks_JobQueueInMemoryStorage_tvOS.framework */,
 				0D193EA324B38B47B50C332E /* Pods_All_Tests_JobQueue_tests_tvOS.framework */,
+				66E7C355FA1316664C816993 /* Pods_All_Frameworks_JobQueueCore_iOS.framework */,
+				A0434719EE7DBA67DF3E339A /* Pods_All_Frameworks_JobQueueCore_macOS.framework */,
+				17E87037DBFA33C9DF106401 /* Pods_All_Frameworks_JobQueueCore_tvOS.framework */,
+				69D80BD02C0307362950B994 /* Pods_All_Frameworks_JobQueueCore_watchOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -432,6 +543,14 @@
 				6AA2B1685E46A41A08260FE2 /* Pods-All-Frameworks-JobQueueInMemoryStorage.tvOS.release.xcconfig */,
 				290E1496266F82CC91359B17 /* Pods-All-Tests-JobQueue.tests.tvOS.debug.xcconfig */,
 				2822AD3F2C78368EADCBE079 /* Pods-All-Tests-JobQueue.tests.tvOS.release.xcconfig */,
+				C2216AC43B1F37EDEA82F04D /* Pods-All-Frameworks-JobQueueCore.iOS.debug.xcconfig */,
+				63237C5B0EC59613579B96A1 /* Pods-All-Frameworks-JobQueueCore.iOS.release.xcconfig */,
+				DDD28870058CCC2E88BA5423 /* Pods-All-Frameworks-JobQueueCore.macOS.debug.xcconfig */,
+				F8884D3245F5083B752ADA78 /* Pods-All-Frameworks-JobQueueCore.macOS.release.xcconfig */,
+				32AE247DC066789F6A7D1362 /* Pods-All-Frameworks-JobQueueCore.tvOS.debug.xcconfig */,
+				FC955EF9F04E3E4261F22539 /* Pods-All-Frameworks-JobQueueCore.tvOS.release.xcconfig */,
+				5474824CAA02CFA2CC9648B1 /* Pods-All-Frameworks-JobQueueCore.watchOS.debug.xcconfig */,
+				643DA0D18E7AC41780EA6A35 /* Pods-All-Frameworks-JobQueueCore.watchOS.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -439,9 +558,9 @@
 		B92703B423DA2E7D00558FFE = {
 			isa = PBXGroup;
 			children = (
-				B927040023DA307700558FFE /* Support Files */,
 				B92703D923DA302E00558FFE /* Sources */,
 				B927041523DA33AA00558FFE /* Tests */,
+				B927040023DA307700558FFE /* Support Files */,
 				B92703BF23DA2E7E00558FFE /* Products */,
 				3EDA75788FE9A3356C692076 /* Pods */,
 				30FF360CC86FCC0F31783338 /* Frameworks */,
@@ -462,6 +581,10 @@
 				B92704C323DA3D0100558FFE /* JobQueue.framework */,
 				B92704CB23DA3D0100558FFE /* JobQueueTests.xctest */,
 				B92704DF23DA3D2900558FFE /* JobQueueInMemoryStorage.framework */,
+				B9E9D20623DA695E00D89111 /* JobQueueCore.framework */,
+				B9E9D21323DA696F00D89111 /* JobQueueCore.framework */,
+				B9E9D22023DA697C00D89111 /* JobQueueCore.framework */,
+				B9E9D22D23DA699200D89111 /* JobQueueCore.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -469,42 +592,11 @@
 		B92703D923DA302E00558FFE /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				B92703DC23DA302E00558FFE /* JobQueue */,
-				B92703DA23DA302E00558FFE /* JobQueueInMemoryStorage */,
+				B9E9D1B923DA68C300D89111 /* JobQueue */,
+				B9E9D1B223DA68C300D89111 /* JobQueueCore */,
+				B9E9D1C723DA68C400D89111 /* JobQueueInMemoryStorage */,
 			);
 			path = Sources;
-			sourceTree = "<group>";
-		};
-		B92703DA23DA302E00558FFE /* JobQueueInMemoryStorage */ = {
-			isa = PBXGroup;
-			children = (
-				B92703DB23DA302E00558FFE /* JobStorage.swift */,
-			);
-			path = JobQueueInMemoryStorage;
-			sourceTree = "<group>";
-		};
-		B92703DC23DA302E00558FFE /* JobQueue */ = {
-			isa = PBXGroup;
-			children = (
-				B92703E423DA302E00558FFE /* Common.swift */,
-				B92703EB23DA302E00558FFE /* Date+Extensions.swift */,
-				B92703EA23DA302E00558FFE /* Dictionary+Extensions.swift */,
-				B92703ED23DA302E00558FFE /* Job.swift */,
-				B92703DD23DA302E00558FFE /* JobCancellation.swift */,
-				B92703E823DA302E00558FFE /* JobProcessor.swift */,
-				B92703E023DA302E00558FFE /* JobQueue.swift */,
-				B92703E723DA302E00558FFE /* JobQueueDelayStrategy.swift */,
-				B92703E923DA302E00558FFE /* JobQueueProcessors.swift */,
-				B92703E123DA302E00558FFE /* JobQueueSchedulers.swift */,
-				B92703DF23DA302E00558FFE /* JobSchedule.swift */,
-				B92703EC23DA302E00558FFE /* JobSorter.swift */,
-				B92703E323DA302E00558FFE /* JobStatus.swift */,
-				B92703DE23DA302E00558FFE /* JobStorage.swift */,
-				B92703E623DA302E00558FFE /* JobType.swift */,
-				B92703E223DA302E00558FFE /* Logger.swift */,
-				B92703E523DA302E00558FFE /* Sequence+Extensions.swift */,
-			);
-			path = JobQueue;
 			sourceTree = "<group>";
 		};
 		B927040023DA307700558FFE /* Support Files */ = {
@@ -557,6 +649,47 @@
 				B927042223DA33AA00558FFE /* The.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		B9E9D1B223DA68C300D89111 /* JobQueueCore */ = {
+			isa = PBXGroup;
+			children = (
+				B9E9D1B723DA68C300D89111 /* Common.swift */,
+				B9E9D1B823DA68C300D89111 /* Job.swift */,
+				B9E9D1B523DA68C300D89111 /* JobQueueProtocol.swift */,
+				B9E9D1B423DA68C300D89111 /* JobSchedule.swift */,
+				B9E9D1B623DA68C300D89111 /* JobStatus.swift */,
+				B9E9D1B323DA68C300D89111 /* JobStorage.swift */,
+			);
+			path = JobQueueCore;
+			sourceTree = "<group>";
+		};
+		B9E9D1B923DA68C300D89111 /* JobQueue */ = {
+			isa = PBXGroup;
+			children = (
+				B9E9D1C523DA68C300D89111 /* Date+Extensions.swift */,
+				B9E9D1C423DA68C300D89111 /* Dictionary+Extensions.swift */,
+				B9E9D1BB23DA68C300D89111 /* Index.swift */,
+				B9E9D1BA23DA68C300D89111 /* JobCancellation.swift */,
+				B9E9D1C223DA68C300D89111 /* JobProcessor.swift */,
+				B9E9D1BC23DA68C300D89111 /* JobQueue.swift */,
+				B9E9D1C123DA68C300D89111 /* JobQueueDelayStrategy.swift */,
+				B9E9D1C323DA68C300D89111 /* JobQueueProcessors.swift */,
+				B9E9D1BD23DA68C300D89111 /* JobQueueSchedulers.swift */,
+				B9E9D1C623DA68C300D89111 /* JobSorter.swift */,
+				B9E9D1C023DA68C300D89111 /* JobType.swift */,
+				B9E9D1BE23DA68C300D89111 /* Logger.swift */,
+				B9E9D1BF23DA68C300D89111 /* Sequence+Extensions.swift */,
+			);
+			path = JobQueue;
+			sourceTree = "<group>";
+		};
+		B9E9D1C723DA68C400D89111 /* JobQueueInMemoryStorage */ = {
+			isa = PBXGroup;
+			children = (
+				B9E9D1C823DA68C400D89111 /* JobQueueInMemoryStorage.swift */,
+			);
+			path = JobQueueInMemoryStorage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -619,6 +752,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B9E9D20123DA695E00D89111 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9E9D20E23DA696F00D89111 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9E9D21B23DA697C00D89111 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9E9D22823DA699200D89111 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -635,6 +796,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				B9E9D23623DA6A8000D89111 /* PBXTargetDependency */,
 			);
 			name = JobQueue.iOS;
 			productName = JobQueue;
@@ -675,6 +837,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				B9E9D24223DA6B9100D89111 /* PBXTargetDependency */,
 			);
 			name = JobQueueInMemoryStorage.iOS;
 			productName = JobQueueInMemoryStorage;
@@ -694,6 +857,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				B9E9D23923DA6A9100D89111 /* PBXTargetDependency */,
 			);
 			name = JobQueue.watchOS;
 			productName = JobQueue;
@@ -713,7 +877,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				B92704AB23DA3C0600558FFE /* PBXTargetDependency */,
+				B9E9D24523DA6BA300D89111 /* PBXTargetDependency */,
 			);
 			name = JobQueueInMemoryStorage.watchOS;
 			productName = JobQueueInMemoryStorageWatchOS;
@@ -733,6 +897,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				B9E9D23C23DA6AA300D89111 /* PBXTargetDependency */,
 			);
 			name = JobQueue.macOS;
 			productName = JobQueuemacOS;
@@ -773,7 +938,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				B92704AE23DA3C1400558FFE /* PBXTargetDependency */,
+				B9E9D24823DA6BB800D89111 /* PBXTargetDependency */,
 			);
 			name = JobQueueInMemoryStorage.macOS;
 			productName = JobQueueInMemoryStoragemacOS;
@@ -793,6 +958,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				B9E9D23F23DA6AEF00D89111 /* PBXTargetDependency */,
 			);
 			name = JobQueue.tvOS;
 			productName = JobQueuetvOS;
@@ -833,11 +999,87 @@
 			buildRules = (
 			);
 			dependencies = (
-				B927050523DA3E1B00558FFE /* PBXTargetDependency */,
+				B9E9D24B23DA6BD900D89111 /* PBXTargetDependency */,
 			);
 			name = JobQueueInMemoryStorage.tvOS;
 			productName = JobQueueInMemoryStoragetvOS;
 			productReference = B92704DF23DA3D2900558FFE /* JobQueueInMemoryStorage.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B9E9D20523DA695E00D89111 /* JobQueueCore.iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9E9D20B23DA695E00D89111 /* Build configuration list for PBXNativeTarget "JobQueueCore.iOS" */;
+			buildPhases = (
+				41B27BF9D39E1EAF1620E610 /* [CP] Check Pods Manifest.lock */,
+				B9E9D20123DA695E00D89111 /* Headers */,
+				B9E9D20223DA695E00D89111 /* Sources */,
+				B9E9D20323DA695E00D89111 /* Frameworks */,
+				B9E9D20423DA695E00D89111 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JobQueueCore.iOS;
+			productName = JobQueueCoreiOS;
+			productReference = B9E9D20623DA695E00D89111 /* JobQueueCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B9E9D21223DA696F00D89111 /* JobQueueCore.watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9E9D21823DA696F00D89111 /* Build configuration list for PBXNativeTarget "JobQueueCore.watchOS" */;
+			buildPhases = (
+				A1D49572971CF4F2B9976025 /* [CP] Check Pods Manifest.lock */,
+				B9E9D20E23DA696F00D89111 /* Headers */,
+				B9E9D20F23DA696F00D89111 /* Sources */,
+				B9E9D21023DA696F00D89111 /* Frameworks */,
+				B9E9D21123DA696F00D89111 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JobQueueCore.watchOS;
+			productName = JobQueueCorewatchOS;
+			productReference = B9E9D21323DA696F00D89111 /* JobQueueCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B9E9D21F23DA697C00D89111 /* JobQueueCore.tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9E9D22523DA697C00D89111 /* Build configuration list for PBXNativeTarget "JobQueueCore.tvOS" */;
+			buildPhases = (
+				B585A05D61DD4EB2FB174B65 /* [CP] Check Pods Manifest.lock */,
+				B9E9D21B23DA697C00D89111 /* Headers */,
+				B9E9D21C23DA697C00D89111 /* Sources */,
+				B9E9D21D23DA697C00D89111 /* Frameworks */,
+				B9E9D21E23DA697C00D89111 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JobQueueCore.tvOS;
+			productName = JobQueueCoretvOS;
+			productReference = B9E9D22023DA697C00D89111 /* JobQueueCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B9E9D22C23DA699200D89111 /* JobQueueCore.macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9E9D23223DA699200D89111 /* Build configuration list for PBXNativeTarget "JobQueueCore.macOS" */;
+			buildPhases = (
+				9AFE3A2477C417C11EEA4786 /* [CP] Check Pods Manifest.lock */,
+				B9E9D22823DA699200D89111 /* Headers */,
+				B9E9D22923DA699200D89111 /* Sources */,
+				B9E9D22A23DA699200D89111 /* Frameworks */,
+				B9E9D22B23DA699200D89111 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JobQueueCore.macOS;
+			productName = JobQueueCoremacOS;
+			productReference = B9E9D22D23DA699200D89111 /* JobQueueCore.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -883,6 +1125,18 @@
 					B92704DE23DA3D2900558FFE = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
+					B9E9D20523DA695E00D89111 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					B9E9D21223DA696F00D89111 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					B9E9D21F23DA697C00D89111 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					B9E9D22C23DA699200D89111 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
 				};
 			};
 			buildConfigurationList = B92703B823DA2E7D00558FFE /* Build configuration list for PBXProject "JobQueue" */;
@@ -902,6 +1156,10 @@
 				B927043823DA386100558FFE /* JobQueue.watchOS */,
 				B927047223DA3AB000558FFE /* JobQueue.macOS */,
 				B92704C223DA3D0100558FFE /* JobQueue.tvOS */,
+				B9E9D20523DA695E00D89111 /* JobQueueCore.iOS */,
+				B9E9D21223DA696F00D89111 /* JobQueueCore.watchOS */,
+				B9E9D21F23DA697C00D89111 /* JobQueueCore.tvOS */,
+				B9E9D22C23DA699200D89111 /* JobQueueCore.macOS */,
 				B927040B23DA313200558FFE /* JobQueueInMemoryStorage.iOS */,
 				B927046523DA39E700558FFE /* JobQueueInMemoryStorage.watchOS */,
 				B927049F23DA3B9C00558FFE /* JobQueueInMemoryStorage.macOS */,
@@ -991,6 +1249,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B9E9D20423DA695E00D89111 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9E9D21123DA696F00D89111 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9E9D21E23DA697C00D89111 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9E9D22B23DA699200D89111 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -1053,6 +1339,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-All-Tests-JobQueue.tests.tvOS/Pods-All-Tests-JobQueue.tests.tvOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		41B27BF9D39E1EAF1620E610 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-All-Frameworks-JobQueueCore.iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		45DF16C7D235FF89F067C318 /* [CP] Check Pods Manifest.lock */ = {
@@ -1165,6 +1473,50 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9AFE3A2477C417C11EEA4786 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-All-Frameworks-JobQueueCore.macOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1D49572971CF4F2B9976025 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-All-Frameworks-JobQueueCore.watchOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A65F60B0492791B065ED0C1D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1181,6 +1533,28 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-All-Frameworks-JobQueue.macOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B585A05D61DD4EB2FB174B65 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-All-Frameworks-JobQueueCore.tvOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1294,23 +1668,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B92703F223DA302E00558FFE /* JobQueue.swift in Sources */,
-				B92703F523DA302E00558FFE /* JobStatus.swift in Sources */,
-				B92703FC23DA302E00558FFE /* Dictionary+Extensions.swift in Sources */,
-				B92703FB23DA302E00558FFE /* JobQueueProcessors.swift in Sources */,
-				B92703F723DA302E00558FFE /* Sequence+Extensions.swift in Sources */,
-				B92703F123DA302E00558FFE /* JobSchedule.swift in Sources */,
-				B92703F023DA302E00558FFE /* JobStorage.swift in Sources */,
-				B92703F623DA302E00558FFE /* Common.swift in Sources */,
-				B92703F323DA302E00558FFE /* JobQueueSchedulers.swift in Sources */,
-				B92703FD23DA302E00558FFE /* Date+Extensions.swift in Sources */,
-				B92703F423DA302E00558FFE /* Logger.swift in Sources */,
-				B92703FE23DA302E00558FFE /* JobSorter.swift in Sources */,
-				B92703FA23DA302E00558FFE /* JobProcessor.swift in Sources */,
-				B92703FF23DA302E00558FFE /* Job.swift in Sources */,
-				B92703F923DA302E00558FFE /* JobQueueDelayStrategy.swift in Sources */,
-				B92703EF23DA302E00558FFE /* JobCancellation.swift in Sources */,
-				B92703F823DA302E00558FFE /* JobType.swift in Sources */,
+				B9E9D1CC23DA693A00D89111 /* JobCancellation.swift in Sources */,
+				B9E9D1CF23DA693A00D89111 /* JobQueueDelayStrategy.swift in Sources */,
+				B9E9D1C923DA693A00D89111 /* Date+Extensions.swift in Sources */,
+				B9E9D1D123DA693A00D89111 /* JobQueueSchedulers.swift in Sources */,
+				B9E9D1CD23DA693A00D89111 /* JobProcessor.swift in Sources */,
+				B9E9D1CA23DA693A00D89111 /* Dictionary+Extensions.swift in Sources */,
+				B9E9D1CB23DA693A00D89111 /* Index.swift in Sources */,
+				B9E9D1D423DA693A00D89111 /* Logger.swift in Sources */,
+				B9E9D1D023DA693A00D89111 /* JobQueueProcessors.swift in Sources */,
+				B9E9D1D523DA693A00D89111 /* Sequence+Extensions.swift in Sources */,
+				B9E9D1D223DA693A00D89111 /* JobSorter.swift in Sources */,
+				B9E9D1D323DA693A00D89111 /* JobType.swift in Sources */,
+				B9E9D1CE23DA693A00D89111 /* JobQueue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1336,7 +1706,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B927041423DA317900558FFE /* JobStorage.swift in Sources */,
+				B9E9D1FD23DA694300D89111 /* JobQueueInMemoryStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1344,23 +1714,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B927044923DA38BD00558FFE /* JobQueueProcessors.swift in Sources */,
-				B927044F23DA38BD00558FFE /* JobType.swift in Sources */,
-				B927044E23DA38BD00558FFE /* JobStorage.swift in Sources */,
-				B927044B23DA38BD00558FFE /* JobSchedule.swift in Sources */,
-				B927044823DA38BD00558FFE /* JobQueueDelayStrategy.swift in Sources */,
-				B927044623DA38BD00558FFE /* JobProcessor.swift in Sources */,
-				B927044123DA38BD00558FFE /* Common.swift in Sources */,
-				B927045023DA38BD00558FFE /* Logger.swift in Sources */,
-				B927045123DA38BD00558FFE /* Sequence+Extensions.swift in Sources */,
-				B927044223DA38BD00558FFE /* Date+Extensions.swift in Sources */,
-				B927044A23DA38BD00558FFE /* JobQueueSchedulers.swift in Sources */,
-				B927044323DA38BD00558FFE /* Dictionary+Extensions.swift in Sources */,
-				B927044D23DA38BD00558FFE /* JobStatus.swift in Sources */,
-				B927044C23DA38BD00558FFE /* JobSorter.swift in Sources */,
-				B927044423DA38BD00558FFE /* Job.swift in Sources */,
-				B927044723DA38BD00558FFE /* JobQueue.swift in Sources */,
-				B927044523DA38BD00558FFE /* JobCancellation.swift in Sources */,
+				B9E9D1D923DA693B00D89111 /* JobCancellation.swift in Sources */,
+				B9E9D1DC23DA693B00D89111 /* JobQueueDelayStrategy.swift in Sources */,
+				B9E9D1D623DA693B00D89111 /* Date+Extensions.swift in Sources */,
+				B9E9D1DE23DA693B00D89111 /* JobQueueSchedulers.swift in Sources */,
+				B9E9D1DA23DA693B00D89111 /* JobProcessor.swift in Sources */,
+				B9E9D1D723DA693B00D89111 /* Dictionary+Extensions.swift in Sources */,
+				B9E9D1D823DA693B00D89111 /* Index.swift in Sources */,
+				B9E9D1E123DA693B00D89111 /* Logger.swift in Sources */,
+				B9E9D1DD23DA693B00D89111 /* JobQueueProcessors.swift in Sources */,
+				B9E9D1E223DA693B00D89111 /* Sequence+Extensions.swift in Sources */,
+				B9E9D1DF23DA693B00D89111 /* JobSorter.swift in Sources */,
+				B9E9D1E023DA693B00D89111 /* JobType.swift in Sources */,
+				B9E9D1DB23DA693B00D89111 /* JobQueue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1368,7 +1734,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B92704A923DA3BF900558FFE /* JobStorage.swift in Sources */,
+				B9E9D1FE23DA694300D89111 /* JobQueueInMemoryStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1376,23 +1742,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B927049223DA3AF000558FFE /* JobQueueProcessors.swift in Sources */,
-				B927049823DA3AF000558FFE /* JobType.swift in Sources */,
-				B927049723DA3AF000558FFE /* JobStorage.swift in Sources */,
-				B927049423DA3AF000558FFE /* JobSchedule.swift in Sources */,
-				B927049123DA3AF000558FFE /* JobQueueDelayStrategy.swift in Sources */,
-				B927048F23DA3AF000558FFE /* JobProcessor.swift in Sources */,
-				B927048A23DA3AF000558FFE /* Common.swift in Sources */,
-				B927049923DA3AF000558FFE /* Logger.swift in Sources */,
-				B927049A23DA3AF000558FFE /* Sequence+Extensions.swift in Sources */,
-				B927048B23DA3AF000558FFE /* Date+Extensions.swift in Sources */,
-				B927049323DA3AF000558FFE /* JobQueueSchedulers.swift in Sources */,
-				B927048C23DA3AF000558FFE /* Dictionary+Extensions.swift in Sources */,
-				B927049623DA3AF000558FFE /* JobStatus.swift in Sources */,
-				B927049523DA3AF000558FFE /* JobSorter.swift in Sources */,
-				B927048D23DA3AF000558FFE /* Job.swift in Sources */,
-				B927049023DA3AF000558FFE /* JobQueue.swift in Sources */,
-				B927048E23DA3AF000558FFE /* JobCancellation.swift in Sources */,
+				B9E9D1E623DA693C00D89111 /* JobCancellation.swift in Sources */,
+				B9E9D1E923DA693C00D89111 /* JobQueueDelayStrategy.swift in Sources */,
+				B9E9D1E323DA693B00D89111 /* Date+Extensions.swift in Sources */,
+				B9E9D1EB23DA693C00D89111 /* JobQueueSchedulers.swift in Sources */,
+				B9E9D1E723DA693C00D89111 /* JobProcessor.swift in Sources */,
+				B9E9D1E423DA693B00D89111 /* Dictionary+Extensions.swift in Sources */,
+				B9E9D1E523DA693C00D89111 /* Index.swift in Sources */,
+				B9E9D1EE23DA693C00D89111 /* Logger.swift in Sources */,
+				B9E9D1EA23DA693C00D89111 /* JobQueueProcessors.swift in Sources */,
+				B9E9D1EF23DA693C00D89111 /* Sequence+Extensions.swift in Sources */,
+				B9E9D1EC23DA693C00D89111 /* JobSorter.swift in Sources */,
+				B9E9D1ED23DA693C00D89111 /* JobType.swift in Sources */,
+				B9E9D1E823DA693C00D89111 /* JobQueue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1418,7 +1780,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B92704A823DA3BF900558FFE /* JobStorage.swift in Sources */,
+				B9E9D1FF23DA694400D89111 /* JobQueueInMemoryStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1426,23 +1788,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B92704EF23DA3DF500558FFE /* JobQueueProcessors.swift in Sources */,
-				B92704F523DA3DF500558FFE /* JobType.swift in Sources */,
-				B92704F423DA3DF500558FFE /* JobStorage.swift in Sources */,
-				B92704F123DA3DF500558FFE /* JobSchedule.swift in Sources */,
-				B92704EE23DA3DF500558FFE /* JobQueueDelayStrategy.swift in Sources */,
-				B92704EC23DA3DF500558FFE /* JobProcessor.swift in Sources */,
-				B92704E723DA3DF500558FFE /* Common.swift in Sources */,
-				B92704F623DA3DF500558FFE /* Logger.swift in Sources */,
-				B92704F723DA3DF500558FFE /* Sequence+Extensions.swift in Sources */,
-				B92704E823DA3DF500558FFE /* Date+Extensions.swift in Sources */,
-				B92704F023DA3DF500558FFE /* JobQueueSchedulers.swift in Sources */,
-				B92704E923DA3DF500558FFE /* Dictionary+Extensions.swift in Sources */,
-				B92704F323DA3DF500558FFE /* JobStatus.swift in Sources */,
-				B92704F223DA3DF500558FFE /* JobSorter.swift in Sources */,
-				B92704EA23DA3DF500558FFE /* Job.swift in Sources */,
-				B92704ED23DA3DF500558FFE /* JobQueue.swift in Sources */,
-				B92704EB23DA3DF500558FFE /* JobCancellation.swift in Sources */,
+				B9E9D1F323DA693C00D89111 /* JobCancellation.swift in Sources */,
+				B9E9D1F623DA693C00D89111 /* JobQueueDelayStrategy.swift in Sources */,
+				B9E9D1F023DA693C00D89111 /* Date+Extensions.swift in Sources */,
+				B9E9D1F823DA693C00D89111 /* JobQueueSchedulers.swift in Sources */,
+				B9E9D1F423DA693C00D89111 /* JobProcessor.swift in Sources */,
+				B9E9D1F123DA693C00D89111 /* Dictionary+Extensions.swift in Sources */,
+				B9E9D1F223DA693C00D89111 /* Index.swift in Sources */,
+				B9E9D1FB23DA693C00D89111 /* Logger.swift in Sources */,
+				B9E9D1F723DA693C00D89111 /* JobQueueProcessors.swift in Sources */,
+				B9E9D1FC23DA693C00D89111 /* Sequence+Extensions.swift in Sources */,
+				B9E9D1F923DA693C00D89111 /* JobSorter.swift in Sources */,
+				B9E9D1FA23DA693C00D89111 /* JobType.swift in Sources */,
+				B9E9D1F523DA693C00D89111 /* JobQueue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1468,7 +1826,59 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B92704F823DA3DFA00558FFE /* JobStorage.swift in Sources */,
+				B9E9D20023DA694400D89111 /* JobQueueInMemoryStorage.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9E9D20223DA695E00D89111 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9E9D25023DA6C1D00D89111 /* JobSchedule.swift in Sources */,
+				B9E9D24F23DA6C1D00D89111 /* JobQueueProtocol.swift in Sources */,
+				B9E9D25123DA6C1D00D89111 /* JobStatus.swift in Sources */,
+				B9E9D25223DA6C1D00D89111 /* JobStorage.swift in Sources */,
+				B9E9D24D23DA6C1D00D89111 /* Common.swift in Sources */,
+				B9E9D24E23DA6C1D00D89111 /* Job.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9E9D20F23DA696F00D89111 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9E9D25623DA6C1D00D89111 /* JobSchedule.swift in Sources */,
+				B9E9D25523DA6C1D00D89111 /* JobQueueProtocol.swift in Sources */,
+				B9E9D25723DA6C1D00D89111 /* JobStatus.swift in Sources */,
+				B9E9D25823DA6C1D00D89111 /* JobStorage.swift in Sources */,
+				B9E9D25323DA6C1D00D89111 /* Common.swift in Sources */,
+				B9E9D25423DA6C1D00D89111 /* Job.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9E9D21C23DA697C00D89111 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9E9D25C23DA6C1E00D89111 /* JobSchedule.swift in Sources */,
+				B9E9D25B23DA6C1E00D89111 /* JobQueueProtocol.swift in Sources */,
+				B9E9D25D23DA6C1E00D89111 /* JobStatus.swift in Sources */,
+				B9E9D25E23DA6C1E00D89111 /* JobStorage.swift in Sources */,
+				B9E9D25923DA6C1E00D89111 /* Common.swift in Sources */,
+				B9E9D25A23DA6C1E00D89111 /* Job.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9E9D22923DA699200D89111 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9E9D26223DA6C1E00D89111 /* JobSchedule.swift in Sources */,
+				B9E9D26123DA6C1E00D89111 /* JobQueueProtocol.swift in Sources */,
+				B9E9D26323DA6C1E00D89111 /* JobStatus.swift in Sources */,
+				B9E9D26423DA6C1E00D89111 /* JobStorage.swift in Sources */,
+				B9E9D25F23DA6C1E00D89111 /* Common.swift in Sources */,
+				B9E9D26023DA6C1E00D89111 /* Job.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1490,16 +1900,6 @@
 			target = B927047223DA3AB000558FFE /* JobQueue.macOS */;
 			targetProxy = B927047D23DA3AB000558FFE /* PBXContainerItemProxy */;
 		};
-		B92704AB23DA3C0600558FFE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B927043823DA386100558FFE /* JobQueue.watchOS */;
-			targetProxy = B92704AA23DA3C0600558FFE /* PBXContainerItemProxy */;
-		};
-		B92704AE23DA3C1400558FFE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B927047223DA3AB000558FFE /* JobQueue.macOS */;
-			targetProxy = B92704AD23DA3C1400558FFE /* PBXContainerItemProxy */;
-		};
 		B92704B123DA3C6C00558FFE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B927049F23DA3B9C00558FFE /* JobQueueInMemoryStorage.macOS */;
@@ -1510,15 +1910,50 @@
 			target = B92704C223DA3D0100558FFE /* JobQueue.tvOS */;
 			targetProxy = B92704CD23DA3D0100558FFE /* PBXContainerItemProxy */;
 		};
-		B927050523DA3E1B00558FFE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B92704C223DA3D0100558FFE /* JobQueue.tvOS */;
-			targetProxy = B927050423DA3E1B00558FFE /* PBXContainerItemProxy */;
-		};
 		B927050923DA3E3400558FFE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B92704DE23DA3D2900558FFE /* JobQueueInMemoryStorage.tvOS */;
 			targetProxy = B927050823DA3E3400558FFE /* PBXContainerItemProxy */;
+		};
+		B9E9D23623DA6A8000D89111 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B9E9D20523DA695E00D89111 /* JobQueueCore.iOS */;
+			targetProxy = B9E9D23523DA6A8000D89111 /* PBXContainerItemProxy */;
+		};
+		B9E9D23923DA6A9100D89111 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B9E9D21223DA696F00D89111 /* JobQueueCore.watchOS */;
+			targetProxy = B9E9D23823DA6A9100D89111 /* PBXContainerItemProxy */;
+		};
+		B9E9D23C23DA6AA300D89111 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B9E9D22C23DA699200D89111 /* JobQueueCore.macOS */;
+			targetProxy = B9E9D23B23DA6AA300D89111 /* PBXContainerItemProxy */;
+		};
+		B9E9D23F23DA6AEF00D89111 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B9E9D21F23DA697C00D89111 /* JobQueueCore.tvOS */;
+			targetProxy = B9E9D23E23DA6AEF00D89111 /* PBXContainerItemProxy */;
+		};
+		B9E9D24223DA6B9100D89111 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B9E9D20523DA695E00D89111 /* JobQueueCore.iOS */;
+			targetProxy = B9E9D24123DA6B9100D89111 /* PBXContainerItemProxy */;
+		};
+		B9E9D24523DA6BA300D89111 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B9E9D21223DA696F00D89111 /* JobQueueCore.watchOS */;
+			targetProxy = B9E9D24423DA6BA300D89111 /* PBXContainerItemProxy */;
+		};
+		B9E9D24823DA6BB800D89111 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B9E9D22C23DA699200D89111 /* JobQueueCore.macOS */;
+			targetProxy = B9E9D24723DA6BB800D89111 /* PBXContainerItemProxy */;
+		};
+		B9E9D24B23DA6BD900D89111 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B9E9D21F23DA697C00D89111 /* JobQueueCore.tvOS */;
+			targetProxy = B9E9D24A23DA6BD900D89111 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1574,6 +2009,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Support Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1631,6 +2067,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Support Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -1699,7 +2136,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8Y2R2YMCQT;
-				INFOPLIST_FILE = "$(SRCROOT)/Support Files/Info.tests.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1718,7 +2155,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8Y2R2YMCQT;
-				INFOPLIST_FILE = "$(SRCROOT)/Support Files/Info.tests.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2109,7 +2546,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tundaware.jobqueue.storage.inmemory;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tundaware.jobqueue.tests;
 				PRODUCT_NAME = JobQueueTests;
 				SDKROOT = appletvos;
 				SWIFT_VERSION = 5.0;
@@ -2130,7 +2567,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tundaware.jobqueue.storage.inmemory;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tundaware.jobqueue.tests;
 				PRODUCT_NAME = JobQueueTests;
 				SDKROOT = appletvos;
 				SWIFT_VERSION = 5.0;
@@ -2190,6 +2627,212 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 13.2;
+			};
+			name = Release;
+		};
+		B9E9D20C23DA695E00D89111 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2216AC43B1F37EDEA82F04D /* Pods-All-Frameworks-JobQueueCore.iOS.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8Y2R2YMCQT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tundaware.jobqueue.core;
+				PRODUCT_NAME = JobQueueCore;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B9E9D20D23DA695E00D89111 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63237C5B0EC59613579B96A1 /* Pods-All-Frameworks-JobQueueCore.iOS.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8Y2R2YMCQT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tundaware.jobqueue.core;
+				PRODUCT_NAME = JobQueueCore;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B9E9D21923DA696F00D89111 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5474824CAA02CFA2CC9648B1 /* Pods-All-Frameworks-JobQueueCore.watchOS.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8Y2R2YMCQT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tundaware.jobqueue.core;
+				PRODUCT_NAME = JobQueueCore;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Debug;
+		};
+		B9E9D21A23DA696F00D89111 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 643DA0D18E7AC41780EA6A35 /* Pods-All-Frameworks-JobQueueCore.watchOS.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8Y2R2YMCQT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tundaware.jobqueue.core;
+				PRODUCT_NAME = JobQueueCore;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Release;
+		};
+		B9E9D22623DA697C00D89111 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32AE247DC066789F6A7D1362 /* Pods-All-Frameworks-JobQueueCore.tvOS.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8Y2R2YMCQT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tundaware.jobqueue.core;
+				PRODUCT_NAME = JobQueueCore;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 13.2;
+			};
+			name = Debug;
+		};
+		B9E9D22723DA697C00D89111 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC955EF9F04E3E4261F22539 /* Pods-All-Frameworks-JobQueueCore.tvOS.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8Y2R2YMCQT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tundaware.jobqueue.core;
+				PRODUCT_NAME = JobQueueCore;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 13.2;
+			};
+			name = Release;
+		};
+		B9E9D23323DA699200D89111 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDD28870058CCC2E88BA5423 /* Pods-All-Frameworks-JobQueueCore.macOS.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8Y2R2YMCQT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tundaware.jobqueue.core;
+				PRODUCT_NAME = JobQueueCore;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		B9E9D23423DA699200D89111 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8884D3245F5083B752ADA78 /* Pods-All-Frameworks-JobQueueCore.macOS.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8Y2R2YMCQT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tundaware.jobqueue.core;
+				PRODUCT_NAME = JobQueueCore;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -2300,6 +2943,42 @@
 			buildConfigurations = (
 				B92704E523DA3D2900558FFE /* Debug */,
 				B92704E623DA3D2900558FFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B9E9D20B23DA695E00D89111 /* Build configuration list for PBXNativeTarget "JobQueueCore.iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9E9D20C23DA695E00D89111 /* Debug */,
+				B9E9D20D23DA695E00D89111 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B9E9D21823DA696F00D89111 /* Build configuration list for PBXNativeTarget "JobQueueCore.watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9E9D21923DA696F00D89111 /* Debug */,
+				B9E9D21A23DA696F00D89111 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B9E9D22523DA697C00D89111 /* Build configuration list for PBXNativeTarget "JobQueueCore.tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9E9D22623DA697C00D89111 /* Debug */,
+				B9E9D22723DA697C00D89111 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B9E9D23223DA699200D89111 /* Build configuration list for PBXNativeTarget "JobQueueCore.macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9E9D23323DA699200D89111 /* Debug */,
+				B9E9D23423DA699200D89111 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
