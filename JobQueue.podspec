@@ -25,16 +25,15 @@ Pod::Spec.new do |s|
   s.default_subspecs = 'Standard'
 
   s.subspec 'Standard' do |ss|
-    ss.subspec 'JobQueue' do |sss|
-      sss.source_files = 'Sources/JobQueue/**/*.swift'
-      sss.dependency = 'JobQueue/JobQueueCore'
-      sss.dependency = 'ReactiveSwift', '~> 6.2.0'
-
-      sss.subspec 'JobQueueCore' do |ssss|
-        ssss.source_files = 'Sources/JobQueueCore/**/*.swift'
-        sss.dependency = 'ReactiveSwift', '~> 6.2.0'
-      end
+    ss.subspec 'JobQueueCore' do |sss|
+      sss.source_files = 'Sources/JobQueueCore/**/*.swift'
+      sss.dependency 'ReactiveSwift', '~> 6.2.0'
     end
+    # ss.subspec 'JobQueue' do |sss|
+    #   sss.source_files = 'Sources/JobQueue/**/*.swift'
+    #   sss.dependency 'JobQueue/Standard/JobQueueCore'
+    #   sss.dependency 'ReactiveSwift', '~> 6.2.0'
+    # end
   end
 
   # spec.subspec 'InMemoryStorage' do |sp|
