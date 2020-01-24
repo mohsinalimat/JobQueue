@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
     ss.dependency 'ReactiveSwift', '~> 6.2.0'
   end
   s.subspec 'Storage' do |ss|
-    ss.subspec 'InMemoryStorage' do |sss|
+    ss.subspec 'InMemory' do |sss|
       sss.source_files = 'Sources/JobQueueInMemoryStorage/**/*.swift'
       sss.dependency 'JobQueue/Core'
       sss.dependency 'ReactiveSwift', '~> 6.2.0'

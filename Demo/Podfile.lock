@@ -1,17 +1,17 @@
 PODS:
-  - JobQueue/JobQueue (0.0.15):
-    - JobQueue/JobQueueCore
+  - JobQueue/Core (0.0.16):
     - ReactiveSwift (~> 6.2.0)
-  - JobQueue/JobQueueCore (0.0.15):
+  - JobQueue/Queue (0.0.16):
+    - JobQueue/Core
     - ReactiveSwift (~> 6.2.0)
-  - JobQueue/JobQueueInMemoryStorage (0.0.15):
-    - JobQueue/JobQueueCore
+  - JobQueue/Storage/InMemory (0.0.16):
+    - JobQueue/Core
     - ReactiveSwift (~> 6.2.0)
   - ReactiveSwift (6.2.0)
 
 DEPENDENCIES:
-  - JobQueue/JobQueue (from `../`)
-  - JobQueue/JobQueueInMemoryStorage (from `../`)
+  - JobQueue/Queue (from `../`)
+  - JobQueue/Storage/InMemory (from `../`)
   - ReactiveSwift
 
 SPEC REPOS:
@@ -23,9 +23,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JobQueue: bf155b2a637096f90eba432db82514fe57df0f97
+  JobQueue: 3f35d0a623f32904883f651e27063bd12fb0f51b
   ReactiveSwift: 3dc8800378110b13d40b46ab362afa9f6bcffc6c
 
-PODFILE CHECKSUM: 08b3fd75662bfcf542569cef204bf48beac573e2
+PODFILE CHECKSUM: f4bf47569b3cc2a677bad023ee5bd20a164116e4
 
 COCOAPODS: 1.8.4
