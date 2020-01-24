@@ -7,7 +7,7 @@ import ReactiveSwift
 
 public struct JobQueueSchedulers {
   public let synchronize: Scheduler
-  public let shouldSynchronize: DateScheduler
+  public let synchronizePending: DateScheduler
   public let storage: Scheduler
   public let delay: DateScheduler
 
@@ -26,10 +26,10 @@ public struct JobQueueSchedulers {
       qos: .background,
       name: "JobQueue.synchronize",
       targeting: DispatchQueue(label: "JobQueue.synchronize")),
-    shouldSynchronize: DateScheduler = QueueScheduler(
+    synchronizePending: DateScheduler = QueueScheduler(
       qos: .background,
-      name: "JobQueue.shouldSynchronize",
-      targeting: DispatchQueue(label: "JobQueue.shouldSynchronize")),
+      name: "JobQueue.synchronizePending",
+      targeting: DispatchQueue(label: "JobQueue.synchronizePending")),
     storage: Scheduler = QueueScheduler(
       qos: .background,
       name: "JobQueue.storage",
@@ -40,7 +40,7 @@ public struct JobQueueSchedulers {
       targeting: DispatchQueue(label: "JobQueue.delay"))
     ) {
     self.synchronize = synchronize
-    self.shouldSynchronize = shouldSynchronize
+    self.synchronizePending = synchronizePending
     self.storage = storage
     self.delay = delay
   }

@@ -37,6 +37,8 @@ public final class JobQueue: JobQueueProtocol {
 
   private let _isSynchronizing = MutableProperty(false)
   private let isSynchronizing: Property<Bool>
+  private let _isSynchronizePending = MutableProperty(false)
+  private let isSynchronizePending: Property<Bool>
 
   private let _events = Signal<JobQueueEvent, Never>.pipe()
   /// An observable stream of events produced by the queue
@@ -67,6 +69,7 @@ public final class JobQueue: JobQueueProtocol {
     self.delayStrategy = delayStrategy
     self.isActive = Property(capturing: self._isActive)
     self.isSynchronizing = Property(capturing: self._isSynchronizing)
+    self.isSynchronizePending = Property(capturing: self._isSynchronizePending)
     self.events = self._events.output
     self.logger = logger
 
@@ -77,17 +80,18 @@ public final class JobQueue: JobQueueProtocol {
      Once those conditions are met, the `_isSynchronizing` property is set to `true`,
      which has the side effect of triggering synchronization.
      */
-    self.disposables +=
-      self.shouldSynchronize.output.producer
-      .throttle(0.5, on: self.schedulers.shouldSynchronize)
-      .throttle(while: self.isActive.map { !$0 }, on: self.schedulers.shouldSynchronize)
-      .throttle(while: self.isSynchronizing.map { $0 }, on: self.schedulers.shouldSynchronize)
+    self.disposables += self.isSynchronizePending.producer
+      .filter { $0 }
+      .throttle(0.5, on: self.schedulers.synchronizePending)
+      .throttle(while: self.isActive.map { !$0 }, on: self.schedulers.synchronizePending)
+      .throttle(while: self.isSynchronizing.map { $0 }, on: self.schedulers.synchronizePending)
       .map { _ in }
       .on(value: {
         logger.trace("Queue (\(name)) will set _isSynchronizing to true")
+        self._isSynchronizePending.value = false
         self._isSynchronizing.value = true
         logger.trace("Queue (\(name)) did set _isSynchronizing to true")
-    })
+      })
       .start()
 
     /**
@@ -338,7 +342,10 @@ public extension JobQueue {
 
 private extension JobQueue {
   func scheduleSynchronization() {
-    self.shouldSynchronize.input.send(value: ())
+    guard !self.isSynchronizePending.value else {
+      return
+    }
+    self._isSynchronizePending.swap(true)
   }
 
   func configureDelayTimer(for jobs: [AnyJob]) {}
