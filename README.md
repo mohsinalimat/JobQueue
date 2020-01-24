@@ -9,7 +9,7 @@ There are other queue implementations for Swift that are based on `Operation` an
 
 ## Features
 
-- [x] No `Operation` or `OperationQueue`
+- [x] No dependence on `Operation` or `OperationQueue`
 - [x] Concurrency per job type
 - [x] Manual processing order
 - [x] Delayed jobs
@@ -18,12 +18,12 @@ There are other queue implementations for Swift that are based on `Operation` an
 - [ ] Repeating jobs
 - [ ] Rate limiting
 - [x] Custom execution sorting
-- [x] Custom persistance
-- [x] In memory persistence
-- [ ] YapDatabase persistence
-- [ ] Couchbase Lite persistence
-- [ ] Core Data persistence
-- [ ] Realm persistence
+- [x] Storage agnostic
+- [x] In memory storage implementation
+- [ ] YapDatabase storage implementation
+- [ ] Couchbase Lite storage implementation
+- [ ] Core Data storage implementation
+- [ ] Realm storage implementation
 
 ## Dependencies
 ### [ReactiveSwift](https://github.com/ReactiveCocoa/ReactiveSwift)
@@ -38,7 +38,6 @@ could be written for GCD, RxSwift, ReactiveSwift, Combine, etc.
 This is alpha level code at this time. It needs more testing and profiling before being used in production.
 
 Priorities are:
-- [ ] CocoaPods support
 - [ ] Implementing `JobStorage` for `YapDatabase`, `Core Data`, `Realm`, and `Couchbase Lite`, in that order.
 - [ ] Testing
 - [ ] Profiling
@@ -117,7 +116,7 @@ let email = Email(
 )
 let job = SendAnEmail(
   id: "email 1",
-  rawPayload: try SendAnEmail.serialize(email),
+  rawPayload: try! SendAnEmail.serialize(email),
   payload: payload,
   status: status,
   queuedAt: queuedAt
