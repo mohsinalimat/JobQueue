@@ -3,6 +3,7 @@
 ///
 
 import Foundation
+import JobQueueCore
 
 internal extension Sequence where Element == AnyJob {
   var earliestDelayedJob: Element? {

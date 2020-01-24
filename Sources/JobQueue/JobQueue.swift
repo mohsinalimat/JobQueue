@@ -4,6 +4,7 @@
 
 import Foundation
 import ReactiveSwift
+import JobQueueCore
 
 public enum JobQueueError: Error {
   case jobNotFound(JobID)

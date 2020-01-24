@@ -4,6 +4,7 @@
 
 import Foundation
 import ReactiveSwift
+import JobQueueCore
 
 public struct JobQueueSchedulers {
   let synchronize: Scheduler

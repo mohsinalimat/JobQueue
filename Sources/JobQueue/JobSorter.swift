@@ -3,6 +3,8 @@
 ///
 
 import Foundation
+import JobQueueCore
+import JobQueueCore
 
 public protocol JobSorter {
   func sort(jobs: [AnyJob]) -> [AnyJob]

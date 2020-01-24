@@ -3,6 +3,7 @@
 ///
 
 import Foundation
+import JobQueueCore
 
 public enum JobType {
   case standard

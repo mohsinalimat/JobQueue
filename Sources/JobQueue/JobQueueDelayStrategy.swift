@@ -4,6 +4,7 @@
 
 import Foundation
 import ReactiveSwift
+import JobQueueCore
 
 public protocol JobQueueDelayStrategy {
   /// Invoked each time the queue is synchronized

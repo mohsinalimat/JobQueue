@@ -3,6 +3,7 @@
 ///
 
 import Foundation
+import JobQueueCore
 
 internal extension Dictionary where Key == JobName, Value == [AnyJob] {
   var jobIDs: [JobID] {

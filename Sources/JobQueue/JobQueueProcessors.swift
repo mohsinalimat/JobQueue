@@ -3,6 +3,7 @@
 ///
 
 import Foundation
+import JobQueueCore
 
 struct JobProcessorConfiguration {
   let concurrency: Int

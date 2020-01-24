@@ -4,6 +4,7 @@
 
 import Foundation
 import ReactiveSwift
+import JobQueueCore
 
 public enum JobProcessorError: Swift.Error {
   case invalidJobType
