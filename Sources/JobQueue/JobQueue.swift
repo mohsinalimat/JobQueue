@@ -185,12 +185,17 @@ public extension JobQueue {
 
 // Job access
 public extension JobQueue {
-  private func transaction<T>(_ closure: @escaping (JobStorageTransaction) throws -> T) -> SignalProducer<T, Error> {
+  func transaction<T>(synchronize: Bool = false, _ closure: @escaping (JobStorageTransaction) throws -> T) -> SignalProducer<T, Error> {
     return self.storage.transaction(queue: self, closure)
+      .on(completed: {
+        if synchronize {
+          self.scheduleSynchronization()
+        }
+      })
   }
 
   func set(_ id: JobID, status: JobStatus) -> SignalProducer<AnyJob, Error> {
-    return self.transaction {
+    return self.transaction(synchronize: true) {
       var job = (try $0.get(id).get())
       guard job.status != status else {
         return job
@@ -200,7 +205,6 @@ public extension JobQueue {
       return try $0.store(job).get()
     }.on(completed: {
       self.logger.trace("QUEUE (\(self.name)) set job \(id) status to \(status)")
-      self.scheduleSynchronization()
     })
   }
 
@@ -251,12 +255,7 @@ public extension JobQueue {
    from the underlying storage provider
    */
   func store(_ job: AnyJob, synchronize: Bool = true) -> SignalProducer<AnyJob, Error> {
-    self.transaction { try $0.store(job).get() }
-      .on(completed: {
-        if synchronize {
-          self.scheduleSynchronization()
-        }
-      })
+    self.transaction(synchronize: synchronize) { try $0.store(job).get() }
   }
 
   /**
@@ -269,12 +268,7 @@ public extension JobQueue {
    from the underlying storage provider
    */
   func store<T>(_ job: T, synchronize: Bool = true) -> SignalProducer<T, Error> where T: Job {
-    self.transaction { try $0.store(job).get() }
-      .on(completed: {
-        if synchronize {
-          self.scheduleSynchronization()
-        }
-      })
+    self.transaction(synchronize: synchronize) { try $0.store(job).get() }
   }
 
   /**
@@ -288,12 +282,7 @@ public extension JobQueue {
      from the underlying storage provider
    */
   func remove(_ id: JobID, synchronize: Bool = true) -> SignalProducer<JobID, Error> {
-    self.transaction { try $0.remove(id).get() }
-      .on(completed: {
-        if synchronize {
-          self.scheduleSynchronization()
-        }
-      })
+    self.transaction(synchronize: synchronize) { try $0.remove(id).get() }
   }
 
   /**
@@ -310,12 +299,7 @@ public extension JobQueue {
    from the underlying storage provider
    */
   func remove(_ job: AnyJob, synchronize: Bool = true) -> SignalProducer<AnyJob, Error> {
-    self.transaction { try $0.remove(job).get() }
-      .on(completed: {
-        if synchronize {
-          self.scheduleSynchronization()
-        }
-      })
+    self.transaction(synchronize: synchronize) { try $0.remove(job).get() }
   }
 }
 
