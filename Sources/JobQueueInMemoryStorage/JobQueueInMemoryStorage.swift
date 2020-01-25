@@ -66,7 +66,7 @@ public class JobQueueInMemoryStorageTransaction: JobStorageTransaction {
       return .failure(JobStorageError.noQueueProvided)
     }
     guard let jobs = self.data[queue.name] else {
-      return .failure(JobStorageError.queueNotFound(queue.name))
+      return .success([AnyJob]())
     }
     return .success(jobs.values.map { $0 })
   }
