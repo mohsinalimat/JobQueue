@@ -190,7 +190,7 @@ public class JobQueueInMemoryStorage: JobStorage {
               return
             }
             self.logger.trace("Storage applying .removed(\(queueName), \(jobId), \(job.status) from tx \(transaction.id)")
-            jobs[jobId] = job
+            jobs.removeValue(forKey: jobId)
             self.data[queueName] = jobs
           case .removedAll(let queueName):
             self.logger.trace("Storage applying .removedAll(\(queueName)) from tx \(transaction.id)")
