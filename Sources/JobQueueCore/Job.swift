@@ -12,7 +12,7 @@ public protocol AnyJob: StaticallyNamed {
   var id: JobID { get }
 
   /// Raw payload bytes
-  var rawPayload: [UInt8] { get }
+  var rawPayload: [UInt8] { get set }
 
   /// The job's status
   var status: JobStatus { get set }
@@ -76,6 +76,15 @@ extension Job {
   /// - Parameter rawPayload: the raw payload bytes
   public static func deserialize(_ rawPayload: [UInt8]) throws -> Payload {
     return try JSONDecoder().decode([Payload].self, from: .init(rawPayload)).first!
+  }
+}
+
+extension AnyJob {
+  public mutating func update(with job: AnyJob) {
+    self.order = job.order
+    self.progress = job.progress
+    self.status = job.status
+    self.rawPayload = job.rawPayload
   }
 }
 

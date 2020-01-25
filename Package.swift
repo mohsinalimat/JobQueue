@@ -23,6 +23,10 @@ let package = Package(
     .library(
       name: "JobQueueInMemoryStorage",
       targets: ["JobQueueInMemoryStorage"]
+    ),
+    .library(
+      name: "JobQueueCoreDataStorage",
+      targets: ["JobQueueCoreDataStorage"]
     )
   ],
   dependencies: [
@@ -41,6 +45,10 @@ let package = Package(
     ),
     .target(
       name: "JobQueueInMemoryStorage",
+      dependencies: ["JobQueueCore", "ReactiveSwift"]
+    ),
+    .target(
+      name: "JobQueueCoreDataStorage",
       dependencies: ["JobQueueCore", "ReactiveSwift"]
     ),
     .testTarget(
