@@ -33,19 +33,23 @@ let package = Package(
   targets: [
     .target(
       name: "JobQueue",
-      dependencies: ["JobQueueCore", "ReactiveSwift"]
+      dependencies: ["JobQueueCore", "ReactiveSwift"],
+      path: "Sources/Queue"
     ),
     .target(
       name: "JobQueueCore",
-      dependencies: ["ReactiveSwift"]
+      dependencies: ["ReactiveSwift"],
+      path: "Sources/Core"
     ),
     .target(
       name: "JobQueueInMemoryStorage",
-      dependencies: ["JobQueueCore", "ReactiveSwift"]
+      dependencies: ["JobQueueCore", "ReactiveSwift"],
+      path: "Sources/Storage/InMemory"
     ),
     .testTarget(
       name: "JobQueueTests",
-      dependencies: ["JobQueue", "JobQueueInMemoryStorage", "Nimble", "Quick", "ReactiveSwift"]
+      dependencies: ["JobQueue", "JobQueueInMemoryStorage", "Nimble", "Quick", "ReactiveSwift"],
+      path: "Tests"
     )
   ]
 )

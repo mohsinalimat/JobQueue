@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "JobQueue"
-  s.version      = "0.0.22"
+  s.version      = "0.0.23"
   s.summary      = "A persistent and flexible job queue for Swift applications"
   s.description  = <<-DESC
   JobQueue is a persistent job queue with a simple API that does not depend on `Operation`/`OperationQueue`, is storage agnostic, supports for manual execution order, per job type concurrency limits, delayed jobs, and more.
@@ -23,17 +23,17 @@ Pod::Spec.new do |s|
   s.swift_version = '5.1'
 
   s.subspec 'Core' do |ss|
-    ss.source_files = 'Sources/JobQueueCore/**/*.swift'
+    ss.source_files = 'Sources/Core/**/*.swift'
     ss.dependency 'ReactiveSwift', '~> 6.2.0'
   end
   s.subspec 'Queue' do |ss|
-    ss.source_files = 'Sources/JobQueue/**/*.swift'
+    ss.source_files = 'Sources/Queue/**/*.swift'
     ss.dependency 'JobQueue/Core'
     ss.dependency 'ReactiveSwift', '~> 6.2.0'
   end
   s.subspec 'Storage' do |ss|
     ss.subspec 'InMemory' do |sss|
-      sss.source_files = 'Sources/JobQueueInMemoryStorage/**/*.swift'
+      sss.source_files = 'Sources/Storage/InMemory/**/*.swift'
       sss.dependency 'JobQueue/Core'
       sss.dependency 'ReactiveSwift', '~> 6.2.0'
     end
