@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		39A2D1B3E2F6214EF1578966 /* Pods_JobQueueDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55429661AFC07D022592011 /* Pods_JobQueueDemo.framework */; };
+		B964BA5C23DF3D1E00AF9279 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B964BA5B23DF3D1E00AF9279 /* CoreDataStack.swift */; };
 		B9E9D29323DB084200D89111 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D29223DB084200D89111 /* AppDelegate.swift */; };
 		B9E9D29523DB084200D89111 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D29423DB084200D89111 /* SceneDelegate.swift */; };
 		B9E9D29723DB084200D89111 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D29623DB084200D89111 /* ContentView.swift */; };
@@ -20,6 +21,7 @@
 		60BE7D0D7CBAAF2D947B2A74 /* Pods-JobQueueDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobQueueDemo.debug.xcconfig"; path = "Target Support Files/Pods-JobQueueDemo/Pods-JobQueueDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		79708CABD71FF5C123C3F910 /* Pods-JobQueueDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobQueueDemo.release.xcconfig"; path = "Target Support Files/Pods-JobQueueDemo/Pods-JobQueueDemo.release.xcconfig"; sourceTree = "<group>"; };
 		B55429661AFC07D022592011 /* Pods_JobQueueDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobQueueDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B964BA5B23DF3D1E00AF9279 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		B9E9D28F23DB084200D89111 /* JobQueueDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobQueueDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9E9D29223DB084200D89111 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9E9D29423DB084200D89111 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,7 +58,6 @@
 				60BE7D0D7CBAAF2D947B2A74 /* Pods-JobQueueDemo.debug.xcconfig */,
 				79708CABD71FF5C123C3F910 /* Pods-JobQueueDemo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -88,6 +89,7 @@
 				B9E9D29D23DB084300D89111 /* LaunchScreen.storyboard */,
 				B9E9D2A023DB084300D89111 /* Info.plist */,
 				B9E9D29A23DB084300D89111 /* Preview Content */,
+				B964BA5B23DF3D1E00AF9279 /* CoreDataStack.swift */,
 			);
 			path = JobQueueDemo;
 			sourceTree = "<group>";
@@ -218,6 +220,7 @@
 				B9E9D29323DB084200D89111 /* AppDelegate.swift in Sources */,
 				B9E9D29523DB084200D89111 /* SceneDelegate.swift in Sources */,
 				B9E9D29723DB084200D89111 /* ContentView.swift in Sources */,
+				B964BA5C23DF3D1E00AF9279 /* CoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

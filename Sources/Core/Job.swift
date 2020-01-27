@@ -11,7 +11,7 @@ extension JobQueueName {
   static let unassignedJobQueueName = "UNASSIGNEDJOBQUEUENAME"
 }
 
-public struct JobDetails {
+public struct JobDetails: Codable {
   public typealias EncodedPayload = [UInt8]
 
   /// Unique name that identifies the type
