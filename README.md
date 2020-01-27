@@ -19,24 +19,27 @@ A persistent job queue with a simple API that does not depend on `Operation`/`Op
 - [x] Storage agnostic
 - [x] In memory storage implementation
 - [ ] YapDatabase storage implementation
-- [ ] Couchbase Lite storage implementation
+- [x] Couchbase Lite storage implementation
 - [ ] Core Data storage implementation
 - [ ] Realm storage implementation
 
 ## Dependencies
 ### [ReactiveSwift](https://github.com/ReactiveCocoa/ReactiveSwift)
-I didn't want to make a hard choice here, but I didn't have time to come up with a more 
-flexible implementation. 
+I didn't want to make a hard choice here, but I didn't have time to come up with a more
+flexible implementation.
 Ideally, I'd like to refactor it to have a core implementation that is
-interacted with via an adapter that implements the asynchronous behavior so adapters 
+interacted with via an adapter that implements the asynchronous behavior so adapters
 could be written for GCD, RxSwift, ReactiveSwift, Combine, etc.
+
+## Install Notes
+For CouchbaseLite storage support, you must use Cocoapods to install.
 
 ## Roadmap
 
 This is alpha level code at this time. It needs more testing and profiling before being used in production.
 
 Priorities are:
-- [ ] Implementing `JobStorage` for `YapDatabase`, `Core Data`, `Realm`, and `Couchbase Lite`, in that order.
+- [ ] Implement the remaining storage providers (YapDB & Realm)
 - [ ] Testing
 - [ ] Profiling
 
