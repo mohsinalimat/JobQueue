@@ -43,7 +43,7 @@ Pod::Spec.new do |s|
     ss.subspec 'CouchbaseLite' do |sss|
       sss.source_files = 'Sources/Storage/CouchbaseLite/**/*.swift'
       sss.dependency 'JobQueue/Core'
-      sss.dependency 'ReactiveSwift', '~> 6.2.0'
+      sss.dependency 'CouchbaseLite-Swift', '~> 2.7.0'
     end
   end
 end
