@@ -52,11 +52,12 @@ let package = Package(
     ),
     .target(
       name: "JobQueueCoreDataStorage",
-      dependencies: ["JobQueueCore", "ReactiveSwift"]
+      dependencies: ["JobQueueCore", "ReactiveSwift"],
+      path: "Sources/Storage/CoreData"
     ),
     .testTarget(
       name: "JobQueueTests",
-      dependencies: ["JobQueue", "JobQueueInMemoryStorage", "Nimble", "Quick", "ReactiveSwift"],
+      dependencies: ["JobQueue", "JobQueueInMemoryStorage", "JobQueueCoreDataStorage", "Nimble", "Quick", "ReactiveSwift"],
       path: "Tests"
     )
   ]

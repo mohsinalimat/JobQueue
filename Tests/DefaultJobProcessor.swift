@@ -3,10 +3,10 @@
 ///
 
 import Foundation
+import JobQueueCore
 import Nimble
 import Quick
 import ReactiveSwift
-import JobQueueCore
 
 @testable import JobQueue
 
@@ -14,10 +14,10 @@ class DefaultJobProcessorTests: QuickSpec {
   override func spec() {
     describe("cancelling") {
       context("when cancelled") {
-        var processor: DefaultJobProcessor<TestJob1>!
+        var processor: TestJob1!
 
         beforeEach {
-          processor = DefaultJobProcessor()
+          processor = TestJob1()
         }
 
         it("should send the cancel reason") {
@@ -45,7 +45,7 @@ class DefaultJobProcessorTests: QuickSpec {
           var queue: JobQueue!
           var schedulers: JobQueueSchedulers!
           var storage: JobStorage!
-          var processor: DefaultJobProcessor<TestJob2>!
+          var processor: AnyJob!
 
           beforeEach {
             schedulers = JobQueueSchedulers()
@@ -54,11 +54,11 @@ class DefaultJobProcessorTests: QuickSpec {
             queue = JobQueue(name: "test",
                              schedulers: schedulers,
                              storage: storage)
-            processor = DefaultJobProcessor()
+            processor = TestJob2()
           }
 
           it("should send an error because the default job processor is abstract") {
-            processor.process(job: (try! TestJob1.make(id: "0", payload: "test")) as AnyJob,
+            processor.process(details: try! JobDetails(TestJob1.self, id: "0", queueName: queue.name, payload: "test"),
                               queue: queue) { result in
               switch result {
               case .success:
@@ -77,7 +77,7 @@ class DefaultJobProcessorTests: QuickSpec {
           var queue: JobQueue!
           var schedulers: JobQueueSchedulers!
           var storage: JobStorage!
-          var processor: DefaultJobProcessor<TestJob1>!
+          var processor: AnyJob!
 
           beforeEach {
             schedulers = JobQueueSchedulers()
@@ -86,11 +86,12 @@ class DefaultJobProcessorTests: QuickSpec {
             queue = JobQueue(name: "test",
                              schedulers: schedulers,
                              storage: storage)
-            processor = DefaultJobProcessor()
+            processor = DefaultJob<String>()
+            queue.register(DefaultJob<String>.self)
           }
 
           it("should send an error because the default job processor is abstract") {
-            processor.process(job: (try! TestJob1.make(id: "0", payload: "test")) as AnyJob,
+            processor.process(details: try! JobDetails(TestJob1.self, id: "0", queueName: queue.name, payload: "test"),
                               queue: queue) { result in
               switch result {
               case .success:
@@ -111,7 +112,7 @@ class DefaultJobProcessorTests: QuickSpec {
         var queue: JobQueue!
         var schedulers: JobQueueSchedulers!
         var storage: JobStorage!
-        var processor: DefaultJobProcessor<TestJob1>!
+        var processor: AnyJob!
 
         beforeEach {
           schedulers = JobQueueSchedulers()
@@ -120,11 +121,11 @@ class DefaultJobProcessorTests: QuickSpec {
           queue = JobQueue(name: "test",
                            schedulers: schedulers,
                            storage: storage)
-          processor = DefaultJobProcessor()
+          processor = TestJob3()
         }
 
         it("should send an error because the default job processor is abstract") {
-          processor.process(job: try! TestJob1.make(id: "0", payload: "test"),
+          processor.process(details: try! JobDetails(TestJob3.self, id: "0", queueName: queue.name, payload: "test"),
                             queue: queue) { result in
             switch result {
             case .success:

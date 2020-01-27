@@ -4,15 +4,6 @@
 
 import Foundation
 
-public protocol StaticallyNamed {
-  static var name: String { get }
-  var name: String { get }
-}
-public extension StaticallyNamed {
-  static var name: String { String(describing: self) }
-  var name: String { Self.name }
-}
-
 public typealias JobID = String
 public typealias JobName = String
 public typealias JobQueueName = String
@@ -25,4 +16,13 @@ public func notImplemented(_ message: @autoclosure () -> String = String(), file
 public func abstract(_ message: @autoclosure () -> String = String(), file: StaticString = #file, line: UInt = #line) -> Never {
   let message = message()
   fatalError(message != String() ? message : "Function is abstract", file: file, line: line)
+}
+
+public typealias JobCompletion = (Result<Void, Error>) -> Void
+public enum JobCancellationReason {
+  case statusChangedToWaiting
+  case statusChangedToDelayed
+  case removed
+  case statusChangedToPaused
+  case queueSuspended
 }

@@ -76,3 +76,65 @@ public enum JobStatus: Equatable {
     }
   }
 }
+
+extension JobStatus: Codable {
+  enum CodingKeys: String, CodingKey {
+    case simpleStatus
+    case completedAt
+    case delayedUntil
+    case failedAt
+    case failedMessage
+  }
+  enum SimpleStatus: String, Codable {
+    case active
+    case waiting
+    case paused
+    case failed
+    case completed
+    case delayed
+
+    func toStatus(from values: KeyedDecodingContainer<JobStatus.CodingKeys>) throws -> JobStatus {
+      switch self {
+      case .active: return .active
+      case .waiting: return .waiting
+      case .paused: return .paused
+      case .completed: return .completed(at: try values.decode(Date.self, forKey: .completedAt))
+      case .failed: return .failed(at: try values.decode(Date.self, forKey: .failedAt),
+                                   message: try values.decode(String.self, forKey: .failedMessage))
+      case .delayed: return .delayed(until: try values.decode(Date.self, forKey: .delayedUntil))
+      }
+    }
+
+    static func from(status: JobStatus) -> Self {
+      switch status {
+      case .active: return .active
+      case .waiting: return .waiting
+      case .paused: return .paused
+      case .completed: return .completed
+      case .failed: return .failed
+      case .delayed: return .delayed
+      }
+    }
+  }
+
+  public init(from decoder: Decoder) throws {
+    let values = try decoder.container(keyedBy: CodingKeys.self)
+    let simpleStatus = try values.decode(SimpleStatus.self, forKey: .simpleStatus)
+    self = try simpleStatus.toStatus(from: values)
+  }
+
+  public func encode(to encoder: Encoder) throws {
+    var container = encoder.container(keyedBy: CodingKeys.self)
+    try container.encode(SimpleStatus.from(status: self), forKey: .simpleStatus)
+    switch self {
+    case .completed(let date):
+      try container.encode(date, forKey: .completedAt)
+    case .failed(let date, let message):
+      try container.encode(date, forKey: .failedAt)
+      try container.encode(message, forKey: .failedMessage)
+    case .delayed(let date):
+      try container.encode(date, forKey: .delayedUntil)
+    default: break
+    }
+  }
+}

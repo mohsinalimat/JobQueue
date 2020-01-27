@@ -3,9 +3,9 @@
 ///
 
 import Foundation
+import JobQueueCore
 import Nimble
 import Quick
-import JobQueueCore
 
 @testable import JobQueue
 
@@ -17,11 +17,12 @@ class JobTests: QuickSpec {
       describe("when completed") {
         let date = Date(timeIntervalSince1970: 25)
         let status = JobStatus.completed(at: date)
-        let job = TestJob1(id: randomString(),
-                           rawPayload: [UInt8](),
-                           payload: "",
-                           status: status,
-                           queuedAt: Date())
+        let job = try! JobDetails(
+          TestJob1.self,
+          id: randomString(),
+          queueName: "",
+          payload: "",
+          status: status)
 
         the("status should be correct") {
           expect(job.status).to(equal(status))
@@ -42,11 +43,12 @@ class JobTests: QuickSpec {
       describe("when delayed") {
         let date = Date(timeIntervalSince1970: 50)
         let status = JobStatus.delayed(until: date)
-        let job = TestJob1(id: randomString(),
-                           rawPayload: [UInt8](),
-                           payload: "",
-                           status: status,
-                           queuedAt: Date())
+        let job = try! JobDetails(
+          TestJob1.self,
+          id: randomString(),
+          queueName: "",
+          payload: "",
+          status: status)
 
         the("status should be correct") {
           expect(job.status).to(equal(status))
@@ -68,11 +70,12 @@ class JobTests: QuickSpec {
         let date = Date(timeIntervalSince1970: 100)
         let message = "some failure"
         let status = JobStatus.failed(at: date, message: message)
-        let job = TestJob1(id: randomString(),
-                           rawPayload: [UInt8](),
-                           payload: "",
-                           status: status,
-                           queuedAt: Date())
+        let job = try! JobDetails(
+          TestJob1.self,
+          id: randomString(),
+          queueName: "",
+          payload: "",
+          status: status)
 
         the("status should be correct") {
           expect(job.status).to(equal(status))

@@ -19,15 +19,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       schedulers: schedulers,
       storage: JobQueueInMemoryStorage(scheduler: schedulers.storage)
     )
-    self.queue?.register(Processor.self, concurrency: 3)
-    self.queue?.resume().start()
+    guard let queue = self.queue else {
+      return true
+    }
+    queue.register(TestJob.self, concurrency: 3)
+    queue.resume().start()
 
     // Add 10 jobs
     let jobs = (0..<10).map {
-      try! TestJob(id: "jobs/TestJob/\($0)", payload: "Job #\($0)")
+      try! JobDetails(TestJob.self, id: "jobs/TestJob/\($0)", queueName: queue.name, payload: "Job #\($0)")
     }
     SignalProducer(jobs)
-      .flatMap(.merge) { self.queue!.store($0) }
+      .flatMap(.merge) { queue.store($0) }
       .startWithCompleted {
         print("Finished storing jobs")
       }
@@ -50,31 +53,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 }
 
-struct TestJob: Job {
-  var id: JobID
-  var rawPayload: [UInt8]
-  var payload: String
-  var status: JobStatus
-  var schedule: JobSchedule?
-  var queuedAt: Date
-  var order: Float?
-  var progress: Float?
-
-  init(id: JobID,
-       payload: String,
-       status: JobStatus = .waiting,
-       queuedAt: Date = Date()
-  ) throws {
-    self.id = id
-    self.rawPayload = try TestJob.serialize(payload)
-    self.status = status
-    self.queuedAt = queuedAt
-    self.payload = payload
-  }
-}
-
-class Processor: DefaultJobProcessor<TestJob> {
-  override func process(job: TestJob, queue: JobQueue, done: @escaping JobCompletion) {
+class TestJob: DefaultJob<String> {
+  override func process(details: JobDetails, payload: Payload, queue: JobQueueProtocol, done: @escaping JobCompletion) {
     QueueScheduler().schedule(after: Date().addingTimeInterval(5)) {
       done(.success(()))
     }

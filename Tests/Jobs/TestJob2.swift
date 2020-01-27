@@ -9,13 +9,8 @@ import JobQueue
 struct TestPayload1: Codable, Equatable {
   var name: String
 }
-struct TestJob2: Job {
-  var id: JobID
-  var rawPayload: [UInt8]
-  var payload: TestPayload1
-  var status: JobStatus
-  var schedule: JobSchedule?
-  var queuedAt: Date
-  var order: Float?
-  var progress: Float?
+class TestJob2: DefaultJob<TestPayload1> {
+  override func process(details: JobDetails, payload: TestPayload1, queue: JobQueueProtocol, done: @escaping JobCompletion) {
+    
+  }
 }
