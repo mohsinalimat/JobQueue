@@ -15,16 +15,16 @@ public enum JobQueueError: Error {
 public enum JobQueueEvent {
   case resumed
   case suspended
-  case added(AnyJob)
-  case updated(AnyJob)
-  case removed(AnyJob)
+  case added(JobDetails)
+  case updated(JobDetails)
+  case removed(JobDetails)
   case registeredProcessor(JobName, concurrency: Int)
-  case updatedStatus(AnyJob)
-  case updatedProgress(AnyJob)
-  case beganProcessing(AnyJob)
-  case cancelledProcessing(AnyJob?, JobCancellationReason)
-  case failedProcessing(AnyJob, Error)
-  case finishedProcessing(AnyJob)
+  case updatedStatus(JobDetails)
+  case updatedProgress(JobDetails)
+  case beganProcessing(JobDetails)
+  case cancelledProcessing(JobDetails?, JobCancellationReason)
+  case failedProcessing(JobDetails, Error)
+  case finishedProcessing(JobDetails)
 }
 
 public final class JobQueue: JobQueueProtocol {
@@ -194,7 +194,7 @@ public extension JobQueue {
       })
   }
 
-  func set(_ id: JobID, status: JobStatus) -> SignalProducer<AnyJob, Error> {
+  func set(_ id: JobID, status: JobStatus) -> SignalProducer<JobDetails, Error> {
     return self.transaction(synchronize: true) {
       var job = (try $0.get(id).get())
       guard job.status != status else {
@@ -208,7 +208,7 @@ public extension JobQueue {
     })
   }
 
-  func set(_ job: AnyJob, status: JobStatus) -> SignalProducer<AnyJob, Error> {
+  func set(_ job: JobDetails, status: JobStatus) -> SignalProducer<JobDetails, Error> {
     guard job.status != status else {
       return SignalProducer(value: job)
     }
@@ -221,18 +221,8 @@ public extension JobQueue {
    - Parameter id: the id of the job to get
    - Returns: A `SignalProducer<AnyJob, Error>` that sends the job or, if not found, an error
    */
-  func get(_ id: JobID) -> SignalProducer<AnyJob, Error> {
+  func get(_ id: JobID) -> SignalProducer<JobDetails, Error> {
     self.transaction { try $0.get(id).get() }
-  }
-
-  /**
-   Fetch one job of type `T`
-
-   - Parameter id: the id of the job to get
-   - Returns: A `SignalProducer<AnyJob, Error>` that sends the job or, if not found, an error
-   */
-  func get<T>(_ id: JobID) -> SignalProducer<T, Error> where T: Job {
-    self.transaction { try ($0.get(id)).get() }
   }
 
   /**
@@ -241,7 +231,7 @@ public extension JobQueue {
    - Returns: A `SignalProducer<[AnyJob], Error>` that sends the jobs in the queue or
    any error from the underlying storage provider
    */
-  func getAll() -> SignalProducer<[AnyJob], Error> {
+  func getAll() -> SignalProducer<[JobDetails], Error> {
     self.transaction { try $0.getAll().get() }
   }
 
@@ -254,20 +244,7 @@ public extension JobQueue {
    - Returns: A `SignalProducer<AnyJob, Error>` that echoes the job or any error
    from the underlying storage provider
    */
-  func store(_ job: AnyJob, synchronize: Bool = true) -> SignalProducer<AnyJob, Error> {
-    self.transaction(synchronize: synchronize) { try $0.store(job).get() }
-  }
-
-  /**
-   Stores one job, of type `T`
-
-   If the job is stored successfully. This will eventually trigger synchronization.
-
-   - Parameter job: the job to store
-   - Returns: A `SignalProducer<T, Error>` that echoes the job or any error
-   from the underlying storage provider
-   */
-  func store<T>(_ job: T, synchronize: Bool = true) -> SignalProducer<T, Error> where T: Job {
+  func store(_ job: JobDetails, synchronize: Bool = true) -> SignalProducer<JobDetails, Error> {
     self.transaction(synchronize: synchronize) { try $0.store(job).get() }
   }
 
@@ -298,7 +275,7 @@ public extension JobQueue {
    - Returns: A `SignalProducer<AnyJob, Error>` that sends the job or any error
    from the underlying storage provider
    */
-  func remove(_ job: AnyJob, synchronize: Bool = true) -> SignalProducer<AnyJob, Error> {
+  func remove(_ job: JobDetails, synchronize: Bool = true) -> SignalProducer<JobDetails, Error> {
     self.transaction(synchronize: synchronize) { try $0.remove(job).get() }
   }
 }
@@ -320,11 +297,11 @@ public extension JobQueue {
      - concurrency: the maximum number of instances of this `JobProcessor` that can
      simultaneously process jobs. defaults to `1`.
    */
-  func register<T>(_ type: T.Type, concurrency: Int = 1) where T: JobProcessor {
-    self.processors.configurations[T.JobType.name] =
+  func register<T>(_ type: T.Type, concurrency: Int = 1) where T: Job {
+    self.processors.configurations[T.typeName] =
       JobProcessorConfiguration(type, concurrency: concurrency)
 
-    self._events.input.send(value: .registeredProcessor(T.JobType.name, concurrency: concurrency))
+    self._events.input.send(value: .registeredProcessor(T.typeName, concurrency: concurrency))
   }
 }
 
@@ -336,7 +313,7 @@ private extension JobQueue {
     self._isSynchronizePending.swap(true)
   }
 
-  func configureDelayTimer(for jobs: [AnyJob]) {}
+  func configureDelayTimer(for jobs: [JobDetails]) {}
 
   /**
    Synchronize the queue
@@ -348,7 +325,7 @@ private extension JobQueue {
 
    - Parameter jobs: all jobs in the queue
    */
-  func synchronize(jobs: [AnyJob]) -> SignalProducer<Void, Error> {
+  func synchronize(jobs: [JobDetails]) -> SignalProducer<Void, Error> {
     return SignalProducer { o, lt in
       let sortedJobs = self.sorter.sort(jobs: jobs)
       let jobsToProcessByName = self.processable(jobs: sortedJobs)
@@ -373,7 +350,7 @@ private extension JobQueue {
 
       // Process jobs to process
       lt += SignalProducer(
-        jobsToProcessByName.reduce(into: [AnyJob]()) { acc, kvp in
+        jobsToProcessByName.reduce(into: [JobDetails]()) { acc, kvp in
           acc.append(contentsOf: kvp.value.filter { !self.processors.isProcessing(job: $0) })
         }
       ).flatMap(.concat) {
@@ -392,9 +369,9 @@ private extension JobQueue {
 
    - Parameter jobs: the list of jobs to reduce
    */
-  func processable(jobs: [AnyJob]) -> [JobName: [AnyJob]] {
-    return jobs.reduce(into: [JobName: [AnyJob]]()) { acc, job in
-      guard let configuration = self.processors.configurations[job.name] else {
+  func processable(jobs: [JobDetails]) -> [JobName: [JobDetails]] {
+    return jobs.reduce(into: [JobName: [JobDetails]]()) { acc, job in
+      guard let configuration = self.processors.configurations[job.type] else {
         return
       }
       guard configuration.concurrency > 0 else {
@@ -406,11 +383,11 @@ private extension JobQueue {
       default:
         break
       }
-      var nextJobs = acc[job.name, default: [AnyJob]()]
+      var nextJobs = acc[job.type, default: [JobDetails]()]
       guard nextJobs.count < configuration.concurrency else {
         return
       }
-      acc[job.name] = {
+      acc[job.type] = {
         nextJobs.append(job)
         return nextJobs
       }()
@@ -425,7 +402,7 @@ private extension JobQueue {
 
    - Parameter job: the job to process
    */
-  func beginProcessing(job: AnyJob) -> SignalProducer<AnyJob, Error> {
+  func beginProcessing(job: JobDetails) -> SignalProducer<JobDetails, Error> {
     return
       self.get(job.id)
         .filter {
@@ -443,7 +420,7 @@ private extension JobQueue {
           guard let processor = self.processors.activeProcessor(for: _job) else {
             return
           }
-          processor.process(job: _job, queue: self) { result in
+          processor.process(details: _job, queue: self) { result in
             self.schedulers.synchronize.schedule {
               switch result {
               case .success:

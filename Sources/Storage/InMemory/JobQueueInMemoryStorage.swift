@@ -9,13 +9,13 @@ import JobQueueCore
 #endif
 
 public enum JobStorageTransactionChange {
-  case stored(JobQueueName, JobID, AnyJob)
-  case removed(JobQueueName, JobID, AnyJob)
+  case stored(JobQueueName, JobID, JobDetails)
+  case removed(JobQueueName, JobID, JobDetails)
   case removedAll(JobQueueName)
 }
 
 public class JobQueueInMemoryStorage: JobStorage {
-  private var data = [JobQueueName: [JobID: AnyJob]]()
+  private var data = [JobQueueName: [JobID: JobDetails]]()
   private let scheduler: Scheduler
   private let logger: Logger
 
@@ -34,7 +34,7 @@ public class JobQueueInMemoryStorage: JobStorage {
           switch change {
           case .stored(let queueName, let jobId, let job):
             self.logger.trace("Storage applying .stored(\(queueName), \(jobId), \(job.status) from tx \(transaction.id)")
-            var jobs = self.data[queueName, default: [JobID: AnyJob]()]
+            var jobs = self.data[queueName, default: [JobID: JobDetails]()]
             jobs[jobId] = job
             self.data[queueName] = jobs
           case .removed(let queueName, let jobId, let job):

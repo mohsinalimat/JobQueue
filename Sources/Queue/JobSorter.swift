@@ -8,12 +8,12 @@ import JobQueueCore
 #endif
 
 public protocol JobSorter {
-  func sort(jobs: [AnyJob]) -> [AnyJob]
+  func sort(jobs: [JobDetails]) -> [JobDetails]
 }
 
 public struct DefaultJobSorter: JobSorter {
   public init() {}
-  public func sort(jobs: [AnyJob]) -> [AnyJob] {
+  public func sort(jobs: [JobDetails]) -> [JobDetails] {
     return jobs.sorted { lhs, rhs in
       if
         let lhsOrder = lhs.order,

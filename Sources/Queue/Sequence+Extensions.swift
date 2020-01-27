@@ -7,14 +7,14 @@ import Foundation
 import JobQueueCore
 #endif
 
-internal extension Sequence where Element == AnyJob {
+internal extension Sequence where Element == JobDetails {
   var earliestDelayedJob: Element? {
     return self.delayedJobs
       .sorted { $0.delayedUntil! < $1.delayedUntil! }
       .first
   }
 
-  var delayedJobs: [AnyJob] {
+  var delayedJobs: [JobDetails] {
     return self.filter { $0.status.isDelayed }
   }
 }

@@ -9,9 +9,9 @@ import JobQueueCore
 
 struct JobProcessorConfiguration {
   let concurrency: Int
-  let generate: () -> AnyJobProcessor
+  let generate: () -> AnyJob
 
-  init<T>(_ type: T.Type, concurrency: Int) where T: JobProcessor {
+  init<T>(_ type: T.Type, concurrency: Int) where T: AnyJob {
     self.concurrency = concurrency
     self.generate = { T() }
   }
@@ -19,7 +19,7 @@ struct JobProcessorConfiguration {
 
 class JobQueueProcessors {
   var configurations = [JobName: JobProcessorConfiguration]()
-  var active = [JobName: [JobID: AnyJobProcessor]]()
+  var active = [JobName: [JobID: AnyJob]]()
 
   /**
    Gets the active processors by filtering out processors for the provided list
@@ -30,8 +30,8 @@ class JobQueueProcessors {
    - Returns: a `[JobID: AnyJobProcessor]` that only includes active processors
    and excludes processors for any job whose id is in the `excludedIDs` list.
    */
-  func activeProcessorsByID(excluding excludedIDs: [JobID]) -> [JobID: AnyJobProcessor] {
-    return self.active.reduce(into: [JobID: AnyJobProcessor]()) { acc, kvp in
+  func activeProcessorsByID(excluding excludedIDs: [JobID]) -> [JobID: AnyJob] {
+    return self.active.reduce(into: [JobID: AnyJob]()) { acc, kvp in
       kvp.value.filter {
         !excludedIDs.contains($0.key)
       }.forEach {
@@ -47,7 +47,7 @@ class JobQueueProcessors {
    should be removed from the active processors collection.
    */
   func remove(processors processorsToRemoveByJobID: [JobID]) {
-    self.active = self.active.reduce(into: [JobName: [JobID: AnyJobProcessor]]()) { acc, kvp in
+    self.active = self.active.reduce(into: [JobName: [JobID: AnyJob]]()) { acc, kvp in
       var nextProcessorsByJobID = kvp.value
       processorsToRemoveByJobID.forEach {
         nextProcessorsByJobID.removeValue(forKey: $0)
@@ -61,8 +61,8 @@ class JobQueueProcessors {
 
    - Parameter job: the job to check
    */
-  func isProcessing(job: AnyJob) -> Bool {
-    return self.active[job.name]?[job.id] != nil
+  func isProcessing(job: JobDetails) -> Bool {
+    return self.active[job.type]?[job.id] != nil
   }
 
   /**
@@ -78,16 +78,16 @@ class JobQueueProcessors {
    - Parameter job: the job to provide a processor for
    */
   @discardableResult
-  func activeProcessor(for job: AnyJob) -> AnyJobProcessor? {
-    var nextProcessors = self.active[job.name, default: [JobID: AnyJobProcessor]()]
+  func activeProcessor(for job: JobDetails) -> AnyJob? {
+    var nextProcessors = self.active[job.type, default: [JobID: AnyJob]()]
 
     // If there's no configuration for this job type, return nil
-    guard let configuration = self.configurations[job.name] else {
+    guard let configuration = self.configurations[job.type] else {
       return nil
     }
 
     // If there's already a processor for this job, return it
-    if let processor = self.active[job.name]?[job.id] {
+    if let processor = self.active[job.type]?[job.id] {
       return processor
     }
 
@@ -99,7 +99,7 @@ class JobQueueProcessors {
     // Generate a new processor and add it to the active processors collection
     let processor = configuration.generate()
     nextProcessors[job.id] = processor
-    self.active[job.name] = nextProcessors
+    self.active[job.type] = nextProcessors
     return processor
   }
 }

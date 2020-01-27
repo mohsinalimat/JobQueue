@@ -5,32 +5,20 @@
 import Foundation
 import JobQueueCore
 import JobQueue
+import ReactiveSwift
 
-struct TestJob1: Job {
-  var id: JobID
-  var rawPayload: [UInt8]
-  var payload: String
-  var status: JobStatus
-  var schedule: JobSchedule?
-  var queuedAt: Date
-  var order: Float?
-  var progress: Float?
-}
+class TestJob1: DefaultJob<String> {
+  let scheduler = QueueScheduler()
 
-extension TestJob1 {
-  static func make(
-    id: JobID,
-    payload: Payload,
-    queuedAt: Date = Date(),
-    status: JobStatus = .waiting,
-    order: Float? = nil
-  ) throws -> Self {
-    TestJob1(id: id,
-             rawPayload: try Self.serialize(payload),
-             payload: payload,
-             status: status,
-             queuedAt: queuedAt,
-             order: order)
+  var isProcessing: Bool = false
+
+  override func process(details: JobDetails, payload: String, queue: JobQueueProtocol, done: @escaping JobCompletion) {
+    guard !isProcessing else {
+      return
+    }
+    isProcessing = true
+    scheduler.schedule(after: Date(timeIntervalSinceNow: Double.random(in: 0.1..<0.25))) {
+      done(.success(()))
+    }
   }
 }
-

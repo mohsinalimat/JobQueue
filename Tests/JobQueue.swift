@@ -21,7 +21,6 @@ class JobQueueTests: QuickSpec {
     beforeEach {
       schedulers = JobQueueSchedulers()
       storage = TestJobStorage(scheduler: schedulers.storage)
-
       queue = JobQueue(name: randomString(),
                        schedulers: schedulers,
                        storage: storage,
@@ -109,8 +108,8 @@ class JobQueueTests: QuickSpec {
     describe("processing jobs") {
       describe("basic") {
         it("can process a job") {
-          let job = try! TestJob1.make(id: "0", payload: "test")
-          queue.register(Processor.self)
+          let job = try! JobDetails(TestJob1.self, id: "0", queueName: queue.name, payload: "test")
+          queue.register(TestJob1.self)
           var disposable: Disposable?
           waitUntil { done in
             disposable = queue.events.producer
@@ -133,10 +132,10 @@ class JobQueueTests: QuickSpec {
           disposable?.dispose()
         }
         it("can process several jobs") {
-          let jobs = (0..<25).reduce(into: [AnyJob]()) { acc, idx in
-            acc.append(try! TestJob1.make(id: "\(idx)", payload: "test.\(idx)", order: Float(idx)))
+          let jobs = (0..<25).reduce(into: [JobDetails]()) { acc, idx in
+            acc.append(try! JobDetails(TestJob1.self, id: "\(idx)", queueName: queue.name, payload: "test.\(idx)", order: Float(idx)))
           }
-          queue.register(Processor.self, concurrency: 50)
+          queue.register(TestJob1.self, concurrency: 50)
           var disposable: Disposable?
           waitUntil(timeout: 2) { done in
             let ids = Set(jobs.map { $0.id })
@@ -171,12 +170,13 @@ class JobQueueTests: QuickSpec {
       describe("delayed jobs") {
         it("should run the job after the delayed status' `until` date") {
           let date = Date(timeIntervalSinceNow: 2)
-          let job = try! TestJob1.make(
+          let job = try! JobDetails(TestJob1.self,
             id: "delayed1",
+            queueName: queue.name,
             payload: "delayed job",
             status: .delayed(until: date))
 
-          queue.register(Processor.self, concurrency: 50)
+          queue.register(TestJob1.self, concurrency: 50)
           var disposable: Disposable?
 
           waitUntil(timeout: 5) { done in
@@ -208,22 +208,6 @@ class JobQueueTests: QuickSpec {
           disposable?.dispose()
         }
       }
-    }
-  }
-}
-
-private class Processor: DefaultJobProcessor<TestJob1> {
-  let scheduler = QueueScheduler()
-
-  var isProcessing: Bool = false
-
-  override func process(job: TestJob1, queue: JobQueue, done: @escaping (Result<Void, Error>) -> Void) {
-    guard !isProcessing else {
-      return
-    }
-    isProcessing = true
-    scheduler.schedule(after: Date(timeIntervalSinceNow: Double.random(in: 0.1..<0.25))) {
-      done(.success(()))
     }
   }
 }
