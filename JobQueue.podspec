@@ -38,4 +38,11 @@ Pod::Spec.new do |s|
       sss.dependency 'ReactiveSwift', '~> 6.2.0'
     end
   end
+  s.subspec 'Storage' do |ss|
+    ss.subspec 'CoreData' do |sss|
+      sss.source_files = 'Sources/Storage/CoreData/**/*.swift'
+      sss.dependency 'JobQueue/Core'
+      sss.dependency 'ReactiveSwift', '~> 6.2.0'
+    end
+  end
 end
