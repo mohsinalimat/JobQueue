@@ -12,11 +12,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   let schedulers = JobQueueSchedulers()
 
   var inMemoryQueue: JobQueue?
-  var coreDataQueeu: JobQueue?
+
+  let coreDataStack = CoreDataStack()
+  var coreDataQueue: JobQueue?
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
-    self.demoInMemoryQueue()
+    //self.demoInMemoryQueue()
     self.demoCoreDataQueue()
     return true
   }
@@ -25,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     self.inMemoryQueue = JobQueue(
       name: "InMemoryQueue",
       schedulers: schedulers,
-      storage: JobQueueInMemoryStorage(scheduler: schedulers.storage)
+      storage: InMemoryStorage(scheduler: schedulers.storage)
     )
     guard let queue = self.inMemoryQueue else {
       return
@@ -34,22 +36,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 
   func demoCoreDataQueue() {
-    self.inMemoryQueue = JobQueue(
+    self.coreDataQueue = JobQueue(
       name: "CoreDataQueue",
       schedulers: schedulers,
-      storage: JobQueueInMemoryStorage(scheduler: schedulers.storage)
+      storage: CoreDataStorage(
+        createContext: self.coreDataStack.container.newBackgroundContext,
+        rollback: self.coreDataStack.rollback(_:),
+        commit: self.coreDataStack.commit(_:)
+      )
     )
-    guard let queue = self.inMemoryQueue else {
+    guard let queue = self.coreDataQueue else {
       return
     }
-    self.demo(queue: queue)
+    self.coreDataStack.load().startWithCompleted {
+      self.demo(queue: queue)
+    }
   }
 
   func demo(queue: JobQueue) {
     let id = ID(size: 10)
 
     queue.register(TestJob.self, concurrency: 3)
-    queue.resume().start()
 
     // Add 10 jobs
     let jobs = (0..<10).map { idx -> JobDetails in
@@ -65,6 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       .flatMap(.merge) { queue.store($0) }
       .startWithCompleted {
         print("Finished storing jobs in queue: \(queue.name)")
+        queue.resume().start()
       }
   }
 

@@ -17,7 +17,7 @@ class JobQueueInMemoryStorageTests: QuickSpec {
 
     beforeEach {
       queue = Queue()
-      storage = JobQueueInMemoryStorage(scheduler: QueueScheduler())
+      storage = InMemoryStorage(scheduler: QueueScheduler())
     }
 
     describe("within transaction") {
