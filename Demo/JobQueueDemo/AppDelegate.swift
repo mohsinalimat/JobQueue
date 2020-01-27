@@ -5,37 +5,67 @@
 import JobQueue
 import UIKit
 import ReactiveSwift
+import NanoID
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
   let schedulers = JobQueueSchedulers()
-  var queue: JobQueue?
+
+  var inMemoryQueue: JobQueue?
+  var coreDataQueeu: JobQueue?
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
+    self.demoInMemoryQueue()
+    self.demoCoreDataQueue()
+    return true
+  }
 
-    self.queue = JobQueue(
-      name: "Testing",
+  func demoInMemoryQueue() {
+    self.inMemoryQueue = JobQueue(
+      name: "InMemoryQueue",
       schedulers: schedulers,
       storage: JobQueueInMemoryStorage(scheduler: schedulers.storage)
     )
-    guard let queue = self.queue else {
-      return true
+    guard let queue = self.inMemoryQueue else {
+      return
     }
+    self.demo(queue: queue)
+  }
+
+  func demoCoreDataQueue() {
+    self.inMemoryQueue = JobQueue(
+      name: "CoreDataQueue",
+      schedulers: schedulers,
+      storage: JobQueueInMemoryStorage(scheduler: schedulers.storage)
+    )
+    guard let queue = self.inMemoryQueue else {
+      return
+    }
+    self.demo(queue: queue)
+  }
+
+  func demo(queue: JobQueue) {
+    let id = ID(size: 10)
+
     queue.register(TestJob.self, concurrency: 3)
     queue.resume().start()
 
     // Add 10 jobs
-    let jobs = (0..<10).map {
-      try! JobDetails(TestJob.self, id: "jobs/TestJob/\($0)", queueName: queue.name, payload: "Job #\($0)")
+    let jobs = (0..<10).map { idx -> JobDetails in
+      let jobId = id.generate()
+      return try! JobDetails(
+        TestJob.self,
+        id: jobId,
+        queueName: queue.name,
+        payload: "Job #\(idx), ID: \(jobId)"
+      )
     }
     SignalProducer(jobs)
       .flatMap(.merge) { queue.store($0) }
       .startWithCompleted {
-        print("Finished storing jobs")
+        print("Finished storing jobs in queue: \(queue.name)")
       }
-
-    return true
   }
 
   // MARK: UISceneSession Lifecycle
