@@ -8,13 +8,7 @@ import ReactiveSwift
 import JobQueueCore
 #endif
 
-public enum JobStorageTransactionChange {
-  case stored(JobQueueName, JobID, JobDetails)
-  case removed(JobQueueName, JobID, JobDetails)
-  case removedAll(JobQueueName)
-}
-
-public class JobQueueInMemoryStorage: JobStorage {
+public class InMemoryStorage: JobStorage {
   private var data = [JobQueueName: [JobID: JobDetails]]()
   private let scheduler: Scheduler
   private let logger: Logger
@@ -26,7 +20,7 @@ public class JobQueueInMemoryStorage: JobStorage {
 
   public func transaction<T>(queue: JobQueueProtocol, _ closure: @escaping (JobStorageTransaction) throws -> T) -> SignalProducer<T, Error> {
     return SignalProducer { o, lt in
-      let transaction = JobQueueInMemoryStorageTransaction(queue: queue, data: self.data, logger: self.logger)
+      let transaction = Transaction(queue: queue, data: self.data, logger: self.logger)
 
       do {
         let result = try closure(transaction)

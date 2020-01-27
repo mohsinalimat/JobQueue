@@ -30,7 +30,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JobQueue: afc1515241f032561cb72bc101395a78e1f602a6
+  JobQueue: c1f0332589cfdf5bb08c5848e069926384e25d93
   NanoID: fe7ede6a2e918252ec9a779adeb065a2b2522f49
   ReactiveSwift: 3dc8800378110b13d40b46ab362afa9f6bcffc6c
 

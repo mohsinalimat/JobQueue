@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		39A2D1B3E2F6214EF1578966 /* Pods_JobQueueDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55429661AFC07D022592011 /* Pods_JobQueueDemo.framework */; };
+		551A6B6FCDF12D3474579AAC /* Pods_JobQueueDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDC3532B902055871952D588 /* Pods_JobQueueDemo.framework */; };
 		B964BA5C23DF3D1E00AF9279 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B964BA5B23DF3D1E00AF9279 /* CoreDataStack.swift */; };
 		B9E9D29323DB084200D89111 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D29223DB084200D89111 /* AppDelegate.swift */; };
 		B9E9D29523DB084200D89111 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E9D29423DB084200D89111 /* SceneDelegate.swift */; };
@@ -18,9 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		60BE7D0D7CBAAF2D947B2A74 /* Pods-JobQueueDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobQueueDemo.debug.xcconfig"; path = "Target Support Files/Pods-JobQueueDemo/Pods-JobQueueDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		79708CABD71FF5C123C3F910 /* Pods-JobQueueDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobQueueDemo.release.xcconfig"; path = "Target Support Files/Pods-JobQueueDemo/Pods-JobQueueDemo.release.xcconfig"; sourceTree = "<group>"; };
-		B55429661AFC07D022592011 /* Pods_JobQueueDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobQueueDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D08292F93A44A4470801BE1 /* Pods-JobQueueDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobQueueDemo.debug.xcconfig"; path = "Target Support Files/Pods-JobQueueDemo/Pods-JobQueueDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		B964BA5B23DF3D1E00AF9279 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		B9E9D28F23DB084200D89111 /* JobQueueDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobQueueDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9E9D29223DB084200D89111 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +28,8 @@
 		B9E9D29B23DB084300D89111 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B9E9D29E23DB084300D89111 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B9E9D2A023DB084300D89111 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BDC3532B902055871952D588 /* Pods_JobQueueDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobQueueDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F725CFE0D277DFE57B5A80FD /* Pods-JobQueueDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobQueueDemo.release.xcconfig"; path = "Target Support Files/Pods-JobQueueDemo/Pods-JobQueueDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,26 +37,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39A2D1B3E2F6214EF1578966 /* Pods_JobQueueDemo.framework in Frameworks */,
+				551A6B6FCDF12D3474579AAC /* Pods_JobQueueDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		83C7FFC19B3B44B279CE6E0E /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B55429661AFC07D022592011 /* Pods_JobQueueDemo.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		AD5651C63C2138EFB3E6E8BC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				60BE7D0D7CBAAF2D947B2A74 /* Pods-JobQueueDemo.debug.xcconfig */,
-				79708CABD71FF5C123C3F910 /* Pods-JobQueueDemo.release.xcconfig */,
+				3D08292F93A44A4470801BE1 /* Pods-JobQueueDemo.debug.xcconfig */,
+				F725CFE0D277DFE57B5A80FD /* Pods-JobQueueDemo.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -67,7 +59,7 @@
 				B9E9D29123DB084200D89111 /* JobQueueDemo */,
 				B9E9D29023DB084200D89111 /* Products */,
 				AD5651C63C2138EFB3E6E8BC /* Pods */,
-				83C7FFC19B3B44B279CE6E0E /* Frameworks */,
+				C25FF3A7B9068960229D9E35 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,6 +94,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		C25FF3A7B9068960229D9E35 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BDC3532B902055871952D588 /* Pods_JobQueueDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,11 +109,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B9E9D2A323DB084300D89111 /* Build configuration list for PBXNativeTarget "JobQueueDemo" */;
 			buildPhases = (
-				9CD3CC9ECDF9200DADDAD8A0 /* [CP] Check Pods Manifest.lock */,
+				65F674C79927CFAEDBFFCCC5 /* [CP] Check Pods Manifest.lock */,
 				B9E9D28B23DB084200D89111 /* Sources */,
 				B9E9D28C23DB084200D89111 /* Frameworks */,
 				B9E9D28D23DB084200D89111 /* Resources */,
-				88D48C30AF22F51FB92CF336 /* [CP] Embed Pods Frameworks */,
+				5303EAB7BB2230E11AEAE1B9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -171,7 +171,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		88D48C30AF22F51FB92CF336 /* [CP] Embed Pods Frameworks */ = {
+		5303EAB7BB2230E11AEAE1B9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -188,7 +188,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JobQueueDemo/Pods-JobQueueDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9CD3CC9ECDF9200DADDAD8A0 /* [CP] Check Pods Manifest.lock */ = {
+		65F674C79927CFAEDBFFCCC5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -354,7 +354,7 @@
 		};
 		B9E9D2A423DB084300D89111 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 60BE7D0D7CBAAF2D947B2A74 /* Pods-JobQueueDemo.debug.xcconfig */;
+			baseConfigurationReference = 3D08292F93A44A4470801BE1 /* Pods-JobQueueDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -375,7 +375,7 @@
 		};
 		B9E9D2A523DB084300D89111 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 79708CABD71FF5C123C3F910 /* Pods-JobQueueDemo.release.xcconfig */;
+			baseConfigurationReference = F725CFE0D277DFE57B5A80FD /* Pods-JobQueueDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

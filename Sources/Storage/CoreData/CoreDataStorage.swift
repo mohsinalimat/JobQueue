@@ -9,7 +9,8 @@ import CoreData
 import JobQueueCore
 #endif
 
-public class JobQueueCoreDataStorageEntity: NSManagedObject {
+@objc(JobDetailsCoreDataStorageEntity)
+public class JobDetailsCoreDataStorageEntity: NSManagedObject {
   @NSManaged var id: JobID!
   @NSManaged var type: JobName!
   @NSManaged var queue: JobQueueName!
@@ -26,7 +27,7 @@ public class JobQueueCoreDataStorageEntity: NSManagedObject {
   }
 }
 
-public class JobQueueCoreDataStorage: JobStorage {
+public class CoreDataStorage: JobStorage {
   private let logger: Logger
   private let createContext: () -> NSManagedObjectContext?
   private let rollback: (NSManagedObjectContext) -> Void
@@ -77,7 +78,7 @@ public class JobQueueCoreDataStorage: JobStorage {
   }
 }
 
-extension JobQueueCoreDataStorage {
+extension CoreDataStorage {
   public enum Errors: Error {
     case noContext
   }

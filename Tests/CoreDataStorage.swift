@@ -20,7 +20,7 @@ class JobQueueCoreDataStorageTests: QuickSpec {
 
     beforeEach {
       queue = Queue()
-      storage = JobQueueCoreDataStorage(
+      storage = CoreDataStorage(
         createContext: self.stack.container.newBackgroundContext,
         rollback: self.stack.rollback,
         commit: self.stack.commit
@@ -168,7 +168,7 @@ private class CoreDataStack {
 
     let entity = NSEntityDescription()
     entity.name = "JobQueueCoreDataStorageEntity"
-    entity.managedObjectClassName = JobQueueCoreDataStorageEntity.className()
+    entity.managedObjectClassName = JobDetailsCoreDataStorageEntity.className()
 
     let jobID = NSAttributeDescription()
     jobID.attributeType = .stringAttributeType

@@ -9,12 +9,12 @@ import CoreData
 import JobQueueCore
 #endif
 
-extension JobQueueCoreDataStorage {
+extension CoreDataStorage {
   public class Transaction: JobStorageTransaction {
     private var queue: JobQueueProtocol?
     private let logger: Logger
     private let context: NSManagedObjectContext
-    private typealias Entity = JobQueueCoreDataStorageEntity
+    private typealias Entity = JobDetailsCoreDataStorageEntity
 
     internal let id = UUID().uuidString
 
@@ -35,9 +35,7 @@ extension JobQueueCoreDataStorage {
       let fetchRequest = Entity.fetchRequest()
       fetchRequest.predicate = NSPredicate(format: "queue == %@", queue.name)
       do {
-        guard let rawResult = try context.fetch(fetchRequest).first else {
-          return .failure(JobStorageError.jobNotFound(queue.name, id))
-        }
+        let rawResult = try context.fetch(fetchRequest)
         guard let result = rawResult as? [Entity] else {
           return .failure(JobStorageError.jobNotFound(queue.name, id))
         }

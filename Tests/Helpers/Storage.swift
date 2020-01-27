@@ -7,4 +7,4 @@ import JobQueue
 import ReactiveSwift
 import JobQueueInMemoryStorage
 
-public typealias TestJobStorage = JobQueueInMemoryStorage
+public typealias TestJobStorage = InMemoryStorage
