@@ -148,7 +148,7 @@ extension JobDetails {
 
   static func from(blob: Blob) throws -> Self {
     guard let data = blob.content else {
-      throw JobStorageError.jobTypeMismatch
+      throw JobStorageError.jobDeserializationFailed
     }
     return try JSONDecoder().decode(JobDetails.self, from: data)
   }

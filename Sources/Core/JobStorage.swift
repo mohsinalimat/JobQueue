@@ -10,6 +10,8 @@ public enum JobStorageError: Error {
   case queueNotFound(JobQueueName)
   case jobNotFound(JobQueueName, JobID)
   case jobTypeMismatch
+  case jobDeserializationFailed
+  case jobSerializationFailed
 }
 
 public protocol JobStorage {
