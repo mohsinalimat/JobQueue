@@ -1,27 +1,35 @@
 PODS:
-  - JobQueue/Core (0.0.24):
+  - CouchbaseLite-Swift (2.7.0)
+  - JobQueue/Core (0.0.25):
     - ReactiveSwift (~> 6.2.0)
-  - JobQueue/Queue (0.0.24):
+  - JobQueue/Queue (0.0.25):
     - JobQueue/Core
     - ReactiveSwift (~> 6.2.0)
-  - JobQueue/Storage/CoreData (0.0.24):
+  - JobQueue/Storage/CoreData (0.0.25):
     - JobQueue/Core
     - ReactiveSwift (~> 6.2.0)
-  - JobQueue/Storage/InMemory (0.0.24):
+  - JobQueue/Storage/CouchbaseLite (0.0.25):
+    - CouchbaseLite-Swift (~> 2.7.0)
+    - JobQueue/Core
+    - ReactiveSwift (~> 6.2.0)
+  - JobQueue/Storage/InMemory (0.0.25):
     - JobQueue/Core
     - ReactiveSwift (~> 6.2.0)
   - NanoID (1.0.1)
   - ReactiveSwift (6.2.0)
 
 DEPENDENCIES:
+  - CouchbaseLite-Swift
   - JobQueue/Queue (from `../`)
   - JobQueue/Storage/CoreData (from `../`)
+  - JobQueue/Storage/CouchbaseLite (from `../`)
   - JobQueue/Storage/InMemory (from `../`)
   - NanoID
   - ReactiveSwift
 
 SPEC REPOS:
   trunk:
+    - CouchbaseLite-Swift
     - NanoID
     - ReactiveSwift
 
@@ -30,10 +38,11 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JobQueue: c1f0332589cfdf5bb08c5848e069926384e25d93
+  CouchbaseLite-Swift: fc942af766946a7b1efbee2cc9b72ae04ec632e1
+  JobQueue: 4cde67666c67484f4bd9abb4d2fe0aa65f2e76ac
   NanoID: fe7ede6a2e918252ec9a779adeb065a2b2522f49
   ReactiveSwift: 3dc8800378110b13d40b46ab362afa9f6bcffc6c
 
-PODFILE CHECKSUM: 0393c1d919d4a555a7f21175f22e6f5c3ac8c596
+PODFILE CHECKSUM: 80587974e94ea2b4804257f214eb4943f055de68
 
 COCOAPODS: 1.8.4

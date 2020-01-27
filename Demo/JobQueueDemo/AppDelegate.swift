@@ -6,6 +6,7 @@ import JobQueue
 import UIKit
 import ReactiveSwift
 import NanoID
+import CouchbaseLiteSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,10 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   let coreDataStack = CoreDataStack()
   var coreDataQueue: JobQueue?
 
+  var database: Database?
+  var couchbaseLiteQueue: JobQueue?
+
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
-    //self.demoInMemoryQueue()
+    self.demoInMemoryQueue()
     self.demoCoreDataQueue()
+    self.demoCouchbaseLiteQueue()
     return true
   }
 
@@ -51,6 +56,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     self.coreDataStack.load().startWithCompleted {
       self.demo(queue: queue)
     }
+  }
+
+  func demoCouchbaseLiteQueue() {
+    self.database = try! Database(name: "Testing")
+    guard let database = self.database else {
+      fatalError()
+    }
+    self.couchbaseLiteQueue = JobQueue(
+      name: "CouchbaseLite Queue",
+      schedulers: schedulers,
+      storage: CouchbaseLiteStorage(database: database)
+    )
+    guard let queue = self.couchbaseLiteQueue else {
+      return
+    }
+    self.demo(queue: queue)
   }
 
   func demo(queue: JobQueue) {

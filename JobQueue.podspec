@@ -22,25 +22,28 @@ Pod::Spec.new do |s|
   }
   s.swift_version = '5.1'
 
+  s.dependency 'ReactiveSwift', '~> 6.2.0'
+
   s.subspec 'Core' do |ss|
     ss.source_files = 'Sources/Core/**/*.swift'
-    ss.dependency 'ReactiveSwift', '~> 6.2.0'
   end
   s.subspec 'Queue' do |ss|
     ss.source_files = 'Sources/Queue/**/*.swift'
     ss.dependency 'JobQueue/Core'
-    ss.dependency 'ReactiveSwift', '~> 6.2.0'
   end
   s.subspec 'Storage' do |ss|
     ss.subspec 'InMemory' do |sss|
       sss.source_files = 'Sources/Storage/InMemory/**/*.swift'
       sss.dependency 'JobQueue/Core'
-      sss.dependency 'ReactiveSwift', '~> 6.2.0'
     end
     ss.subspec 'CoreData' do |sss|
       sss.source_files = 'Sources/Storage/CoreData/**/*.swift'
       sss.dependency 'JobQueue/Core'
-      sss.dependency 'ReactiveSwift', '~> 6.2.0'
+    end
+    ss.subspec 'CouchbaseLite' do |sss|
+      sss.source_files = 'Sources/Storage/CouchbaseLite/**/*.swift'
+      sss.dependency 'JobQueue/Core'
+      sss.dependency 'CouchbaseLite-Swift', '~> 2.7.0'
     end
   end
 end
