@@ -7,6 +7,10 @@
 
 import Foundation
 
+extension JobQueueName {
+  static let unassignedJobQueueName = "UNASSIGNEDJOBQUEUENAME"
+}
+
 public protocol AnyJob: StaticallyNamed {
   /// Unique identifier of the job
   var id: JobID { get }
