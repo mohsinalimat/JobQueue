@@ -14,6 +14,7 @@ extension JobQueueCoreDataStorage {
     private var queue: JobQueueProtocol?
     private let logger: Logger
     private let context: NSManagedObjectContext
+    private typealias Entity = JobQueueCoreDataStorageEntity
 
     internal let id = UUID().uuidString
 
@@ -32,7 +33,7 @@ extension JobQueueCoreDataStorage {
         return .failure(JobStorageError.noQueueProvided)
       }
       let fetchRequest = Entity.fetchRequest()
-      fetchRequest.predicate = NSPredicate(format: "jobQueueName == %@", queue.name, id)
+      fetchRequest.predicate = NSPredicate(format: "queue == %@", queue.name)
       do {
         guard let rawResult = try context.fetch(fetchRequest).first else {
           return .failure(JobStorageError.jobNotFound(queue.name, id))
@@ -51,7 +52,7 @@ extension JobQueueCoreDataStorage {
         return .failure(JobStorageError.noQueueProvided)
       }
       let fetchRequest = Entity.fetchRequest()
-      fetchRequest.predicate = NSPredicate(format: "jobQueueName == %@ && jobQueueJobId == %@", queue.name, id)
+      fetchRequest.predicate = NSPredicate(format: "queue == %@ && id == %@", queue.name, id)
       do {
         guard let rawResult = try context.fetch(fetchRequest).first else {
           return .failure(JobStorageError.jobNotFound(queue.name, id))
@@ -72,7 +73,11 @@ extension JobQueueCoreDataStorage {
       let entityResult = self.getEntity(id, queue: queue)
       switch entityResult {
       case .success(let entity):
-        return .success(entity.job)
+        do {
+          return .success(try entity.getJobDetails())
+        } catch {
+          return .failure(error)
+        }
       case .failure(let error):
         return .failure(error)
       }
@@ -85,31 +90,42 @@ extension JobQueueCoreDataStorage {
       let result = self.getEntities(queue: queue)
       switch result {
       case .success(let entities):
-        return .success(entities.map { $0.job })
+        do {
+          return .success(try entities.map { try $0.getJobDetails() })
+        } catch {
+          return .failure(error)
+        }
       case .failure(let error):
         return .failure(error)
       }
     }
 
-    public func store(_ job: JobDetails, queue: JobQueueProtocol?) -> Result<JobDetails, Error> {
+    public func store(_ details: JobDetails, queue: JobQueueProtocol?) -> Result<JobDetails, Error> {
       guard let queue = (queue ?? self.queue) else {
         return .failure(JobStorageError.noQueueProvided)
       }
-      let entityResult = self.getEntity(job.id, queue: queue)
+      let entityResult = self.getEntity(details.id, queue: queue)
       switch entityResult {
       case .success(let entity):
         // TODO: Guard for entity.jobId matching job.id
         // TODO: Guard for entity.jobQueueName matching queue.name
-        entity.job = job
-        return .success(job)
+        do {
+          try entity.setJobDetails(details)
+          return .success(details)
+        } catch {
+          return .failure(error)
+        }
       case .failure(let error):
         switch error {
         case JobStorageError.jobNotFound:
           let entity = Entity(context: self.context)
-          entity.job = job
-          entity.jobId = job.id
-          entity.jobQueueName = queue.name
-          return .success(job)
+          do {
+            try context.obtainPermanentIDs(for: [entity])
+            try entity.setJobDetails(details)
+            return .success(details)
+          } catch {
+            return .failure(error)
+          }
         default:
           return .failure(error)
         }

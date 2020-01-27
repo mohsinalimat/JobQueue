@@ -10,19 +10,29 @@ import JobQueueCore
 #endif
 
 public class JobQueueCoreDataStorageEntity: NSManagedObject {
-  dynamic var jobId: String!
-  dynamic var jobQueueName: String!
-  dynamic var job: JobDetails!
+  @NSManaged var id: JobID!
+  @NSManaged var type: JobName!
+  @NSManaged var queue: JobQueueName!
+  @NSManaged var details: Data!
+
+  func setJobDetails(_ details: JobDetails) throws {
+    self.details = try JSONEncoder().encode(details)
+    self.id = details.id
+    self.queue = details.queueName
+    self.type = details.type
+  }
+  func getJobDetails() throws -> JobDetails {
+    try JSONDecoder().decode(JobDetails.self, from: self.details)
+  }
 }
 
-public class JobQueueCoreDataStorage<Entity: JobQueueCoreDataStorageEntity>: JobStorage {
+public class JobQueueCoreDataStorage: JobStorage {
   private let logger: Logger
   private let createContext: () -> NSManagedObjectContext?
   private let rollback: (NSManagedObjectContext) -> Void
   private let commit: (NSManagedObjectContext) -> SignalProducer<Void, Error>
 
   public init(
-    _ entity: Entity.Type,
     createContext: @escaping () -> NSManagedObjectContext,
     rollback: @escaping (NSManagedObjectContext) -> Void,
     commit: @escaping (NSManagedObjectContext) -> SignalProducer<Void, Error>,
